@@ -27,7 +27,7 @@
     <message>
         <location filename="../../src/components/logic/adc.cpp" line="54"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -166,7 +166,7 @@
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="32"/>
         <source>Main</source>
-        <translation type="unfinished">Základní</translation>
+        <translation>Základní</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="37"/>
@@ -180,7 +180,7 @@
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="34"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="40"/>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="45"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="50"/>
@@ -341,12 +341,12 @@
     <message>
         <location filename="../../src/gui/appdialogs/appdialog.ui" line="1331"/>
         <source>Target Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Požadovaný krok</translation>
     </message>
     <message>
         <location filename="../../src/gui/appdialogs/appdialog.ui" line="1417"/>
         <source>Real Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Skutečný krok</translation>
     </message>
     <message>
         <location filename="../../src/gui/appdialogs/appdialog.ui" line="1547"/>
@@ -496,17 +496,17 @@
         <location filename="../../src/components/logic/bcdto7s.cpp" line="66"/>
         <location filename="../../src/components/logic/bcdto7s.cpp" line="77"/>
         <source>Main</source>
-        <translation type="unfinished">Základní</translation>
+        <translation>Základní</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bcdto7s.cpp" line="67"/>
         <source>Custom Characters CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastní znaková sada</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bcdto7s.cpp" line="70"/>
         <source>Reset Pin</source>
-        <translation type="unfinished">Vstup Reset</translation>
+        <translation>Vstup Reset</translation>
     </message>
     <message>
         <source>Reset Inverted</source>
@@ -515,7 +515,7 @@
     <message>
         <location filename="../../src/components/logic/bcdto7s.cpp" line="79"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -529,12 +529,12 @@
     <message>
         <location filename="../../src/components/logic/bcdto7s.cpp" line="86"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bcdto7s.cpp" line="90"/>
         <source>Tristate</source>
-        <translation type="unfinished">Třístavové</translation>
+        <translation>Třístavové</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bcdto7s.cpp" line="95"/>
@@ -563,12 +563,12 @@
     <message>
         <location filename="../../src/components/logic/bcdtodec.cpp" line="50"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bcdtodec.cpp" line="57"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bcdtodec.cpp" line="61"/>
@@ -606,27 +606,27 @@
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="74"/>
         <source>Size</source>
-        <translation type="unfinished">Velikost</translation>
+        <translation>Velikost</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="77"/>
         <source>Top Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Čítat do</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="80"/>
         <source>Parallel Input</source>
-        <translation type="unfinished">Paralelní vstupy</translation>
+        <translation>Paralelní vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="83"/>
         <source>Use RCO &amp; RBO</source>
-        <translation type="unfinished"></translation>
+        <translation>Přetečení a výpůjčka</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="86"/>
         <source>Bidirectional</source>
-        <translation type="unfinished">Obousměrný</translation>
+        <translation>Obousměrný</translation>
     </message>
     <message>
         <source>Reset Inverted</source>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="98"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <source>Use Set Pin</source>
@@ -660,12 +660,12 @@
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="101"/>
         <source>Invert Inputs</source>
-        <translation type="unfinished">Invertované vstupy</translation>
+        <translation>Invertované vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="106"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="110"/>
@@ -689,12 +689,12 @@
     <message>
         <location filename="../../src/components/logic/buffer.cpp" line="39"/>
         <source>Small size</source>
-        <translation type="unfinished">Malý symbol</translation>
+        <translation>Malý symbol</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/buffer.cpp" line="45"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/buffer.cpp" line="48"/>
@@ -704,7 +704,7 @@
     <message>
         <location filename="../../src/components/logic/buffer.cpp" line="53"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/buffer.cpp" line="57"/>
@@ -1176,7 +1176,7 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/gui/properties/colorval.cpp" line="57"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Výběr barvy</translation>
     </message>
 </context>
 <context>
@@ -1413,18 +1413,18 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="21"/>
         <source>Simple Counter</source>
-        <translation type="unfinished"></translation>
+        <translation>Jednoduchý čítač</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="52"/>
         <location filename="../../src/components/logic/counter.cpp" line="66"/>
         <source>Main</source>
-        <translation type="unfinished">Základní</translation>
+        <translation>Základní</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="53"/>
         <source>Use Set Pin</source>
-        <translation type="unfinished">Vstup Set</translation>
+        <translation>Vstup Set</translation>
     </message>
     <message>
         <source>Clock Inverted</source>
@@ -1437,17 +1437,17 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="62"/>
         <source>Count to</source>
-        <translation type="unfinished">Čítat do</translation>
+        <translation>Čítat do</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="68"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="69"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -1456,7 +1456,7 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="70"/>
         <source>Timing</source>
-        <translation type="unfinished">Časování</translation>
+        <translation>Časování</translation>
     </message>
 </context>
 <context>
@@ -1556,7 +1556,7 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/dac.cpp" line="53"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -1674,7 +1674,7 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/dectobcd.cpp" line="59"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/dectobcd.cpp" line="62"/>
@@ -1684,7 +1684,7 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/dectobcd.cpp" line="67"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/dectobcd.cpp" line="71"/>
@@ -1722,12 +1722,12 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/demux.cpp" line="64"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/demux.cpp" line="68"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/demux.cpp" line="72"/>
@@ -1984,12 +1984,12 @@ Nemohu najít soubor:
     <message>
         <location filename="../../src/components/logic/dynamic_memory.cpp" line="98"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/dynamic_memory.cpp" line="102"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -2671,12 +2671,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/flipflopbase.cpp" line="39"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/flipflopbase.cpp" line="40"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -2759,12 +2759,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/fulladder.cpp" line="51"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/fulladder.cpp" line="52"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/fulladder.cpp" line="54"/>
@@ -2786,7 +2786,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/function.cpp" line="86"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/function.cpp" line="90"/>
@@ -2796,7 +2796,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/function.cpp" line="97"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/function.cpp" line="101"/>
@@ -3131,7 +3131,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/iocomponent.cpp" line="62"/>
         <source>Input pullups</source>
-        <translation type="unfinished"></translation>
+        <translation>Vstupní pullupy</translation>
     </message>
     <message>
         <source>Outputs:</source>
@@ -3155,12 +3155,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/iocomponent.cpp" line="83"/>
         <source>Output Z Impedance</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstupní impedance Z</translation>
     </message>
     <message>
         <location filename="../../src/components/iocomponent.cpp" line="92"/>
         <source>Ouput pullups</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstupní pullupy</translation>
     </message>
     <message>
         <location filename="../../src/components/iocomponent.cpp" line="95"/>
@@ -3202,7 +3202,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/micro/ky023.cpp" line="34"/>
         <source>Joystick Dual Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Dvouosý křížový ovladač</translation>
     </message>
 </context>
 <context>
@@ -3440,12 +3440,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/latchd.cpp" line="68"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/latchd.cpp" line="76"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/latchd.cpp" line="85"/>
@@ -3912,12 +3912,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/magnitudecomp.cpp" line="53"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/magnitudecomp.cpp" line="55"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -3976,7 +3976,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/mainwindow.cpp" line="347"/>
         <source>Select User data directory</source>
-        <translation>Vyberte složky s uživatelskými daty</translation>
+        <translation>Výběr složky s uživatelskými daty</translation>
     </message>
     <message>
         <location filename="../../src/mainwindow.cpp" line="258"/>
@@ -4034,7 +4034,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/microsim/mcu.cpp" line="251"/>
         <source>PGM persistent</source>
-        <translation type="unfinished"></translation>
+        <translation>Trvalý obsah PGM</translation>
     </message>
     <message>
         <location filename="../../src/microsim/mcu.cpp" line="254"/>
@@ -4107,7 +4107,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/microsim/mcu.cpp" line="261"/>
         <source>EEPROM persistent</source>
-        <translation type="unfinished"></translation>
+        <translation>Trvalý obsah EEPROM</translation>
     </message>
     <message>
         <location filename="../../src/microsim/mcu.cpp" line="505"/>
@@ -4227,12 +4227,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/memory.cpp" line="88"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/memory.cpp" line="90"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/memory.cpp" line="94"/>
@@ -4321,7 +4321,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="67"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="69"/>
@@ -4331,7 +4331,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="74"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="77"/>
@@ -4429,7 +4429,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="32"/>
         <source>Main</source>
-        <translation type="unfinished">Základní</translation>
+        <translation>Základní</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="37"/>
@@ -4443,7 +4443,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="34"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="40"/>
@@ -4453,7 +4453,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="45"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="50"/>
@@ -4528,7 +4528,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/gui/properties/pathval.cpp" line="44"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat soubor</translation>
     </message>
 </context>
 <context>
@@ -4637,7 +4637,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/meters/probe.cpp" line="174"/>
         <source>Pause at state change</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozastavit při změně stavu</translation>
     </message>
 </context>
 <context>
@@ -4912,7 +4912,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/gui/circuitwidget/iopin.cpp" line="308"/>
         <source>Invert Pin</source>
-        <translation type="unfinished">Invertovaný pin</translation>
+        <translation>Invertovaný pin</translation>
     </message>
 </context>
 <context>
@@ -5545,12 +5545,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/shiftreg.cpp" line="90"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/shiftreg.cpp" line="92"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <source>Electric</source>
@@ -5756,22 +5756,22 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/other/subpackage.cpp" line="101"/>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastní barva</translation>
     </message>
     <message>
         <location filename="../../src/components/other/subpackage.cpp" line="104"/>
         <source>Background Color</source>
-        <translation type="unfinished">Barva pozadí</translation>
+        <translation>Barva pozadí</translation>
     </message>
     <message>
         <location filename="../../src/components/other/subpackage.cpp" line="107"/>
         <source>Background image</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrázek na pozadí</translation>
     </message>
     <message>
         <location filename="../../src/components/other/subpackage.cpp" line="110"/>
         <source>Border</source>
-        <translation type="unfinished">Síla rámečku</translation>
+        <translation>Síla rámečku</translation>
     </message>
     <message>
         <location filename="../../src/components/other/subpackage.cpp" line="260"/>
@@ -5973,7 +5973,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/other/testunit.cpp" line="228"/>
         <source>Show Table</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit tabulku</translation>
     </message>
 </context>
 <context>
@@ -6211,7 +6211,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/other/truthtable/truthtable.ui" line="102"/>
         <source>Clear test</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazat test</translation>
     </message>
 </context>
 <context>
@@ -6501,7 +6501,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/sources/wavegen.cpp" line="80"/>
         <source>Minimum Steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimální počet kroků</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/wavegen.cpp" line="86"/>
@@ -6553,12 +6553,12 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/gate_xor.cpp" line="33"/>
         <source>Main</source>
-        <translation type="unfinished">Základní</translation>
+        <translation>Základní</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_xor.cpp" line="35"/>
         <source>Inputs</source>
-        <translation type="unfinished">Vstupy</translation>
+        <translation>Vstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_xor.cpp" line="38"/>
@@ -6568,7 +6568,7 @@ Chcete uložit změny?
     <message>
         <location filename="../../src/components/logic/gate_xor.cpp" line="43"/>
         <source>Outputs</source>
-        <translation type="unfinished">Výstupy</translation>
+        <translation>Výstupy</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_xor.cpp" line="48"/>
