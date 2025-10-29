@@ -104,10 +104,74 @@ win32 {
 }
 linux {
     OS = Linux
+#    Note 1: QMAKE_HOST.arch refers to the architecture of the computer which is running
+#            the qmake executable, which is the same as the architecture of the computer
+#            which will run the resulting build of SimulIDE when cross-compilation is not
+#            being used, but when cross-compilation is being used, QMAKE_HOST.arch is not
+#            the same as the architecture of the computer which will run the resulting
+#            build of SimulIDE, so QMAKE_HOST.arch cannot be solely relied on if
+#            reliable detection of the architecture of the computer which will run the
+#            resulting build of SimulIDE is desired.
+#    Note 2: Unfortunately, unlike, for example, the CMAKE_SYSTEM_PROCESSOR variable
+#            found in CMake, QMake does not appear to consistently support any direct
+#            equivalent to that CMAKE_SYSTEM_PROCESSOR variable which could be reliably
+#            used to determine the architecture of the computer which will run the
+#            resulting build of SimulIDE. Therefore, to reliably detect the architecture
+#            of the computer which will run the resulting build of SimulIDE in QMake,
+#            it is necessary to check multiple variables in a particular order and
+#            using a particular conditional logic, in order to have the best chance
+#            of accurately detecting whether the resulting build of SimulIDE will be
+#            run on a computer that has a 64-bit ARM processor or not.
+#    Note 3: On almost all 64-bit ARM computers which are running GNU/Linux, Android,
+#            Alpine Linux, ChimeraOS or any other operating system that has a Linux
+#            kernel, regardless of the exact system userspace libraries, within QMake
+#            running on that 64-bit ARM computer which has an operating system that
+#            has a Linux kernel, QMAKE_HOST.arch will be equal to "aarch64" and not "arm64".
+#            This is in contrast to some other operating systems that do not have
+#            Linux kernels, like MacOS, on which QMAKE_HOST.arch may be equal to "arm64"
+#            instead.
+#    Note 4: The file as_callfunc_arm_gcc.S does not exist in SimulIDE because it is
+#            for 32-bit ARM, which is not supported, so it has been removed. The
+#            equivalent file for 64-bit ARM is named as_callfunc_arm64_gcc.S, and that
+#            file does still exist in SimulIDE, so that is the file which should be
+#            built when the SimulIDE that is being built will be run on a 64-bit ARM
+#            computer running any operating system that has a Linux kernel (including
+#            when the toolchain Clang is being used to compile SimulIDE, as well as
+#            the toolchain GCC, because the assembler of the toolchain Clang supports,
+#            at least in this situation, the same format of .S assembly file that the
+#            assembler of the toolchain GCC supports)
+
+#    This is the original check, which did not work
 #    contains( QMAKE_HOST.arch, arm64 ) {
-    contains( QMAKE_CC, aarch64.* ) {
-        SOURCES += $$PWD/src/angel/src/as_callfunc_arm_gcc.S
-    }
+#        SOURCES += $$PWD/src/angel/src/as_callfunc_arm_gcc.S
+#    }
+
+#    This is the new check, which attempts to take all four of the above notes into
+#    consideration as consistently as it is possible to in QMake.
+#    It is not perfect, but passes all of the common test cases I have tested it with
+#    and anticipate it might need to be used for.
+#    An unhandled edge case here is cross-compiling from a 64-bit ARM computer to any
+#    other kind of computer, but that edge case is relatively uncommon.
+
+#    First, check if the triplet of the C compiler being used contains "aarch64".
+#    if it does, then add the as_callfunc_arm64_gcc.S to the sources to be built.
+#    This enables support for cross-compilation to 64-bit ARM computers running operating
+#    systems that have a Linux kernel, as long as the QMake crossfile being used defined
+#    the QMAKE_CC variable.
+     contains( QMAKE_CC, .*aarch64.* ) {
+         SOURCES += $$PWD/src/angel/src/as_callfunc_arm64_gcc.S
+     }
+
+#    Next, if the triplet of the C compiler being used does not start with "aarch64",
+#    then check whether the QMAKE_HOST.arch variable is equal to "aarch64",
+#    and if it is, then add the as_callfunc_arm64_gcc.S to the sources to be built.
+#    This enables support for native compilation on 64-bit ARM computers running
+#    operating systems that have a Linux kernel.
+     !contains ( QMAKE_CC, .*aarch64.* ) {
+         contains ( QMAKE_HOST.arch, aarch64 ) {
+             SOURCES += $$PWD/src/angel/src/as_callfunc_arm64_gcc.S
+         }
+     }
 }
 macx {
     OS = MacOs
