@@ -26,7 +26,10 @@ class SwitchBase : public MechContact
 
         QString key() { return m_key; }
         void setKey( QString key );
-        
+
+        QString linkCondition() { return m_condition; }
+        void setLinkCondition( QString condition );
+
         CustomButton* button() { return m_button; }
 
         virtual void onbuttonclicked();
@@ -36,7 +39,8 @@ class SwitchBase : public MechContact
         //virtual void setflip() override;
 
         QString m_key;
-        
+        QString m_condition;
+
         CustomButton* m_button;
         QGraphicsProxyWidget* m_proxy;
 

@@ -18,6 +18,7 @@ SwitchBase::SwitchBase( QString type, QString id )
     m_graphical = true;
     m_changed = true;
     m_key = "";
+    m_condition = "";
 
     m_area =  QRectF( 0,0,0,0 );
     m_ePin.resize(2);
@@ -96,4 +97,9 @@ void SwitchBase::setKey( QString key )
     if( key.size()>1 ) key = key.left( 1 );
     m_key = key;
     m_button->setText( key );
+}
+
+void SwitchBase::setLinkCondition( QString condition )
+{
+    m_condition = condition;
 }

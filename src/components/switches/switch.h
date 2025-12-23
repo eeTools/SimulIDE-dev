@@ -26,4 +26,6 @@ class Switch : public SwitchBase
         void paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w ) override;
 
         virtual void keyEvent( QString key, bool pressed ) override;
+        void setLinkedValue( double v, int i=0 ) override;
+        bool evaluateCompoundCondition(const QString& rawCondition, int value);
 };
