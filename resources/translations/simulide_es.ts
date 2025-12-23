@@ -2346,7 +2346,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="55"/>
         <source>Show Spaces and Tabs</source>
-        <translation>Mostar Espacios como Tabs</translation>
+        <translation>Mostrar Espacios como Tabs</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="211"/>
@@ -2460,7 +2460,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/micro/esp01.cpp" line="92"/>
         <source>Show Debug messages</source>
-        <translation>Mostar Mensajes</translation>
+        <translation>Mostrar Mensajes</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/esp01.cpp" line="441"/>
@@ -4591,7 +4591,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/meters/probe.cpp" line="67"/>
         <source>Show Voltage</source>
-        <translation>Mostar Voltaje</translation>
+        <translation>Mostrar Voltaje</translation>
     </message>
     <message>
         <location filename="../../src/components/meters/probe.cpp" line="70"/>
@@ -4634,7 +4634,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/properties/propdialog.ui" line="122"/>
         <source>    Show</source>
-        <translation>    Mostar</translation>
+        <translation>    Mostrar</translation>
     </message>
 </context>
 <context>
@@ -5415,7 +5415,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/logic/sevensegment_bcd.cpp" line="75"/>
         <source>Show Enable Pin</source>
-        <translation>Mostar Pin de Nabilitación</translation>
+        <translation>Mostrar Pin de Nabilitación</translation>
     </message>
 </context>
 <context>
@@ -6213,7 +6213,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/connectors/tunnel.cpp" line="210"/>
         <source>Show group</source>
-        <translation>Mostar grupo</translation>
+        <translation>Mostrar grupo</translation>
     </message>
     <message>
         <location filename="../../src/components/connectors/tunnel.cpp" line="223"/>
