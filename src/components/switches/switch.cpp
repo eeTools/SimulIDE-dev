@@ -4,6 +4,7 @@
  ***( see copyright.txt file at root folder )*******************************/
 
 #include <QGraphicsProxyWidget>
+#include <QRegularExpression>
 
 #include "switch.h"
 #include "itemlibrary.h"
@@ -54,6 +55,9 @@ Switch::Switch( QString type, QString id )
         new StrProp <Switch>("Key", tr("Key"), ""
                             , this, &Switch::key, &Switch::setKey ),
 
+        new StrProp <Switch>("LinkCondition", tr("Link Condition"), ""
+                            , this, &Switch::linkCondition, &Switch::setLinkCondition ),
+
         new BoolProp<Switch>("Checked", "", ""
                             , this, &Switch::checked, &Switch::setChecked, propHidden ),
     },0} );
@@ -66,16 +70,103 @@ void Switch::stamp()
     onbuttonclicked();
 }
 
+void Switch::setLinkedValue( double v, int )
+{
+    bool checked = Switch::checked();
+
+    if (m_condition.isNull() or m_condition.isEmpty())
+        return;
+    bool new_state = Switch::evaluateCompoundCondition(m_condition, (int)v);
+    if (checked != new_state) {
+        Switch::setChecked(new_state);
+    }
+}
+
 void Switch::keyEvent( QString key, bool pressed )
 {
     if( key == m_key )
     {
         if( !pressed )
         {
-            m_button->setChecked( !m_button->isChecked() );
-            SwitchBase::onbuttonclicked();
+            Switch::setChecked(!m_button->isChecked());
 }   }   }
 
+
+bool evaluateSingleCondition(const QString& condition, int value) {
+    QRegularExpression regex(R"(([><=!]=?|==)\s*(-?\d+))");
+    QRegularExpressionMatch match = regex.match(condition);
+
+    if (!match.hasMatch()) {
+        return false;
+    }
+
+    QString op = match.captured(1);
+    int threshold = match.captured(2).toInt();
+
+    if (op == ">") return value > threshold;
+    if (op == ">=") return value >= threshold;
+    if (op == "<") return value < threshold;
+    if (op == "<=") return value <= threshold;
+    if (op == "==") return value == threshold;
+    if (op == "=") return value == threshold;
+    if (op == "!=") return value != threshold;
+
+    return false;
+}
+
+QStringList tokenize(const QString& condition) {
+    QString cleanedCondition = condition;
+    cleanedCondition.replace(QRegularExpression("\\s+"), "");
+    cleanedCondition = cleanedCondition.trimmed();
+    QString regexPattern = R"((\(|\)|and|or|[><=!]=?[+-]?\d+))";
+    QRegularExpression regex(regexPattern);
+
+    QStringList tokens;
+    QRegularExpressionMatchIterator i = regex.globalMatch(cleanedCondition);
+    while (i.hasNext()) {
+        QRegularExpressionMatch match = i.next();
+        tokens << match.captured(1);
+    }
+
+    return tokens;
+}
+
+bool evaluateTokens(const QStringList& tokens, int& index, int value) {
+    bool result = false;
+    QString currentOperator = "or";
+
+    while (index < tokens.size()) {
+        QString token = tokens[index++];
+
+        if (token == "(") {
+            bool subResult = evaluateTokens(tokens, index, value);
+            if (currentOperator == "and") {
+                result = result && subResult;
+            } else if (currentOperator == "or") {
+                result = result || subResult;
+            }
+        } else if (token == ")") {
+            break;
+        } else if (token == "and" || token == "or") {
+            currentOperator = token;
+        } else {
+            bool conditionResult = evaluateSingleCondition(token, value);
+            if (currentOperator == "and") {
+                result = result && conditionResult;
+            } else if (currentOperator == "or") {
+                result = result || conditionResult;
+            }
+        }
+    }
+
+    return result;
+}
+
+bool Switch::evaluateCompoundCondition(const QString& rawCondition, int value) {
+    QStringList tokens = tokenize(rawCondition);  // Tokenize the condition into parts
+    int index = 0;
+    return evaluateTokens(tokens, index, value);
+}
 bool Switch::checked()
 {
     return m_button->isChecked();
