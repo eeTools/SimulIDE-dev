@@ -48,7 +48,7 @@ CircuitView::CircuitView( QWidget *parent )
     //setViewportUpdateMode( QGraphicsView::FullViewportUpdate );
     //setCacheMode( CacheBackground );
     //setRenderHint( QPainter::Antialiasing );
-    setRenderHints( QPainter::HighQualityAntialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
+    setRenderHints( QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
     setTransformationAnchor( AnchorUnderMouse );
     setResizeAnchor( AnchorUnderMouse );
     setDragMode( RubberBandDrag );
@@ -65,7 +65,7 @@ void CircuitView::clear()
     }
     m_circuit = new Circuit( 3200, 2400, this );
     setScene( m_circuit );
-    resetMatrix();
+    resetTransform();
     m_scale = 1;
     m_enterItem = nullptr;
     centerOn( 0, 0 );
@@ -170,7 +170,7 @@ void CircuitView::mousePressEvent( QMouseEvent* event )
             setDragMode( QGraphicsView::ScrollHandDrag );
         }
     }
-    else if( event->button() == Qt::MidButton )
+    else if( event->button() == Qt::MiddleButton )
     {
         event->accept();
         setDragMode( QGraphicsView::ScrollHandDrag );
@@ -205,7 +205,7 @@ void CircuitView::mouseMoveEvent( QMouseEvent* event )
 
 void CircuitView::mouseReleaseEvent( QMouseEvent* event )
 {
-    if( event->button() == Qt::MidButton
+    if( event->button() == Qt::MiddleButton
      || ( event->button() == Qt::LeftButton
         && event->modifiers() & Qt::ShiftModifier
         && !(event->modifiers() & Qt::ControlModifier) ) )
@@ -300,7 +300,7 @@ void CircuitView::zoomSelected()
 
 void CircuitView::zoomOne()
 {
-    resetMatrix();
+    resetTransform();
     m_scale = 1;
 }
 

@@ -32,9 +32,6 @@ class TreeItem : public QTreeWidgetItem
         bool isItemExpanded() { return m_expanded; }
         void setItemExpanded( bool e );
 
-        //bool isItemHidden()   { return m_hidden; }
-        //void setItemHidden( bool h );
-
         void setItemType( treItemType_t itemType );
 
         QString toString( QString indent="" );
@@ -48,7 +45,6 @@ class TreeItem : public QTreeWidgetItem
 
         bool m_isCustom;
         bool m_expanded;
-        //bool m_hidden;
 
         treItemType_t m_itemType;
 

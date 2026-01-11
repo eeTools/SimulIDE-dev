@@ -37,10 +37,6 @@ class Esp32 : public QemuDevice
         uint64_t m_state;
         uint64_t m_direc;
 
-       //uint64_t m_pullUps;
-       //uint64_t m_pullDown;
-       //uint64_t m_inputEn;
-
         IoPin* m_dummyPin;
         esp32Pin* m_espPad[40];
         funcPin m_matrixIn[256];

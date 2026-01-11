@@ -510,11 +510,11 @@ int CodeEditor::getSyntaxCoincidences()
          || line.startsWith(".") ) continue;
 
         for( QString instruction : m_avrInstr )
-        { if( line.contains( QRegExp( "\\b"+instruction+"\\b" ) )) {avr++; matches++;} }
+        { if( line.contains( QRegularExpression( "\\b"+instruction+"\\b" ) )) {avr++; matches++;} }
         for( QString instruction : m_picInstr )
-        { if( line.contains( QRegExp( "\\b"+instruction+"\\b" ) )) {pic++; matches++;} }
+        { if( line.contains( QRegularExpression( "\\b"+instruction+"\\b" ) )) {pic++; matches++;} }
         for( QString instruction : m_i51Instr )
-        { if( line.contains( QRegExp( "\\b"+instruction+"\\b" ) )) {i51++; matches++;} }
+        { if( line.contains( QRegularExpression( "\\b"+instruction+"\\b" ) )) {i51++; matches++;} }
         if( matches > 200 || ++nlines > 400 ) break;
     }
     if( matches == 0 ) return 0;
@@ -787,19 +787,18 @@ void CodeEditor::loadConfig()
     }//---------------------------------------------------------------------------
 
     QString doc = fileToString( fileF, "EditorWidget::loadConfig" );
-    QVector<QStringRef> docLines = doc.splitRef("\n");
-
-    for( QStringRef line : docLines )
+    QStringList docLines = doc.split("\n");
+    for (const QString &line : docLines)
     {
-        if( !line.startsWith("<item") ) continue;
-        QVector<propStr_t> properties = parseXmlProps( line );
+        if (!line.startsWith("<item")) continue;
+        QVector<propStr_t> properties = parseXmlProps(line);
 
         propStr_t itemType = properties.takeFirst();
-        if( itemType.name != "itemtype") continue;
+        if (itemType.name != "itemtype") continue;
         QString type = itemType.value.toString();
 
-        if     ( type == m_type ) loadProperties( properties ); // CodeEditor
-        else if( type == "Compiler" && m_compiler ) m_compiler->loadProperties( properties ); // Compiler
+        if      (type == m_type) loadProperties(properties);          // CodeEditor
+        else if (type == "Compiler" && m_compiler) m_compiler->loadProperties(properties); // Compiler
     }
 }
 
@@ -824,7 +823,6 @@ void CodeEditor::saveConfig()
         return;
     }
     QTextStream out( &file );
-    out.setCodec("UTF-8");
     out << config;
     file.close();
 }
@@ -834,7 +832,7 @@ int CodeEditor::lineNumberAreaWidth()
     int digits = 1;
     int max = qMax( 1, blockCount() );
     while( max >= 10 ) { max /= 10; ++digits; }
-    return  fontMetrics().height() + fontMetrics().width( QLatin1Char( '9' ) ) * digits;
+    return  fontMetrics().height() + fontMetrics().horizontalAdvance( QLatin1Char( '9' ) ) * digits;
 }
 
 void CodeEditor::updateLineNumberArea( const QRect &rect, int dy )

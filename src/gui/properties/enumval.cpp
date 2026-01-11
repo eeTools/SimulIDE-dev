@@ -27,7 +27,7 @@ void EnumVal::setup( bool isComp )
     valueBox->setCurrentIndex( m_enums.indexOf( valStr) );
 
     QFontMetrics fm( valueBox->font() );
-    float scale = fm.width(" ")/2;
+    float scale = fm.horizontalAdvance(" ")/2;
     valueBox->setFixedWidth( 170.0*scale );
 
     if( !isComp ) showVal->setVisible( false );

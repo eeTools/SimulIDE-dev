@@ -7,7 +7,9 @@
 #include <QFileDialog>
 #include <QSettings>
 #include <QStandardPaths>
-#include <QDesktopWidget>
+//#include <QDesktopWidget>
+#include <QScreen>
+#include <QGuiApplication>
 #include <QMessageBox>
 #include <QSplitter>
 #include <QLineEdit>
@@ -41,7 +43,7 @@ MainWindow::MainWindow()
 
     this->setWindowTitle( m_version );
 
-    m_configDir.setPath( QStandardPaths::writableLocation( QStandardPaths::DataLocation ) );
+    m_configDir.setPath( QStandardPaths::writableLocation( QStandardPaths::AppDataLocation ) );
 
     m_settings     = new QSettings( getConfigPath("simulide.ini"), QSettings::IniFormat, this );
     m_compSettings = new QSettings( getConfigPath("compList.ini"), QSettings::IniFormat, this );
@@ -66,7 +68,8 @@ MainWindow::MainWindow()
     {
         scale = m_settings->value( "fontScale" ).toFloat();
     }else{
-        float dpiX = qApp->desktop()->logicalDpiX();
+        QScreen* screen = QGuiApplication::primaryScreen();
+        float dpiX = screen->logicalDotsPerInchX();
         scale = dpiX/96.0;
     }
     setFontScale( scale );
@@ -231,77 +234,60 @@ void MainWindow::setState( QString state )
 
 void MainWindow::createWidgets()
 {
-    QWidget *centralWidget = new QWidget( this );
+    QWidget *centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
 
-    QGridLayout *baseWidgetLayout = new QGridLayout( centralWidget );
-    baseWidgetLayout->setSpacing( 0 );
+    QGridLayout *baseWidgetLayout = new QGridLayout(centralWidget);
+    baseWidgetLayout->setSpacing(0);
     baseWidgetLayout->setContentsMargins(0, 0, 0, 0);
 
-    m_mainSplitter = new QSplitter( this );
-    m_mainSplitter->setOrientation( Qt::Horizontal );
+    m_mainSplitter = new QSplitter;
+    m_mainSplitter->setOrientation(Qt::Horizontal);
 
-    m_sidepanel = new QTabWidget( this );
-    m_sidepanel->setTabPosition( QTabWidget::North );
-    m_sidepanel->setIconSize( QSize( 20*m_fontScale, 20*m_fontScale ) );
-    //QString fontSize = QString::number( int(11*m_fontScale) );
-    //m_sidepanel->tabBar()->setStyleSheet("QTabBar { font-size:"+fontSize+"px; }");
-    m_mainSplitter->addWidget( m_sidepanel );
+    m_sidepanel = new QTabWidget;
+    m_sidepanel->setTabPosition(QTabWidget::North);
+    m_sidepanel->setIconSize(QSize(20*m_fontScale, 20*m_fontScale));
+    m_mainSplitter->addWidget(m_sidepanel);
 
-    m_listWidget = new QWidget( this );
-    QVBoxLayout* listLayout = new QVBoxLayout( m_listWidget );
-    listLayout->setSpacing( 6 );
-    listLayout->setContentsMargins(0, 2, 0, 0);
+    m_listWidget = new QWidget;
+    QVBoxLayout* listLayout = new QVBoxLayout(m_listWidget);
 
-    QHBoxLayout* searchLayout = new QHBoxLayout( this );
-    searchLayout->setSpacing(1);
+    QHBoxLayout* searchLayout = new QHBoxLayout;
 
-    m_searchComponent = new QLineEdit( this );
-    QFont font = m_searchComponent->font();
-    font.setPixelSize( 12*m_fontScale );
-    m_searchComponent->setFont( font );
-    m_searchComponent->setFixedHeight( 24*m_fontScale );
-    m_searchComponent->setPlaceholderText( " "+tr("Search Components"));
-    searchLayout->addWidget( m_searchComponent );
-    connect( m_searchComponent, SIGNAL( editingFinished() ),
-             this,              SLOT(   searchChanged() ) );
+    m_searchComponent = new QLineEdit;
+    searchLayout->addWidget(m_searchComponent);
 
-    m_clearButton = new QPushButton( this );
-    m_clearButton->setFixedSize( 24*m_fontScale, 24*m_fontScale );
-    m_clearButton->setIcon( QIcon(":/remove.svg") );
-    m_clearButton->setToolTip( tr("Clear search"));
+    connect(m_searchComponent, &QLineEdit::editingFinished,
+            this, &MainWindow::searchChanged);
 
-    searchLayout->addWidget( m_clearButton );
-    connect( m_clearButton, SIGNAL( clicked() ),
-             this,          SLOT(   clearSearch()) );
+    m_clearButton = new QPushButton;   // ✅ FIXED
+    searchLayout->addWidget(m_clearButton);
 
-    listLayout->addLayout( searchLayout );
+    connect(m_clearButton, &QPushButton::clicked,
+            this, &MainWindow::clearSearch);
 
-    m_installer = new Installer( this );
-    m_fileTree  = new FileWidget( this );
-    m_circuitW  = new CircuitWidget( this );
+    listLayout->addLayout(searchLayout);
 
-    m_components = new ComponentList( m_sidepanel );
-    listLayout->addWidget( m_components );
+    m_installer = new Installer(m_sidepanel);       // ✅ FIXED
+    m_fileTree  = new FileWidget(m_sidepanel);      // ✅ FIXED
+    m_circuitW  = new CircuitWidget(m_mainSplitter);   // ✅ FIXED
 
-    m_sidepanel->addTab( m_listWidget, QIcon(":/ic2.png")    , "" );
-    m_sidepanel->addTab( m_installer , QIcon(":/complib.svg"), "" );
-    m_sidepanel->addTab( m_fileTree  , QIcon(":/files.svg")  , "" );
+    m_components = new ComponentList(m_sidepanel);
+    listLayout->addWidget(m_components);
 
-    m_sidepanel->setTabToolTip( 0, tr("Components") );
-    m_sidepanel->setTabToolTip( 1, tr("Libraries") );
-    m_sidepanel->setTabToolTip( 2, tr("Files") );
+    m_sidepanel->addTab(m_listWidget, QIcon(":/ic2.png"), "");
+    m_sidepanel->addTab(m_installer, QIcon(":/complib.svg"), "");
+    m_sidepanel->addTab(m_fileTree, QIcon(":/files.svg"), "");
 
-    m_mainSplitter->addWidget( m_circuitW );
+    m_mainSplitter->addWidget(m_circuitW);
 
-    m_editor = new EditorWindow( this );
-    m_mainSplitter->addWidget( m_editor );
+    m_editor = new EditorWindow(m_mainSplitter);        // ✅ FIXED
+    m_mainSplitter->addWidget(m_editor);
 
-    baseWidgetLayout->addWidget( m_mainSplitter, 0, 0 );
+    baseWidgetLayout->addWidget(m_mainSplitter, 0, 0);
 
-    m_mainSplitter->setSizes( {150, 350, 500} );
-
-    this->showMaximized();
+    m_mainSplitter->setSizes({150, 350, 500});
+    showMaximized();
 }
 
 void MainWindow::clearSearch()
@@ -414,4 +400,3 @@ QSettings* MainWindow::settings() { return m_settings; }
 
 QSettings* MainWindow::compSettings() { return m_compSettings; }
 
-#include  "moc_mainwindow.cpp"

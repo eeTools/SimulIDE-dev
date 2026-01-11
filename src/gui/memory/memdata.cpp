@@ -205,7 +205,7 @@ bool MemData::loadHex( QVector<int>* toData, QString file, bool resize, int bits
         }
         checksum += line.mid( i, 2 ).toInt( &ok, 16 );
         if( checksum & 0xFF ){
-            qDebug() << "    Error: CheckSum Error at line "+QString::number(nLine)+1;
+            qDebug() << "    Error: CheckSum Error at line "+QString::number(nLine+1);
             return false;
         }
         nLine++;

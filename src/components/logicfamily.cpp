@@ -133,29 +133,31 @@ void LogicFamily::getFamilies() // Static
     QString modelsFile = MainWindow::self()->getDataFilePath("logic_families.model");
     if( !QFile::exists( modelsFile ) ) return;
 
-    QString doc = fileToString( modelsFile, "LogicFamily::getFamilies()" );
-    QVector<QStringRef> docLines = doc.splitRef("\n");
-    for( QStringRef line : docLines )
-    {
-        QVector<propStr_t> properties = parseProps( line );
-        if( properties.isEmpty() ) break;
-        QString familyName = properties.takeFirst().name.toString();
-        logicFamily_t family;
+QString doc = fileToString( modelsFile, "LogicFamily::getFamilies()" );
+auto docLines = doc.split(QChar('\n'));
+for( QStringView line : docLines )
+{
+    QVector<propStr_t> properties = parseProps( line );
+    if( properties.isEmpty() ) break;
+    QString familyName = properties.takeFirst().name.toString();
+    logicFamily_t family;
 
-        for( propStr_t property : properties )
-        {
-            QStringRef propName = property.name;
-            double  propValue = property.value.toDouble();
-            if     ( propName == "supply") family.supply = propValue;
-            else if( propName == "inpLHp") family.inpLHp = propValue;
-            else if( propName == "inpHLp") family.inpHLp = propValue;
-            else if( propName == "inpImp") family.inpImp = propValue;
-            else if( propName == "inpPul") family.inpPul = propValue;
-            else if( propName == "outHip") family.outHip = propValue;
-            else if( propName == "outLop") family.outLop = propValue;
-            else if( propName == "outImp") family.outImp = propValue;
-            else if( propName == "outPul") family.outPul = propValue;
-        }
-        m_families[familyName] = family;
+    for (const propStr_t& property : properties)
+    {
+        QStringView propName = property.name;
+        double propValue = property.value.toDouble();
+
+        if     ( propName == u"supply") family.supply = propValue;
+        else if( propName == u"inpLHp") family.inpLHp = propValue;
+        else if( propName == u"inpHLp") family.inpHLp = propValue;
+        else if( propName == u"inpImp") family.inpImp = propValue;
+        else if( propName == u"inpPul") family.inpPul = propValue;
+        else if( propName == u"outHip") family.outHip = propValue;
+        else if( propName == u"outLop") family.outLop = propValue;
+        else if( propName == u"outImp") family.outImp = propValue;
+        else if( propName == u"outPul") family.outPul = propValue;
     }
+    m_families[familyName] = family;
 }
+}
+

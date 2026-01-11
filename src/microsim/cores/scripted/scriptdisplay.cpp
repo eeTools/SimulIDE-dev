@@ -10,7 +10,7 @@
 #include "simulator.h"
 
 ScriptDisplay::ScriptDisplay( int w, int h, QString name, QWidget* parent )
-             : Display( w, h, name, parent )
+             : MyDisplay( w, h, name, parent )
              , ScriptPerif( name )
 {
     m_clear = nullptr;

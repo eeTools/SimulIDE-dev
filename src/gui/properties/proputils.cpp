@@ -21,34 +21,34 @@ QString getStrPointF( QPointF p )
 
 //---------------------------------------------------
 
-QVector<propStr_t> parseXmlProps( QStringRef line )
+QVector<propStr_t> parseXmlProps( QStringView line )
 {
     QVector<propStr_t> properties;
 
-    QStringRef name;
-    QVector<QStringRef> tokens = line.split("\"");
+    QStringView name;
+    auto tokens = line.split('"');
     tokens.removeLast();
 
-    for( QStringRef token : tokens )
+    for( QStringView token : tokens )
     {
         if( name.isEmpty() ){
-            int start = token.lastIndexOf(" ")+1;
+            int start = token.lastIndexOf(' ')+1;
             name = token.mid( start, token.length()-start-1 );
         }else{
             properties.append( { name, token } );
-            name.clear();
+            name = QStringView();
         }
     }
     return properties;
 }
 
-QVector<propStr_t> parseProps( QStringRef line )
+QVector<propStr_t> parseProps( QStringView line )
 {
     QVector<propStr_t> properties;
 
-    QVector<QStringRef> tokens = line.split(";");
+    QVector<QStringView> tokens = line.split(';');
 
-    for( QStringRef token : tokens )
+    for( QStringView token : tokens )
     {
         propStr_t property = parseProp( token );
         if( property.name.size() ) properties.append( property );
@@ -56,20 +56,20 @@ QVector<propStr_t> parseProps( QStringRef line )
     return properties;
 }
 
-propStr_t parseProp( QStringRef token )
+propStr_t parseProp( QStringView token )
 {
-    QStringRef name;       // Property_name
-    QStringRef value;      // Property value
-    int index = token.indexOf("="); // First occurrence of "="
+    QStringView name;       // Property_name
+    QStringView value;      // Property value
+    int index = token.indexOf('='); // First occurrence of "="
 
     if( index == -1 ) name = token;
     else{
         name  = token.left( index );
         value = token.right( token.size()-1-index );
     }
-    if( name.indexOf(" ") == 0)   // Only remove leading spaces
+    if( name.indexOf(' ') == 0)   // Only remove leading spaces
     {
-        index = name.lastIndexOf(" ");
+        index = name.lastIndexOf(' ');
         name = name.right( name.size()-index-1 ); // Remove spaces
     }
     return { name, value };

@@ -270,7 +270,7 @@ void SwitchDip::remove()
 void SwitchDip::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w )
 {
     Component::paint( p, o, w );
-    p->drawRoundRect( m_area, 4, 4 );
+    p->drawRoundedRect( m_area, 4, 4 );
 
     Component::paintSelected( p );
 }

@@ -54,7 +54,7 @@ Chip::Chip( QString type, QString id, QString device )
 
     QFont f;
     f.setFamily("Ubuntu Mono");
-    f.setWeight( 65 );
+    f.setWeight( static_cast<QFont::Weight>(65) );
 #ifdef Q_OS_UNIX
     f.setLetterSpacing( QFont::PercentageSpacing, 120 );
 #else
@@ -66,7 +66,7 @@ Chip::Chip( QString type, QString id, QString device )
 
     m_label.setFont( f );
     m_label.setDefaultTextColor( QColor( 135, 135, 120 ) );
-    m_label.setAcceptedMouseButtons( 0 );
+    m_label.setAcceptedMouseButtons( Qt::NoButton );
     m_label.setRotation(-90 );
     m_label.setVisible( true );
     
@@ -108,11 +108,12 @@ QMap<QString, QString> Chip::getPackages( QString compFile ) // Static
 
     QString doc = fileToString( compFile, "Chip::getPackages");
 
-    QVector<QStringRef> docLines = doc.splitRef("\n");
+    QVector<QStringView> docLines =
+        QStringView{doc}.split('\n');
 
-    for( QStringRef line : docLines )
+    for( QStringView line : docLines )
     {
-        if( !line.startsWith("<item") ) continue;
+        if (!line.startsWith(QLatin1StringView("<item"))) continue;
 
         QVector<propStr_t> properties = parseXmlProps( line );
         propStr_t itemType = properties.takeFirst();
@@ -148,16 +149,16 @@ QMap<QString, QString> Chip::getPackages( QString compFile ) // Static
 QString Chip::convertPackage( QString pkgText ) // Static, converts xml to new format
 {
     QString pkgStr;
-    QVector<QStringRef> docLines = pkgText.splitRef("\n");
-    for( QStringRef line : docLines )
+    QVector<QStringView> docLines =  QStringView{pkgText}.split('\n');
+    for( QStringView line : docLines )
     {
-        if( line.startsWith("<!") ) continue;
-        if( line.startsWith("</") ) continue;
+        if( line.startsWith(QLatin1StringView("<!")) ) continue;
+        if( line.startsWith(QLatin1StringView("</")) ) continue;
         if( line.isEmpty() ) continue;
 
         QVector<propStr_t> properties = parseXmlProps( line );
 
-        if( line.startsWith("<package") )
+        if( line.startsWith(QLatin1StringView("<package")) )
         {
             pkgStr += "Package; ";
 
@@ -232,15 +233,15 @@ void Chip::initPackage( QString pkgStr )
 
     QString embedName;
 
-    QVector<QStringRef> docLines = pkgStr.splitRef("\n");
-    for( QStringRef line : docLines )
+    QVector<QStringView> docLines = QStringView(pkgStr).split('\n');
+    for( QStringView line : docLines )
     {
         if( line.isEmpty() ) continue;
 
         QVector<propStr_t> properties = parseProps( line );
         if( properties.isEmpty() ) break;
 
-        QStringRef item = properties.takeFirst().name;
+        QStringView item = properties.takeFirst().name;
         if( item == "Package" )
         {
             QString background;
@@ -249,10 +250,10 @@ void Chip::initPackage( QString pkgStr )
             for( propStr_t property : properties )
             {
                 QString   name = property.name.toString().toLower();  // Property name
-                QStringRef val = property.value;                      // Property value
+                QStringView val = property.value;                      // Property value
 
-                if     ( name == "width"       ) m_width    = val.split(" ").first().toInt();
-                else if( name == "height"      ) m_height   = val.split(" ").first().toInt();
+                if     ( name == "width"       ) m_width    = val.split(' ').first().toInt();
+                else if( name == "height"      ) m_height   = val.split(' ').first().toInt();
                 else if( name == "name"        ) embedName  = val.toString();
                 else if( name == "border"      ) m_border = ( val == "true" );
                 else if( name == "custom_color") m_customColor = ( val == "true" );
@@ -320,8 +321,8 @@ void Chip::setPinStr( QVector<propStr_t> properties )
 
     for( propStr_t property : properties )
     {
-        QStringRef name = property.name;  // Property_name
-        QStringRef val  = property.value; // Property_value
+        QStringView name = property.name;  // Property_name
+        QStringView val  = property.value; // Property_value
 
         if     ( name == "xpos"  ) xpos   = val.toInt();
         else if( name == "ypos"  ) ypos   = val.toInt();
@@ -400,12 +401,12 @@ void Chip::setBckGndData( QString data )
     m_hasBckGndData = true;
     m_backPixmap = new QPixmap();
 
-    QStringRef dataRef( &data );
+    QStringView dataRef{data};
     QByteArray ba;
     bool ok;
     for( int i=0; i<dataRef.size(); i+=2 )
     {
-        QStringRef ch = dataRef.mid( i, 2 );
+        QStringView ch = dataRef.mid( i, 2 );
         ba.append( ch.toInt( &ok, 16 ) );
     }
     m_backPixmap->loadFromData( ba );

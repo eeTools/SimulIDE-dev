@@ -19,15 +19,15 @@ TcpModule::TcpModule( QString name )
     m_debug = false;
 
     m_connectSM = new QSignalMapper();
-    QObject::connect( m_connectSM, QOverload<int>::of(&QSignalMapper::mapped),
+    QObject::connect( m_connectSM, &QSignalMapper::mappedInt,
                      [=](int i){ tcpConnected(i); } );
 
     m_discontSM = new QSignalMapper();
-    QObject::connect( m_discontSM, QOverload<int>::of(&QSignalMapper::mapped),
+    QObject::connect( m_discontSM, &QSignalMapper::mappedInt,
                      [=](int i){ tcpDisconnected(i); } );
 
     m_readyReSM = new QSignalMapper();
-    QObject::connect( m_readyReSM, QOverload<int>::of(&QSignalMapper::mapped),
+    QObject::connect( m_readyReSM, &QSignalMapper::mappedInt,
                      [=](int i){ tcpReadyRead(i); } );
 
     Simulator::self()->addToUpdateList( this );

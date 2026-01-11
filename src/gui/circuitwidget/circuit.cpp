@@ -77,8 +77,8 @@ Circuit::Circuit( int width, int height, CircuitView* parent )
     connect( &m_bckpTimer, &QTimer::timeout,
                      this, &Circuit::saveBackup );
 
-    qDebug() << endl << "-------------------------------------------------";
-    qDebug() << "                   NEW CIRCUIT                   "<<endl;
+    qDebug() << Qt::endl << "-------------------------------------------------";
+    qDebug() << "                   NEW CIRCUIT                   "<<Qt::endl;
 }
 
 Circuit::~Circuit()
@@ -202,8 +202,8 @@ void Circuit::loadStrDoc( QString &doc )
     m_busy  = true;
     if( !m_undo && !m_redo ) m_LdPinMap.clear();
 
-    QVector<QStringRef> docLines = doc.splitRef("\n");
-    for( QStringRef line : docLines )
+    QStringList docLines = doc.split('\n');  // Qt6 safe
+    for (const QString &line : docLines)
     {
         QVector<propStr_t> properties = parseXmlProps( line );
 
@@ -475,7 +475,6 @@ bool Circuit::saveString( QString fileName, QString doc )
         return false;
     }
     QTextStream out( &file );
-    out.setCodec("UTF-8");
     out << doc;
     file.close();
 

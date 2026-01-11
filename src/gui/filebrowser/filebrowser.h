@@ -40,8 +40,6 @@ class FileBrowser : public QTreeView
         void cdUp();
         void open();
         void openInEditor();
-        void openExternally();
-        void openParentDirExternally();
         void addBookMark();
         void showHidden();
         

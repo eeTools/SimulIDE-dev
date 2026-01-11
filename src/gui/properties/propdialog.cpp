@@ -40,7 +40,7 @@ PropDialog::PropDialog( QWidget* parent, QString help )
 void PropDialog::setComponent( CompBase* comp, bool isComp )
 {
     QFontMetrics fm( labelLabel->font() );
-    m_scale = fm.width(" ")/2.0;
+    m_scale = fm.horizontalAdvance(" ")/2.0;
     m_minW  = 265*m_scale;
     m_minH  = 100*m_scale;
 

@@ -10,7 +10,7 @@
 
 class asIScriptFunction;
 
-class ScriptDisplay : public Display, public ScriptPerif
+class ScriptDisplay : public MyDisplay, public ScriptPerif
 {
     public:
         ScriptDisplay( int width, int height, QString name, QWidget* parent );

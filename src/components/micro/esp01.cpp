@@ -34,6 +34,7 @@ LibraryItem* Esp01::libraryItem()
         Esp01::construct );
 }
 
+
 Esp01::Esp01( QString type, QString id )
      : Component( type, id )
      , UsartModule( nullptr, id+"-Uart" )
@@ -65,17 +66,25 @@ Esp01::Esp01( QString type, QString id )
 
     setBaudRate( 115200 );
 
-    m_connectSM = new QSignalMapper();
-    QObject::connect( m_connectSM, QOverload<int>::of(&QSignalMapper::mapped),
-                     [=](int i){ tcpConnected(i); } );
+    int link;
+    QTcpSocket* tcpSocket = m_tcpSockets.value(link);
+    if (!tcpSocket)
+    {
+        tcpSocket = new QTcpSocket();
+        m_tcpSockets[link] = tcpSocket;
 
-    m_discontSM = new QSignalMapper();
-    QObject::connect( m_discontSM, QOverload<int>::of(&QSignalMapper::mapped),
-                     [=](int i){ tcpConnected(i); } );
+        // ---- Qt6 connections (replace QSignalMapper) ----
 
-    m_readyReSM = new QSignalMapper();
-    QObject::connect( m_readyReSM, QOverload<int>::of(&QSignalMapper::mapped),
-                     [=](int i){ tcpConnected(i); } );
+        QObject::connect(tcpSocket, &QTcpSocket::connected,
+                         [this, link]() { tcpConnected(link); });
+
+
+        QObject::connect(tcpSocket, &QTcpSocket::disconnected,
+                         [this, link]() { tcpDisconnected(link); });
+
+        QObject::connect(tcpSocket, &QTcpSocket::readyRead,
+                         [this, link]() { tcpReadyRead(link); });
+    }
 
     Simulator::self()->addToUpdateList( this );
 
@@ -98,7 +107,7 @@ Esp01::Esp01( QString type, QString id )
                            , this, &Esp01::serialMon, &Esp01::setSerialMon ),
     }, groupHidden} );
 }
-Esp01::~Esp01(){}
+    Esp01::~Esp01(){}
 
 void Esp01::stamp()
 {
@@ -182,7 +191,7 @@ void Esp01::byteReceived( uint8_t byte )
             m_dataLenght = 0;
     }   }
     else{
-        m_buffer.append( byte ); //qDebug() << m_buffer;
+        m_buffer.append( QChar(byte) ); //qDebug() << m_buffer;
         if( m_buffer.right(2)  == "\r\n")
         { command(); runEvent(); }
     }
@@ -353,7 +362,7 @@ void Esp01::frameSent( uint8_t data )
         sendByte( byte );
     }
 }
-
+/*
 void Esp01::connectTcp( int link )
 {
     QTcpSocket* tcpSocket = m_tcpSockets.value( link );
@@ -386,7 +395,52 @@ void Esp01::connectTcp( int link )
     }
     else if( m_debug ) qDebug() << "Esp01 - Error Connecting link"<<link<<"to"<<m_host<< m_port
                                 <<"\n              State = "<<tcpSocket->state();
+}*/
+
+void Esp01::connectTcp(int link)
+{
+    QTcpSocket* tcpSocket = m_tcpSockets.value(link);
+    if (!tcpSocket)
+    {
+        tcpSocket = new QTcpSocket();
+        m_tcpSockets[link] = tcpSocket;
+
+        // ---- Qt6 connections (replace QSignalMapper) ----
+
+        QObject::connect(tcpSocket, &QTcpSocket::connected,
+                         [this, link]() { tcpConnected(link); });
+
+
+        QObject::connect(tcpSocket, &QTcpSocket::disconnected,
+                         [this, link]() { tcpDisconnected(link); });
+
+        QObject::connect(tcpSocket, &QTcpSocket::readyRead,
+                         [this, link]() { tcpReadyRead(link); });
+
+    }
+
+    if (tcpSocket->state() == QAbstractSocket::ConnectedState)
+    {
+        tcpSocket->disconnectFromHost();
+        tcpSocket->waitForDisconnected(1000);
+    }
+
+    if (tcpSocket->state() == QAbstractSocket::UnconnectedState)
+    {
+        if (m_debug)
+            qDebug() << "Esp01 - Connecting link" << link << "to" << m_host << m_port;
+
+        tcpSocket->connectToHost(m_host, m_port);
+    }
+    else if (m_debug)
+    {
+        qDebug() << "Esp01 - Error Connecting link" << link << "to" << m_host << m_port
+                 << "\n              State = " << tcpSocket->state();
+    }
 }
+
+
+
 
 void Esp01::tcpConnected( int link )
 {

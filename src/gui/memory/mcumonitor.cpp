@@ -63,7 +63,10 @@ MCUMonitor::MCUMonitor( QWidget* parent, eMcu* mcu )
         }
 
         m_ramMonitor = new MemTable( tabWidget, m_processor->ramSize() );
-        connect( m_ramMonitor, SIGNAL( dataChanged(int, int)), this, SLOT(ramDataChanged(int, int)) );
+        connect(m_ramMonitor,
+                &MemTable::dataChanged,
+                this,
+                &MCUMonitor::ramDataChanged);
         tabWidget->addTab( m_ramMonitor, "RAM" );
         jumpButton->setVisible( true );
     }
@@ -72,15 +75,26 @@ MCUMonitor::MCUMonitor( QWidget* parent, eMcu* mcu )
     {
         m_flashMonitor = new MemTable( tabWidget, m_processor->flashSize(), m_processor->wordSize() );
         tabWidget->addTab( m_flashMonitor, "Flash");
-        connect( m_flashMonitor, SIGNAL(dataChanged(int, int)), this, SLOT(flashDataChanged(int, int)) );
+        connect(m_flashMonitor,
+                &MemTable::dataChanged,
+                this,
+                &MCUMonitor::flashDataChanged);
+
     }
     if( mcu->romSize() )
     {
         m_romMonitor   = new MemTable( tabWidget, m_processor->romSize() );
         tabWidget->addTab( m_romMonitor, "EEPROM");
-        connect( m_romMonitor,   SIGNAL(dataChanged(int, int)), this, SLOT(eepromDataChanged(int, int)) );
+        connect(m_romMonitor,
+                &MemTable::dataChanged,
+                this,
+                &MCUMonitor::eepromDataChanged);
     }
-    connect( tabWidget, SIGNAL(currentChanged(int)), this, SLOT(tabChanged(int)) );
+    connect(tabWidget,
+            &QTabWidget::currentChanged,
+            this,
+            &MCUMonitor::tabChanged);
+
 }
 
 void MCUMonitor::ramDataChanged( int address, int val )
@@ -228,14 +242,14 @@ void MCUMonitor::createStatusPC()
     it = new QTableWidgetItem(0);
     it->setFlags( Qt::ItemIsEnabled );
     it->setFont( font );
-    it->setTextColor( QColor( numberColor ) );
+    it->setForeground( QColor( numberColor ) );
     m_pc.setItem( 0, 0, it );
     m_pc.setColumnWidth( 0, round(45*scale) );
 
     it = new QTableWidgetItem(0);
     it->setFlags( Qt::ItemIsEnabled );
     it->setFont( font );
-    it->setTextColor( QColor( 0x3030B8 ) );
+    it->setForeground( QColor( 0x3030B8 ) );
     m_pc.setItem( 0, 1, it );
     m_pc.setColumnWidth( 1, round(60*scale) );
     wi = round(135*scale);

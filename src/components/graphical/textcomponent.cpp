@@ -55,7 +55,7 @@ TextComponent::TextComponent( QString type, QString id )
     QColor color = Qt::darkBlue;
     m_fontColor = color.name();
     m_text = new QGraphicsTextItem( this );
-    m_text->setTextInteractionFlags( 0 );
+    m_text->setTextInteractionFlags( Qt::NoTextInteraction );
     m_text->setTextWidth( 90 );
     m_text->setFont( sansFont );
     m_textString = "... TEXT ...";

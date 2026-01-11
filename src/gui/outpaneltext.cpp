@@ -22,7 +22,7 @@ OutPanelText::OutPanelText( QWidget* parent )
     
     QFont font;
     font.setFamily("Ubuntu Mono");
-    font.setWeight( 50 );
+    font.setWeight( QFont::Normal );
     font.setFixedPitch(true);
     font.setPixelSize( 13*MainWindow::self()->fontScale() );
     setFont( font );
@@ -66,63 +66,66 @@ OutHighlighter::OutHighlighter( QTextDocument* parent )
     QTextCharFormat format;
 
     format.setForeground( QColor(110, 180, 100) );
-    rule.pattern = QRegExp( "/[^\n]*" );
+    rule.pattern = QRegularExpression( "/[^\n]*" );
     rule.format = format;
     highlightingRules.append( rule );
 
     format.setForeground( QColor(140, 150, 240) );
-    rule.pattern = QRegExp("\\b[0-9]+\\b");
+    rule.pattern = QRegularExpression("\\b[0-9]+\\b");
     rule.format = format;
     highlightingRules.append(rule);
 
     format.setForeground( QColor(140, 150, 240) );
-    rule.pattern = QRegExp("0[xX][0-9a-fA-F]+");
+    rule.pattern = QRegularExpression("0[xX][0-9a-fA-F]+");
     rule.format = format;
     highlightingRules.append(rule);
 
     format.setForeground( QColor(50, 200, 100) );
-    rule.pattern = QRegExp( "\".*\"" );
+    rule.pattern = QRegularExpression( "\".*\"" );
     rule.format = format;
     highlightingRules.append( rule );
 
     format.setForeground( QColor(200, 255, 200) );
     format.setFontWeight( QFont::Bold );
-    rule.pattern = QRegExp("\\bSUCCESS\\b");
+    rule.pattern = QRegularExpression("\\bSUCCESS\\b");
     rule.format = format;
     highlightingRules.append(rule);
     
     format.setForeground( QColor(255, 255, 200) );
-    rule.pattern = QRegExp("SENT:");
+    rule.pattern = QRegularExpression("SENT:");
     rule.format = format;
     highlightingRules.append(rule);
 
     format.setForeground( QColor(255, 200, 100) );
-    rule.pattern = QRegExp("\\bWARNING\\b");
+    rule.pattern = QRegularExpression("\\bWARNING\\b");
     rule.format = format;
     highlightingRules.append(rule);
 
     format.setForeground( QColor(100, 50, 0) );
     format.setBackground( QColor(255, 255, 100) );
-    rule.pattern = QRegExp("\\bERROR\\b");
+    rule.pattern = QRegularExpression("\\bERROR\\b");
     rule.format = format;
     highlightingRules.append(rule);
 }
 OutHighlighter::~OutHighlighter(){}
 
-void OutHighlighter::highlightBlock( const QString &text )
+void OutHighlighter::highlightBlock(const QString &text)
 {
-    QString upText = text;
-    upText = upText.toUpper(); // Do case insensitive
-
-    for( const HighlightingRule &rule : highlightingRules )
+    for (const HighlightingRule &rule : highlightingRules)
     {
-        QRegExp expression( rule.pattern );
-        int index = expression.indexIn( upText );
-        while( index >= 0 )
+        QRegularExpressionMatchIterator it =
+            rule.pattern.globalMatch(text);
+
+        while (it.hasNext())
         {
-            int length = expression.matchedLength();
-            setFormat( index, length, rule.format );
-            index = expression.indexIn( upText, index + length );
-}   }   }
+            QRegularExpressionMatch match = it.next();
+            setFormat(match.capturedStart(),
+                      match.capturedLength(),
+                      rule.format);
+        }
+    }
+}
+
+
 
 #include "moc_outpaneltext.cpp"

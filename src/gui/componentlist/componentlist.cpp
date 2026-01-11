@@ -77,7 +77,7 @@ void ComponentList::createList()
     QDir compSetDir = MainWindow::self()->getConfigPath("data");
     if( compSetDir.exists() ) LoadCompSetAt( compSetDir );
 
-    compSetDir = "./data";          // FIXME: provisional, used by QemuDevice
+    compSetDir = QDir("./data");          // FIXME: provisional, used by QemuDevice
     LoadCompSetAt( compSetDir );
 
     MainWindow::self()->installer()->loadInstalled(); // Load Installed components
@@ -199,14 +199,14 @@ void ComponentList::loadXml( QString xmlFile )
 
     QFile file( xmlFile );
     if( !file.open( QFile::ReadOnly | QFile::Text ) ){
-          qDebug() << "ComponentList::loadXml Cannot read file"<< endl << xmlFile << endl << file.errorString();
+          qDebug() << "ComponentList::loadXml Cannot read file"<< Qt::endl << xmlFile << Qt::endl << file.errorString();
           return;
     }
     QXmlStreamReader reader( &file );
     if( !reader.readNextStartElement() ) return;
 
     if( reader.name() != "itemlib" ){
-        qDebug() <<  "ComponentList::loadXml Error parsing file (itemlib):"<< endl << xmlFile;
+        qDebug() <<  "ComponentList::loadXml Error parsing file (itemlib):"<< Qt::endl << xmlFile;
         file.close();
         return;
     }
@@ -333,9 +333,6 @@ void ComponentList::addItem( QString caption, TreeItem* catItem, QIcon &icon, QS
 
     if( m_oldConfig )
     {
-        //bool hidden = MainWindow::self()->compSettings()->value( name+"/hidden" ).toBool();
-        //item->setItemHidden( hidden );
-
         QString shortCut = MainWindow::self()->compSettings()->value( name+"/shortcut" ).toString();
         item->setShortCut( shortCut );
         if( !shortCut.isEmpty() ) m_shortCuts[name] = shortCut;
@@ -355,7 +352,6 @@ TreeItem* ComponentList::addCategory( QString nameTr, QString name, QString pare
     TreeItem* catParent = nullptr;
 
     bool expanded = false;
-    //bool hidden   = false;
 
     if( parent.isEmpty() )                              // Is Main Category
     {
@@ -370,7 +366,6 @@ TreeItem* ComponentList::addCategory( QString nameTr, QString name, QString pare
     else if( catParent )
     {
         catParent->addChild( catItem );
-        //catParent->setHidden( false );
     }
     m_categories.insert( name, catItem );
 
@@ -379,11 +374,8 @@ TreeItem* ComponentList::addCategory( QString nameTr, QString name, QString pare
         if( MainWindow::self()->compSettings()->contains(name+"/collapsed") )
             expanded = !MainWindow::self()->compSettings()->value( name+"/collapsed" ).toBool();
 
-        //if( MainWindow::self()->compSettings()->contains(name+"/hidden") )
-        //    hidden = MainWindow::self()->compSettings()->value( name+"/hidden" ).toBool();
     }
     catItem->setText( 0, nameTr );
-    //catItem->setItemHidden( hidden );
     catItem->setItemExpanded( expanded );
 
     return catItem;
@@ -471,7 +463,6 @@ void ComponentList::search( QString filter )
         }
         if( !cList.contains( item ) ) continue;
 
-        //bool hidden = treeItem->isItemHidden();
         while( treeItem )
         {
             treeItem->setHidden( false );
@@ -522,7 +513,6 @@ void ComponentList::readNodCfg( QDomNode* node, TreeItem* parent )
         item = m_categories.value( name );
 
         if( item ){
-            //m_categories.remove( name );
             m_categoryList.append( item );
             expanded = element.attribute("expanded") == "1";
 
@@ -541,16 +531,6 @@ void ComponentList::readNodCfg( QDomNode* node, TreeItem* parent )
             m_shortCuts.insert( shortcut, name );
         }
     }
-
-    //if( item ){
-        /*if( !m_oldConfig )
-        {
-            if( parent ) parent->addChild( item );
-            else         addTopLevelItem( item );
-        }*/
-        //bool hidden = element.attribute("hidden") == "1";
-        //item->setItemHidden( hidden );
-    //}
 
     QDomNode child = node->firstChild(); // Recursively read child items
     while( !child.isNull() ){

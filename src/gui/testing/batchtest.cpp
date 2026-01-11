@@ -21,7 +21,7 @@ void BatchTest::doBatchTest( QString folder )
     QDir dir = QDir(folder);
     if( !dir.exists() )
     {
-        qDebug() <<"Folder doesn't exist:" << endl << folder;
+        qDebug() <<"Folder doesn't exist:" << Qt::endl << folder;
         return;
     }
     m_failedTests.clear();

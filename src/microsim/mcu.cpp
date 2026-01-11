@@ -10,6 +10,11 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QSettings>
+#include <QObject>
+#include <QtGlobal>       // sometimes helps
+// → THIS ONE is the missing one in Qt 6:
+#include <QMetaObject>
+//#include <QObjectConnection>
 
 #include "mcu.h"
 #include "cpu8bits.h"
@@ -203,7 +208,7 @@ Mcu::Mcu( QString type, QString id, QString device )
     }
 
     if( m_packageList.isEmpty() ){
-        qDebug() << "Mcu::Mcu: No Packages found for"<<m_device<<endl;
+        qDebug() << "Mcu::Mcu: No Packages found for"<<m_device<<Qt::endl;
         m_error = 1;
         return;
     }
@@ -216,7 +221,7 @@ Mcu::Mcu( QString type, QString id, QString device )
 
     Simulator::self()->addToUpdateList( this );
 
-    qDebug() << "       "<<id<< "Initialized"<<endl;
+    qDebug() << "       "<<id<< "Initialized"<<Qt::endl;
 }
 Mcu::~Mcu()
 {
@@ -578,18 +583,24 @@ void Mcu::contextMenu( QGraphicsSceneContextMenuEvent* event, QMenu* menu )
     QAction* openRamTab = menu->addAction( QIcon(":/terminal.svg"),tr("Open Mcu Monitor.") );
     QObject::connect( openRamTab, &QAction::triggered, [=](){ slotOpenMcuMonitor(); } );
 
-    if( m_eMcu.m_usarts.size() )
+    if (!m_eMcu.m_usarts.empty())
     {
-        QMenu* serMonMenu = menu->addMenu( QIcon(":/serialterm.png"),tr("Open Serial Monitor.") );
+        QMenu* serMonMenu = menu->addMenu(QIcon(":/serialterm.png"),
+                                          tr("Open Serial Monitor"));
 
-        QSignalMapper* sm = new QSignalMapper();
-        for( uint i=0; i<m_eMcu.m_usarts.size(); ++i )
+        for (uint i = 0; i < m_eMcu.m_usarts.size(); ++i)
         {
-            QAction* openSerMonAct = serMonMenu->addAction( "USart"+QString::number(i+1) );
-            QObject::connect( openSerMonAct, &QAction::triggered, sm, QOverload<>::of(&QSignalMapper::map) );
-            sm->setMapping( openSerMonAct, i+1 );
+            const int portNumber = i + 1;  // or i if you prefer 0-based
+            QString text = "USART" + QString::number(portNumber);
+
+            QAction* act = serMonMenu->addAction(text);
+
+            // Direct connection with captured value – no QSignalMapper needed
+            QObject::connect(act, &QAction::triggered,
+                             this, [this, portNumber](bool /*checked*/) {
+                                 slotOpenTerm(portNumber);
+                             });
         }
-        QObject::connect( sm, QOverload<int>::of(&QSignalMapper::mapped), [=](int n){ slotOpenTerm(n);} );
     }
     menu->addSeparator();
     Component::contextMenu( event, menu );

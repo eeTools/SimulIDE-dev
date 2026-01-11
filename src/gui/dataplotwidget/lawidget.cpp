@@ -186,7 +186,7 @@ void LaWidget::mousePressEvent( QMouseEvent* event )
         m_action = actMove;
         setCursor( Qt::ClosedHandCursor );
     }
-    else if( event->button() == Qt::MidButton )
+    else if( event->button() == Qt::MiddleButton )
     {
         m_action = actTime;
         plotDisplay->setTimeZero( m_mousePos );

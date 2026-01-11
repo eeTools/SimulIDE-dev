@@ -102,7 +102,7 @@ int ScriptBase::compileScript()
     if( r < 0 ) return -1;
 
     r = m_asModule->Build();
-    if( r < 0 ) { qDebug() << endl << m_elmId+" ScriptBase::compileScript Error"<< endl; return -1; }
+    if( r < 0 ) { qDebug() << Qt::endl << m_elmId+" ScriptBase::compileScript Error"<< Qt::endl; return -1; }
 
     //qDebug() << "\nScriptBase::compileScript: Build() Success\n";
     return 0;

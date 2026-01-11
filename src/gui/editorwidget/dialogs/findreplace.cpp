@@ -3,9 +3,13 @@
  *                                                                         *
  ***( see copyright.txt file at root folder )*******************************/
 
+#include <QRegularExpression>
+
 #include "findreplace.h"
 #include "codeeditor.h"
 #include "basedebugger.h"
+
+
 
 FindReplace::FindReplace( QWidget* parent )
            : QDialog( parent )
@@ -111,13 +115,25 @@ bool FindReplace::find( bool next )
     if( whole->isChecked() )  flags |= QTextDocument::FindWholeWords;
     if( regexp->isChecked() )
     {
-        QRegExp reg( toSearch, (caseS->isChecked() ? Qt::CaseSensitive : Qt::CaseInsensitive) );
+        QRegularExpression reg(toSearch, (caseS->isChecked() ? QRegularExpression::NoPatternOption
+                                                             : QRegularExpression::CaseInsensitiveOption));
 
-        m_textCursor = m_editor->document()->find( reg, m_textCursor, flags );
-        m_editor->setTextCursor( m_textCursor );
-        result = !m_textCursor.isNull();
+        int pos = m_textCursor.position();
+        QString text = m_editor->toPlainText();
+
+        QRegularExpressionMatch match = reg.match(text, pos);
+        if (!match.hasMatch() && !next) { // backward search
+            match = reg.match(text, 0, QRegularExpression::NormalMatch); // wrap around
+        }
+
+        if (match.hasMatch()) {
+            m_textCursor.setPosition(match.capturedStart());
+            m_textCursor.setPosition(match.capturedEnd(), QTextCursor::KeepAnchor);
+            m_editor->setTextCursor(m_textCursor);
+            result = true;
+        } else result = false;
     }
-    else result = m_editor->find( toSearch, flags );
 
     return result;
 }
+

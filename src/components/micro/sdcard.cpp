@@ -422,7 +422,7 @@ void SdCard::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w )
 
     if( m_diskImage ){
         p->setBrush( QColor( 50,50,50 ) );
-        p->drawRoundRect( 8,-12, 32, 32, 2, 2 );
+        p->drawRoundedRect( 8,-12, 32, 32, 2, 2 );
         p->setBrush( QColor( 200,255,200 ) );
     }
     else p->setBrush( QColor( Qt::white ) );

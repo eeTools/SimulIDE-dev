@@ -100,7 +100,7 @@ Component* SubCircuit::construct( QString type, QString id )
     }
 
     if( packageList.isEmpty() ){
-        qDebug() << "SubCircuit::construct: No Packages found for"<<device<<endl;
+        qDebug() << "SubCircuit::construct: No Packages found for"<<device<<Qt::endl;
         return nullptr;
     }
 
@@ -176,10 +176,10 @@ void SubCircuit::loadSubCircuit( QString doc )
 
     QList<Linker*> linkList;   // Linked  Component list
 
-    QVector<QStringRef> docLines = doc.splitRef("\n");
-    for( QStringRef line : docLines )
+    QVector<QStringView> docLines = QStringView(doc).split('\n');
+    for (QStringView line : docLines)
     {
-        if( !line.startsWith("<item") ) continue;
+        if( !line.startsWith(QLatin1StringView("<item")) ) continue;
 
         QVector<propStr_t> properties = parseXmlProps( line );
 

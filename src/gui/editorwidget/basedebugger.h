@@ -12,9 +12,9 @@
 struct codeLine_t{
     QString file;
     int     lineNumber;
-    bool operator!=(const codeLine_t& lhs )
+    bool operator!=(const codeLine_t& lhs ) const
     { return lhs.file != file || lhs.lineNumber != lineNumber; }
-    bool operator==(const codeLine_t& lhs )
+    bool operator==(const codeLine_t& lhs ) const
     { return lhs.file == file && lhs.lineNumber == lineNumber; }
 };
 

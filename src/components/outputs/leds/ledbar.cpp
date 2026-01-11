@@ -94,7 +94,7 @@ void LedBar::createLeds( int c )
         m_led[i]->setParentItem(this);
         m_led[i]->setPos( 0,-28+2+i*8 );
         m_led[i]->setFlag( QGraphicsItem::ItemIsSelectable, false );
-        m_led[i]->setAcceptedMouseButtons(0);
+        m_led[i]->setAcceptedMouseButtons(Qt::NoButton);
         
         if( initialized ){
             m_led[i]->setGrounded( grounded() );
@@ -194,7 +194,7 @@ void LedBar::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w )
     if( m_hidden ) return;
 
     Component::paint( p, o, w );
-    p->drawRoundRect( m_area, 4, 4 );
+    p->drawRoundedRect( m_area, 4, 4 );
 
     Component::paintSelected( p );
 }

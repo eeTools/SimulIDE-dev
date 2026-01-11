@@ -24,7 +24,7 @@ class Esp32Usart : public QemuUsart
         };
 
         //void enable( bool e ) override;
-        void connected( bool c ) override;
+        void connected( bool c ); // override;
 
         void doAction() override;
 

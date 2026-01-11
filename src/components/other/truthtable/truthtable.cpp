@@ -71,7 +71,7 @@ void TruthTable::setup( QString inputs, QString outputs, std::vector<uint> truth
 
             if( col == m_numInputs )    // Separator Column
             {
-                it->setFlags( 0 );
+                it->setFlags( Qt::NoItemFlags );
                 it->setBackground( QColor( 150, 150, 150 ) );
             }
             else                        // Value Column

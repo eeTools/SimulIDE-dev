@@ -135,7 +135,7 @@ void LedMatrix::createMatrix()
             lsmd->setThreshold( m_threshold );
             lsmd->setColorStr( colorStr() );
             lsmd->setFlag( QGraphicsItem::ItemIsSelectable, false );
-            lsmd->setAcceptedMouseButtons(0);
+            lsmd->setAcceptedMouseButtons(Qt::NoButton);
             m_led[row][col] = lsmd;
     }   }
     for( int col=0; col<m_cols; ++col )
@@ -269,7 +269,7 @@ void LedMatrix::remove()
 void LedMatrix::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w )
 {
     Component::paint( p, o, w );
-    p->drawRoundRect( m_area, 4, 4 );
+    p->drawRoundedRect( m_area, 4, 4 );
 
     Component::paintSelected( p );
 }

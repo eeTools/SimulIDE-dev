@@ -9,7 +9,7 @@
 #include "display.h"
 #include "simulator.h"
 
-Display::Display( uint w, uint h, QString name, QWidget* parent )
+MyDisplay::MyDisplay( uint w, uint h, QString name, QWidget* parent )
        : QWidget( parent )
        , Updatable()
        , eElement( name )
@@ -27,15 +27,15 @@ Display::Display( uint w, uint h, QString name, QWidget* parent )
 
     Simulator::self()->addToUpdateList( this );
 }
-Display::~Display(){}
+MyDisplay::~MyDisplay(){}
 
-void Display::initialize()
+void MyDisplay::initialize()
 {
     m_x = 0;
     m_y = 0;
 }
 
-void Display::updateStep()
+void MyDisplay::updateStep()
 {
     if( m_changed )
     {
@@ -47,21 +47,21 @@ void Display::updateStep()
     update();
 }
 
-void Display::setWidth( uint w )
+void MyDisplay::setWidth( uint w )
 {
     if( m_width == w || w < 1 ) return;
     m_newWidth = w;
     m_changed = true;
 }
 
-void Display::setHeight( uint h )
+void MyDisplay::setHeight( uint h )
 {
     if( m_height == h || h < 1 ) return;
     m_newHeight = h;
     m_changed = true;
 }
 
-void Display::setSize( uint w, uint h )
+void MyDisplay::setSize( uint w, uint h )
 {
     if( w < 1 || h < 1 ) return;
     m_newWidth  = w;
@@ -69,7 +69,7 @@ void Display::setSize( uint w, uint h )
     m_changed = true;
 }
 
-void Display::setMonitorScale( double scale )
+void MyDisplay::setMonitorScale( double scale )
 {
     if( scale <= 0 ) return;
     m_scale = scale;
@@ -79,30 +79,30 @@ void Display::setMonitorScale( double scale )
     show();
 }
 
-void Display::setEmbed( bool e )
+void MyDisplay::setEmbed( bool e )
 {
     m_embed = e;
     this->setVisible( !e );
 }
 
-void Display::setBackground( int b )
+void MyDisplay::setBackground( int b )
 {
     m_background = b;
 }
 
-void Display::fillData( int data )
+void MyDisplay::fillData( int data )
 {
     for( uint x=0; x<m_width; x++ )
         for( uint y=0; y<m_height; y++ )
             m_data[x][y] = data;
 }
 
-void Display::clear()
+void MyDisplay::clear()
 {
     fillData( m_background );
 }
 
-void Display::drawLine( int x0, int y0, int x1, int y1, int color )
+void MyDisplay::drawLine( int x0, int y0, int x1, int y1, int color )
 {
     int dx = fabs( x1-x0 );
     int dy = fabs( y1-y0 );
@@ -131,7 +131,7 @@ void Display::drawLine( int x0, int y0, int x1, int y1, int color )
     }
 }
 
-void Display::setPixel( uint x, uint y, int color )
+void MyDisplay::setPixel( uint x, uint y, int color )
 {
     if( x >= m_width || y >= m_height ) return;
 
@@ -146,14 +146,14 @@ void Display::setPixel( uint x, uint y, int color )
     m_data[x][y] = color;
 }
 
-void Display::updtImageSize()
+void MyDisplay::updtImageSize()
 {
     m_data.clear();
     m_data.resize( m_width, std::vector<int>(m_height, m_background) );
     this->setFixedSize( m_width*m_scale, m_height*m_scale );
 }
 
-void Display::paintEvent( QPaintEvent* )
+void MyDisplay::paintEvent( QPaintEvent* )
 {
     if( m_embed ) return;
     QPainter p(this);

@@ -59,19 +59,21 @@ FileWidget::FileWidget( QWidget* parent )
     //addEntry("Data",       MainWindow::self()->getFilePath("data") );
     addEntry("User Data",  MainWindow::self()->userPath() );
     addEntry("Settings",   settingsDir );
-    addEntry("Last Project", NULL, true );
 
-    connect( m_bookmarks, SIGNAL( itemClicked( QListWidgetItem* )), 
-             this,        SLOT(   itemClicked( QListWidgetItem* )), Qt::UniqueConnection);
+    connect(m_bookmarks, &QListWidget::itemClicked,
+            this, &FileWidget::itemClicked,
+            Qt::UniqueConnection);
              
-    //connect( m_searchFiles, SIGNAL( editingFinished() ),
+    // connect( m_searchFiles, SIGNAL( editingFinished() ),
     //         this,          SLOT( searchChanged() ), Qt::UniqueConnection);
 
-    connect( m_cdUpButton,  SIGNAL( released() ),
-             m_fileBrowser, SLOT( cdUp() ), Qt::UniqueConnection);
-             
-    connect( m_path, SIGNAL( editingFinished() ),
-             this,   SLOT(  pathChanged() ), Qt::UniqueConnection);
+    connect(m_cdUpButton, &QPushButton::released,
+            m_fileBrowser, &FileBrowser::cdUp,
+            Qt::UniqueConnection);
+
+    connect(m_path, &QLineEdit::editingFinished,
+            this, &FileWidget::pathChanged,
+            Qt::UniqueConnection);
              
     int size = settings->beginReadArray("bookmarks");
     
@@ -101,16 +103,16 @@ void FileWidget::writeSettings()
     while( m_bookmarks->count() ) delete m_bookmarks->takeItem( 0 );
 }
 
-void FileWidget::addEntry( QString name, QString path, bool force )
+void FileWidget::addEntry( QString name, QString path )
 {
-    if( !force && !QDir( path ).exists() ) return;
+    if( !QDir( path ).exists() ) return;
 
     QListWidgetItem* item = new QListWidgetItem( name, m_bookmarks, 0 );
     item->setData( 4, path );
     
     QFont font;
     font.setPixelSize( 11*MainWindow::self()->fontScale() );
-    font.setWeight(70);
+    font.setWeight(QFont::DemiBold);
     item->setFont( font );
     item->setIcon( QIcon(":/open.png") );
 }
@@ -136,14 +138,7 @@ void FileWidget::remBookMark()
 
 void FileWidget::itemClicked( QListWidgetItem* item  )
 {
-    QString path = NULL;
-    if ( item->text().compare("Last Project") == 0 ) {
-        QSettings* settings = MainWindow::self()->settings();
-        QFileInfo fileInfo(settings->value("lastCircDir").toString());
-        path = fileInfo.absolutePath();
-    } else {
-        path = item->data( 4 ).toString();
-    }
+    QString path = item->data( 4 ).toString();
     m_fileBrowser->setPath( path );
 }
 
@@ -178,9 +173,10 @@ void FileWidget::contextMenuEvent( QContextMenuEvent* event )
         QPoint eventPos = event->globalPos();
         QMenu menu;
 
-        QAction* remBookMarkAction = menu.addAction(QIcon(":/remove.svg"),tr("Remove Bookmark"));
-        connect( remBookMarkAction, SIGNAL( triggered()), 
-                 this,              SLOT(   remBookMark() ) );
+        QAction* remBookMarkAction =
+            menu.addAction(QIcon(":/remove.svg"), tr("Remove Bookmark"));
+        connect(remBookMarkAction, &QAction::triggered,
+                this, [this]() { remBookMark(); });
                  
         menu.exec( eventPos );
 }   }

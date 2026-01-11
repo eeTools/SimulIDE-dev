@@ -17,6 +17,8 @@
 #include <QPushButton>
 #include <QComboBox>
 #include <QDebug>
+#include <QList>
+#include <QVector>
 
 #include "subpackage.h"
 #include "packagepin.h"
@@ -524,18 +526,24 @@ QString SubPackage::packagePins()
     return pins;
 }
 
-void SubPackage::setPackagePins( QString pinsStr )
+void SubPackage::setPackagePins(QString pinsStr)
 {
-    if( !m_pkgeFile.isEmpty() ) return;
-    if( pinsStr == " " ) return;
+    if (!m_pkgeFile.isEmpty()) return;
+    if (pinsStr.trimmed().isEmpty()) return;
 
-    QVector<QStringRef> pins = pinsStr.splitRef("&#xa;");
-    for( QStringRef pin : pins )
+    QStringView delim = QStringView(u"&#xa;");
+    QStringView view{pinsStr};
+    // Split on the literal "&#xa;"
+    const auto pins = view.split(delim, Qt::SkipEmptyParts);
+
+    for (QStringView pin : pins)
     {
-        if( pin.isEmpty() ) continue;
-        QVector<propStr_t> properties = parseProps( pin );
-        QStringRef item = properties.takeFirst().name;
-        if( item == "Pin" ) setPinStr( properties );
+        QVector<propStr_t> properties = parseProps(pin);
+        if (properties.isEmpty()) continue;
+
+        QStringView item = properties.takeFirst().name;
+        if (item == u"Pin"_qs)       // or: if (item == "Pin")
+            setPinStr(properties);
     }
 }
 
@@ -612,7 +620,7 @@ void SubPackage::savePackage( QString fileName )
           return;
     }
     QTextStream out(&file);
-    out.setCodec("UTF-8");
+    out.setEncoding(QStringConverter::Utf8);
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
@@ -794,8 +802,9 @@ EditDialog::EditDialog( SubPackage* pack, Pin* eventPin, QWidget* parent )
     layout->addWidget( m_busCheckBox );
     layout->addWidget( bb );
 
-    QFontMetrics fm( m_nameLabel->font() );
-    double scale = fm.width(" ")/2.0;
+    QFontMetrics fm(m_nameLabel->font());
+    double scale = fm.horizontalAdvance(" ") / 2.0;
+
     m_nameLineEdit->setFixedWidth( 60*scale );
     m_idLineEdit->setFixedWidth( 60*scale );
     m_spaceBox->setFixedWidth( 60*scale );

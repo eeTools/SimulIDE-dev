@@ -201,7 +201,7 @@ void ResistorDip::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget
     if( m_ansiSymbol ){
         for( int i=0; i<m_size; i++ ) Resistor::drawAnsi( p, 0,-32+8+i*8, 0.7, 0.6 );
     }
-    else p->drawRoundRect( QRect(-9,-28, 18, m_size*8 ), 2, 2 );
+    else p->drawRoundedRect( QRect(-9,-28, 18, m_size*8 ), 2, 2 );
 
     if( m_pullUp )
     {

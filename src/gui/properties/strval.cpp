@@ -24,7 +24,7 @@ void StrVal::setup( bool )
     //valLabel->setFont( font );
 
     QFontMetrics fm( valLabel->font() );
-    float scale = fm.width(" ")/2;
+    float scale = fm.horizontalAdvance(" ")/2;
     value->setFixedWidth( 192.0*scale );
 
     valLabel->setText( m_property->capt() );

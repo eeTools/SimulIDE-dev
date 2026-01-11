@@ -20,7 +20,7 @@ class LibraryItem;
 class MCUMonitor;
 class ScriptCpu;
 
-class Mcu : public Chip, public Linker
+class Mcu : public Chip, public Linker, public QObject
 {
         friend class McuCreator;
         friend class SubCircuit;

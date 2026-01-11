@@ -124,7 +124,7 @@ void ConnBase::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w
 
     QPen pen( Qt::black, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin );
     p->setPen( pen );
-    if( !this->m_hidden ) p->drawRoundRect( m_area, 4, 4 );
+    if( !this->m_hidden ) p->drawRoundedRect( m_area, 4, 4 );
 
     for( int i=0; i<m_size; i++ )
     {

@@ -36,7 +36,7 @@ Watcher::Watcher( QWidget* parent, Watched* cpu, bool proxy )
     int spacing = proxy ? 0 : 2;
 
     m_valuesLayout = new QBoxLayout( QBoxLayout::TopToBottom, this );
-    m_valuesLayout->setMargin( 0 );
+    m_valuesLayout->setContentsMargins(0, 0, 0, 0);
     m_valuesLayout->setSpacing( spacing );
     m_valuesLayout->setContentsMargins( 0, 0, 0, 4 );
     m_valuesLayout->addStretch();

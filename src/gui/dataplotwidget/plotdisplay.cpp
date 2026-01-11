@@ -116,7 +116,7 @@ void PlotDisplay::updateValues()
 void PlotDisplay::wheelEvent( QWheelEvent* event )
 {
     int dir = 1;
-    if( event->delta() > 0 ) dir = -1;
+    if( event->angleDelta().y() > 0 ) dir = -1;
 
     uint64_t timeDiv = m_timeDiv;
     uint64_t   delta = timeDiv/5;
@@ -144,7 +144,7 @@ void PlotDisplay::wheelEvent( QWheelEvent* event )
 void PlotDisplay::drawBackground( QPainter* p )
 {
     p->setBrush( QColor( 0, 0, 0 ) );
-    p->drawRoundRect( 0, 0, width(), height(), 7, 7 );
+    p->drawRoundedRect( 0, 0, width(), height(), 7, 7 );
 
     double divs = 10*m_tracks;
     double ceroY = m_ceroY;

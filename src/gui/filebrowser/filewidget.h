@@ -29,7 +29,7 @@ class FileWidget : public QSplitter
         
         void writeSettings();
 
-        void addEntry( QString name, QString path, bool force = false );
+        void addEntry( QString name, QString path );
 
     private slots:
         void itemClicked( QListWidgetItem* );

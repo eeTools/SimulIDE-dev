@@ -129,7 +129,6 @@ Stm32::Stm32( QString type, QString id, QString device )
 }
 Stm32::~Stm32(){}
 
-
 bool Stm32::createArgs()
 {
     //QFileInfo fi = QFileInfo( m_firmware );
@@ -208,7 +207,8 @@ void Stm32::createPorts()
 
     for( int p=0; p<m_portN; ++p )
     {
-        QString pId = QString('A'+p);
+        QString pId;
+        pId.append(QChar('A' + p));
         Stm32Port* port = new Stm32Port( this, "Port"+pId, p, &m_apb2, start, end );
         m_ports[p] = port;
 

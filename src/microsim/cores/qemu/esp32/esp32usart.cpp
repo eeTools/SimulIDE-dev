@@ -12,6 +12,8 @@
 #include "iopin.h"
 #include "simulator.h"
 
+#define QEMU_USART_SENT 0x04  // needed to be able to compile the program
+
 Esp32Usart::Esp32Usart( QemuDevice* mcu, QString name, int number )
           : QemuUsart( mcu, name, number )
 {

@@ -10,7 +10,7 @@
 
 class QDomDocument;
 class QByteArray;
-class QStringList;
+class MyQStringList;
 class QString;
 class QPointF;
 class QPoint;

@@ -4,6 +4,7 @@
  ***( see copyright.txt file at root folder )*******************************/
 
 #include <QGraphicsProxyWidget>
+#include <QFile>
 
 #include "logicanalizer.h"
 #include "itemlibrary.h"
@@ -384,20 +385,20 @@ void LAnalizer::dumpData( const QString &fn )
     dumpVars += "$end\n";
     //if( gcd < 1 ) gcd = 1; // This should not happen
 
-    out <<"$timescale "<< gcd*m_timeStep <<"ps $end"<< endl<< endl;
+    out <<"$timescale "<< gcd*m_timeStep <<"ps $end"<< Qt::endl<< Qt::endl;
     out << varDef;
-    out << endl <<"$enddefinitions $end"<< endl;
+    out << Qt::endl <<"$enddefinitions $end"<< Qt::endl;
     out << dumpVars;
 
     uint64_t timeStamp;
     for( uint64_t time : samples.uniqueKeys() )
     {
         timeStamp = time/gcd;
-        out << endl <<"#"<< timeStamp;
+        out << Qt::endl <<"#"<< timeStamp;
         for( sample_t sample : samples.values( time ) )
             out <<" "<< sample.value <<identifiers[sample.channel];
     }
-    out << endl <<"#"<< timeStamp+1; // last time stamp
+    out << Qt::endl <<"#"<< timeStamp+1; // last time stamp
     file.close();
 }
 

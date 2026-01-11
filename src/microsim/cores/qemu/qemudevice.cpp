@@ -196,7 +196,7 @@ void QemuDevice::stamp()
 #endif
         if( !QFileInfo::exists( executable ) )
         {
-            qDebug() << "Error: QemuDevice::stamp executable does not exist:" << endl << executable;
+            qDebug() << "Error: QemuDevice::stamp executable does not exist:" << Qt::endl << executable;
         }
         m_qemuProcess.start( executable, m_arguments );
 
@@ -476,35 +476,35 @@ void QemuDevice::setPackageFile( QString package )
     Circuit::self()->update();
 }
 
-void QemuDevice::contextMenu( QGraphicsSceneContextMenuEvent* event, QMenu* menu )
+void QemuDevice::contextMenu(QGraphicsSceneContextMenuEvent* event, QMenu* menu)
 {
-    //if( m_eMcu.flashSize() )
+    // Firmware actions
+    if (true) // if( m_eMcu.flashSize() )
     {
-        QAction* loadAction = menu->addAction( QIcon(":/load.svg"),tr("Load firmware") );
-        QObject::connect( loadAction, &QAction::triggered, [=](){ slotLoad(); } );
+        QAction* loadAction = menu->addAction(QIcon(":/load.svg"), tr("Load firmware"));
+        QObject::connect(loadAction, &QAction::triggered, [=]() { slotLoad(); });
 
-        QAction* reloadAction = menu->addAction( QIcon(":/reload.svg"),tr("Reload firmware") );
-        QObject::connect( reloadAction, &QAction::triggered, [=](){ slotReload(); } );
+        QAction* reloadAction = menu->addAction(QIcon(":/reload.svg"), tr("Reload firmware"));
+        QObject::connect(reloadAction, &QAction::triggered, [=]() { slotReload(); });
 
         menu->addSeparator();
     }
 
-    //QAction* openRamTab = menu->addAction( QIcon(":/terminal.svg"),tr("Open Mcu Monitor.") );
-    //QObject::connect( openRamTab, &QAction::triggered, [=](){ slotOpenMcuMonitor(); } );
-
-    if( m_usarts.size() )
+    // Serial Monitor menu
+    if (!m_usarts.empty())
     {
-        QMenu* serMonMenu = menu->addMenu( QIcon(":/serialterm.png"),tr("Open Serial Monitor.") );
+        QMenu* serMonMenu = menu->addMenu(QIcon(":/serialterm.png"), tr("Open Serial Monitor."));
 
-        QSignalMapper* sm = new QSignalMapper();
-        for( uint i=0; i<m_usarts.size(); ++i )
+        for (uint i = 0; i < m_usarts.size(); ++i)
         {
-            QAction* openSerMonAct = serMonMenu->addAction( "USart"+QString::number(i+1) );
-            QObject::connect( openSerMonAct, &QAction::triggered, sm, QOverload<>::of(&QSignalMapper::map) );
-            sm->setMapping( openSerMonAct, i+1 );
+            QAction* openSerMonAct = serMonMenu->addAction("USart" + QString::number(i + 1));
+            // Direct lambda capture of i+1, replacing QSignalMapper
+            QObject::connect(openSerMonAct, &QAction::triggered, [this, i]() {
+                slotOpenTerm(i + 1);
+            });
         }
-        QObject::connect( sm, QOverload<int>::of(&QSignalMapper::mapped), [=](int n){ slotOpenTerm(n);} );
     }
+
     menu->addSeparator();
-    Component::contextMenu( event, menu );
+    Component::contextMenu(event, menu);
 }

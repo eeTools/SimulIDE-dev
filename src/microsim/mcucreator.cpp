@@ -88,7 +88,7 @@
 
 #include "utils.h"
 
-QList<Display*> McuCreator::m_displays;
+QList<MyDisplay*> McuCreator::m_displays;
 bool McuCreator::m_console;
 
 QString McuCreator::m_core = "";
@@ -288,7 +288,7 @@ int McuCreator::processFile( QString fileName )
         if( m_displays.size() )
         {
             mcu->m_cpu->createWatcher();
-            for( Display* display : m_displays )
+            for( MyDisplay* display : m_displays )
             {
                 mcu->m_cpu->m_display = display;
                 mcu->m_cpu->getWatcher()->addWidget( display );
@@ -1289,14 +1289,14 @@ void McuCreator::createDisplay( QDomElement* e )
     int width  = e->attribute("width").toInt();
     int height = e->attribute("height").toInt();
 
-    Display* display = nullptr;
+    MyDisplay* display = nullptr;
     if( m_core == "scripted" )
     {
         ScriptDisplay* d = new ScriptDisplay( width, height, name, nullptr );
         m_scriptPerif.push_back( d );
         display = d;
     }
-    else display = new Display( width, height, name, nullptr );
+    else display = new MyDisplay( width, height, name, nullptr );
 
     if( e->hasAttribute("scale") ){
         double scale = e->attribute("scale").toDouble();
@@ -1403,7 +1403,7 @@ void McuCreator::setInterrupt( QString intName, McuModule* module )
 {
     if( intName.isEmpty() ) return;
     Interrupt* inte = mcu->m_interrupts.m_intList.value( intName );
-    if( !inte ) qDebug() << "    Error: Interrupt not found: " << intName << endl;
+    if( !inte ) qDebug() << "    Error: Interrupt not found: " << intName << Qt::endl;
     module->setInterrupt( inte );
 }
 

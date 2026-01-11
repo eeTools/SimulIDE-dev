@@ -7,6 +7,7 @@
 
 #include <QSyntaxHighlighter>
 #include <QTextCharFormat>
+#include <QRegularExpression>
 
 class QTextDocument;
 
@@ -31,7 +32,7 @@ class Highlighter : public QSyntaxHighlighter
     private:
         struct HighlightRule
         {
-            QRegExp pattern;
+            QRegularExpression pattern;
             QTextCharFormat format;
         };
         void addRule( QTextCharFormat, QString );
@@ -44,7 +45,7 @@ class Highlighter : public QSyntaxHighlighter
         QVector<HighlightRule> m_memberRules;
         QVector<HighlightRule> m_extraRules;
 
-        QRegExp m_multiStart;
-        QRegExp m_multiEnd;
+        QRegularExpression m_multiStart;
+        QRegularExpression m_multiEnd;
         QTextCharFormat m_multiFormat;
 };

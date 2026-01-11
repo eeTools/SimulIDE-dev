@@ -145,7 +145,7 @@ void Simulator::timerEvent( QTimerEvent* e )  //update at m_timerTick_ms rate (5
 
 
     if( m_state == SIM_RUNNING ) // Run Circuit in a parallel thread
-        m_CircuitFuture = QtConcurrent::run( this, &Simulator::runCircuit );
+        m_CircuitFuture = QtConcurrent::run([this]() { this->runCircuit(); });
 
     if( Circuit::self()->animateLogic() ) // Moved here to be in parallel with runCircuit thread
     {

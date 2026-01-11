@@ -55,7 +55,7 @@ SevenSegment::SevenSegment( QString type, QString id )
     QString pinid;
     for( int i=0; i<7; ++i ) // Create Pins for 7 segments
     {
-        pinid = m_id+"-pin_"+QString( 97+i ); // a..g
+        pinid = m_id+"-pin_"+QChar( 97+i ); // a..g
         m_ePin[i] = m_pin[i] = new Pin( 180, QPoint(-16-8,-24+i*8 ), pinid, 0, this );
         m_pin[i]->setSpace( 1 );
         m_pin[i]->setLength( 6 );
@@ -240,7 +240,7 @@ void SevenSegment::createDisplay( int n )
 
     // Pin common
     QString label = m_commonCathode ? "|" : "+";
-    QString pinid = m_id+"-pin_common"+QString( 97+n );
+    QString pinid = m_id+"-pin_common"+QString( QChar(97+n) );
     m_commonPin[n] = m_pin[8+n]= new Pin( 270, QPoint( x+8, 24+8 ), pinid, 0, this );
     m_commonPin[n]->setLength( 4 );
     m_commonPin[n]->setSpace( 1 );
@@ -249,14 +249,14 @@ void SevenSegment::createDisplay( int n )
 
     for( int i=0; i<8; ++i ) // Create segments
     {
-        pinid = m_id+"-led_"+QString( 97+i );
+        pinid = m_id+"-led_"+QString( QChar(97+i) );
         LedSmd* lsmd;
         if( i<7 ) lsmd = new LedSmd( "LEDSMD", pinid, QRectF(0, 0, 13.5, 1.5) ); // Segment
         else      lsmd = new LedSmd( "LEDSMD", pinid, QRectF(0, 0, 1.5, 1.5) );  // Point
 
         lsmd->setParentItem(this);
         lsmd->setFlag( QGraphicsItem::ItemIsSelectable, false );
-        lsmd->setAcceptedMouseButtons( 0 );
+        lsmd->setAcceptedMouseButtons( Qt::NoButton );
         lsmd->setResistance( m_resistance );
         lsmd->setMaxCurrent( m_maxCurrent );
         lsmd->setThreshold( m_threshold );

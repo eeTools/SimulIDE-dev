@@ -254,7 +254,7 @@ void Pin::setLabelPos()
     double xlabelpos = pos().x();
     double ylabelpos = pos().y();
     m_labelheight = (fm.height()+1)/2;
-    m_labelWidth  = fm.width(m_label.text());
+    m_labelWidth  = fm.horizontalAdvance(m_label.text());
     double space  = m_space ? m_space : (( m_labelheight < 4 ) ? 2 : m_labelheight/2);
     double offset = m_length + space;
 

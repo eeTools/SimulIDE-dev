@@ -107,7 +107,7 @@ QString SerialMonitor::valToString( int val )
 
     switch( m_printMode )
     {
-        case 0: text.append( byte );                 break; // ASCII
+        case 0: text.append( QChar(byte) );                 break; // ASCII
         case 1: text = decToBase( byte, 16, 2 )+" "; break; // HEX
         case 2: text = decToBase( byte, 10, 3 )+" "; break; // DEC
         case 3: text = decToBase( byte,  8, 3 )+" "; break; // OCT

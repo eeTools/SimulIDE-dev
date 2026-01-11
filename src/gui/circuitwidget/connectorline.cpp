@@ -232,7 +232,7 @@ bool ConnectorLine::connectToWire( QPoint point1 )
 
 void ConnectorLine::mousePressEvent( QGraphicsSceneMouseEvent* event )
 {
-    if( event->button() == Qt::MidButton )                      // Move Line
+    if( event->button() == Qt::MiddleButton )                      // Move Line
     {
         event->accept();
 

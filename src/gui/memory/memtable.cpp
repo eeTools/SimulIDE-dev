@@ -159,12 +159,12 @@ void MemTable::resizeTable( int dataSize )
         for( int col=0; col<33; ++col )
         {
             it = new QTableWidgetItem(0);
-            if( col == 16 ) it->setFlags( 0 );
+            if( col == 16 ) it->setFlags( Qt::NoItemFlags );
             else{
                 if( col < 16 )
                 {
                     font.setWeight( QFont::DemiBold );
-                    it->setTextColor( QColor( 0x202090 ) );
+                    it->setForeground( QColor( 0x202090 ) );
                 }
                 else font.setWeight( QFont::Medium );
                 it->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable );

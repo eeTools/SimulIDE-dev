@@ -216,10 +216,10 @@ void Stepper::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w 
     Component::paint( p, o, w );
 
     //p->setBrush( QColor(250, 210, 230) );
-    if( !m_hidden ) p->drawRoundRect(-64,-40, 25, 80 );
+    if( !m_hidden ) p->drawRoundedRect(QRectF(-64, -40, 25, 80), 0.5, 0.5);
 
     p->setBrush( QColor(50, 70, 100) ); 
-    p->drawRoundRect(-48,-48, 96, 96 );
+    p->drawRoundedRect(QRectF(-48,-48, 96, 96 ), 0.5, 0.5);
 
     p->setPen( QColor(0, 0, 0) );
     p->setBrush( QColor(255, 255, 255) );

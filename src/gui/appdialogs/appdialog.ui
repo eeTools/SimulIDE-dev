@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>AppDialog</class>
- <connections/>
- <resources/>
  <widget class="QDialog" name="AppDialog">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>673</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>320</width>
+    <height>100</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Settings</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
   <layout class="QHBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>9</number>
+     </property>
      <item>
       <widget class="QTabWidget" name="tabList">
        <property name="sizePolicy">
@@ -17,15 +62,15 @@
        </property>
        <property name="minimumSize">
         <size>
-         <height>300</height>
          <width>200</width>
+         <height>300</height>
         </size>
        </property>
        <property name="locale">
-        <locale country="AnyCountry" language="C"/>
+        <locale language="C" country="AnyTerritory"/>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>2</number>
        </property>
        <property name="usesScrollButtons">
         <bool>false</bool>
@@ -35,8 +80,17 @@
          <string>App</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>9</number>
+         </property>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <property name="topMargin">
+            <number>9</number>
+           </property>
+           <property name="bottomMargin">
+            <number>4</number>
+           </property>
            <item>
             <widget class="QLabel" name="label_19">
              <property name="sizePolicy">
@@ -47,11 +101,10 @@
              </property>
              <property name="font">
               <font>
-               <bold>false</bold>
                <family>Ubuntu</family>
-               <italic>false</italic>
                <pointsize>12</pointsize>
-               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
               </font>
              </property>
              <property name="styleSheet">
@@ -61,7 +114,7 @@
               <string>App Settings</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -81,12 +134,6 @@
              </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
-           <property name="bottomMargin">
-            <number>4</number>
-           </property>
           </layout>
          </item>
          <item>
@@ -99,11 +146,10 @@
            </property>
            <property name="font">
             <font>
-             <bold>false</bold>
              <family>Ubuntu</family>
-             <italic>false</italic>
              <pointsize>10</pointsize>
-             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -113,7 +159,7 @@
             <string>Restart required to apply new settings.</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
            <property name="margin">
             <number>0</number>
@@ -122,6 +168,9 @@
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <property name="topMargin">
+            <number>12</number>
+           </property>
            <item>
             <widget class="QLabel" name="label_3">
              <property name="text">
@@ -131,16 +180,37 @@
            </item>
            <item>
             <widget class="QComboBox" name="language">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="currentText">
+              <string notr="true">English</string>
+             </property>
              <item>
               <property name="text">
                <string notr="true">English</string>
               </property>
              </item>
              <item>
-            <property name="text">
-             <string notr="true">简体中文</string>
-            </property>
-            </item>
+              <property name="text">
+               <string notr="true">简体中文</string>
+              </property>
+             </item>
              <item>
               <property name="text">
                <string notr="true">繁體中文</string>
@@ -166,32 +236,8 @@
                <string notr="true">Brasileiro</string>
               </property>
              </item>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <height>0</height>
-               <width>100</width>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <height>16777215</height>
-               <width>100</width>
-              </size>
-             </property>
-             <property name="currentText">
-              <string notr="true">English</string>
-             </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>12</number>
-           </property>
           </layout>
          </item>
          <item>
@@ -213,14 +259,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>100</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>100</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="editable">
@@ -228,9 +274,6 @@
              </property>
              <property name="currentText">
               <string notr="true">Ubuntu</string>
-             </property>
-             <property name="sizeAdjustPolicy">
-              <enum>QComboBox::AdjustToMinimumContentsLength</enum>
              </property>
             </widget>
            </item>
@@ -255,14 +298,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>100</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>100</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="specialValueText">
@@ -317,15 +360,15 @@
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>35</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="toolTip">
               <string>Select tool path</string>
              </property>
              <property name="locale">
-              <locale country="AnyCountry" language="C"/>
+              <locale language="C" country="AnyTerritory"/>
              </property>
              <property name="text">
               <string notr="true">...</string>
@@ -347,12 +390,12 @@
           <widget class="Line" name="line_5">
            <property name="minimumSize">
             <size>
-             <height>32</height>
              <width>0</width>
+             <height>32</height>
             </size>
            </property>
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -366,11 +409,10 @@
            </property>
            <property name="font">
             <font>
-             <bold>false</bold>
              <family>Ubuntu</family>
-             <italic>false</italic>
              <pointsize>12</pointsize>
-             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -380,7 +422,7 @@
             <string>Updates:</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -394,19 +436,16 @@
          <item>
           <spacer name="verticalSpacer_3">
            <property name="orientation">
-            <enum>Qt::Vertical</enum>
+            <enum>Qt::Orientation::Vertical</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <height>40</height>
              <width>20</width>
+             <height>40</height>
             </size>
            </property>
           </spacer>
          </item>
-         <property name="spacing">
-          <number>9</number>
-         </property>
         </layout>
        </widget>
        <widget class="QWidget" name="circTab">
@@ -414,8 +453,29 @@
          <string>Circuit</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <property name="topMargin">
+            <number>9</number>
+           </property>
+           <property name="bottomMargin">
+            <number>9</number>
+           </property>
            <item>
             <widget class="QLabel" name="label_8">
              <property name="sizePolicy">
@@ -426,11 +486,10 @@
              </property>
              <property name="font">
               <font>
-               <bold>false</bold>
                <family>Ubuntu</family>
-               <italic>false</italic>
                <pointsize>12</pointsize>
-               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
               </font>
              </property>
              <property name="styleSheet">
@@ -440,7 +499,7 @@
               <string>Circuit Canvas</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -460,12 +519,6 @@
              </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
-           <property name="bottomMargin">
-            <number>9</number>
-           </property>
           </layout>
          </item>
          <item>
@@ -509,14 +562,14 @@
             <widget class="QSpinBox" name="canvasWidth">
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="suffix">
@@ -543,14 +596,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="text">
@@ -573,14 +626,14 @@
             <widget class="QSpinBox" name="canvasHeight">
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="suffix">
@@ -607,14 +660,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="text">
@@ -637,14 +690,14 @@
             <widget class="QSpinBox" name="fps">
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="suffix">
@@ -671,14 +724,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="text">
@@ -692,12 +745,12 @@
           <widget class="Line" name="line_6">
            <property name="minimumSize">
             <size>
-             <height>32</height>
              <width>0</width>
+             <height>32</height>
             </size>
            </property>
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -711,11 +764,10 @@
            </property>
            <property name="font">
             <font>
-             <bold>false</bold>
              <family>Ubuntu</family>
-             <italic>false</italic>
              <pointsize>12</pointsize>
-             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -725,7 +777,7 @@
             <string>Components</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -753,12 +805,12 @@
           <widget class="Line" name="line_3">
            <property name="minimumSize">
             <size>
-             <height>32</height>
              <width>0</width>
+             <height>32</height>
             </size>
            </property>
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -772,11 +824,10 @@
            </property>
            <property name="font">
             <font>
-             <bold>false</bold>
              <family>Ubuntu</family>
-             <italic>false</italic>
              <pointsize>12</pointsize>
-             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -786,7 +837,7 @@
             <string>Other</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -803,14 +854,14 @@
             <widget class="QSpinBox" name="backup">
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="suffix">
@@ -834,14 +885,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="text">
@@ -864,14 +915,14 @@
             <widget class="QSpinBox" name="undo_steps">
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="suffix">
@@ -895,14 +946,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>75</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="text">
@@ -915,18 +966,25 @@
          <item>
           <spacer name="verticalSpacer_2">
            <property name="orientation">
-            <enum>Qt::Vertical</enum>
+            <enum>Qt::Orientation::Vertical</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <height>40</height>
              <width>20</width>
+             <height>40</height>
             </size>
            </property>
           </spacer>
          </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="simTab">
+        <attribute name="title">
+         <string>Simulation</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
-          <number>6</number>
+          <number>0</number>
          </property>
          <property name="leftMargin">
           <number>9</number>
@@ -940,15 +998,14 @@
          <property name="bottomMargin">
           <number>9</number>
          </property>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="simTab">
-        <attribute name="title">
-         <string>Simulation</string>
-        </attribute>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="topMargin">
+            <number>9</number>
+           </property>
+           <property name="bottomMargin">
+            <number>18</number>
+           </property>
            <item>
             <widget class="QLabel" name="label_6">
              <property name="sizePolicy">
@@ -959,11 +1016,10 @@
              </property>
              <property name="font">
               <font>
-               <bold>false</bold>
                <family>Ubuntu</family>
-               <italic>false</italic>
                <pointsize>12</pointsize>
-               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
               </font>
              </property>
              <property name="styleSheet">
@@ -973,7 +1029,7 @@
               <string>Speed</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -991,125 +1047,124 @@
                 <colorrole role="WindowText">
                  <brush brushstyle="SolidPattern">
                   <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                 <colorrole role="Text">
                  <brush brushstyle="SolidPattern">
                   <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                 <colorrole role="ButtonText">
                  <brush brushstyle="SolidPattern">
                   <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
                   <color alpha="128">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                </active>
-               <disabled>
-                <colorrole role="WindowText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
-                   <red>85</red>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Text">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
-                   <red>85</red>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ButtonText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
-                   <red>85</red>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="PlaceholderText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="128">
-                   <blue>127</blue>
-                   <green>0</green>
-                   <red>85</red>
-                  </color>
-                 </brush>
-                </colorrole>
-               </disabled>
                <inactive>
                 <colorrole role="WindowText">
                  <brush brushstyle="SolidPattern">
                   <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                 <colorrole role="Text">
                  <brush brushstyle="SolidPattern">
                   <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                 <colorrole role="ButtonText">
                  <brush brushstyle="SolidPattern">
                   <color alpha="255">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
                   <color alpha="128">
-                   <blue>127</blue>
-                   <green>0</green>
                    <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
                   </color>
                  </brush>
                 </colorrole>
                </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Text">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="ButtonText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="PlaceholderText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="128">
+                   <red>85</red>
+                   <green>0</green>
+                   <blue>127</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
               </palette>
              </property>
              <property name="font">
               <font>
-               <bold>false</bold>
                <family>Ubuntu</family>
-               <italic>false</italic>
                <pointsize>12</pointsize>
-               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
               </font>
              </property>
              <property name="styleSheet">
@@ -1119,7 +1174,7 @@
               <string notr="true"> 0%</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -1139,12 +1194,6 @@
              </property>
             </widget>
            </item>
-           <property name="bottomMargin">
-            <number>18</number>
-           </property>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
           </layout>
          </item>
          <item>
@@ -1162,7 +1211,7 @@
               <string notr="true">50%</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -1172,7 +1221,7 @@
               <string notr="true">100%</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -1188,14 +1237,14 @@
            </property>
            <property name="minimumSize">
             <size>
-             <height>0</height>
              <width>0</width>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <height>20</height>
              <width>16777215</width>
+             <height>20</height>
             </size>
            </property>
            <property name="cursor">
@@ -1214,10 +1263,10 @@
             <number>100</number>
            </property>
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
            <property name="tickPosition">
-            <enum>QSlider::TicksBothSides</enum>
+            <enum>QSlider::TickPosition::TicksBothSides</enum>
            </property>
            <property name="tickInterval">
             <number>10</number>
@@ -1226,6 +1275,12 @@
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="topMargin">
+            <number>9</number>
+           </property>
            <item>
             <widget class="QLabel" name="stepLabel_2">
              <property name="sizePolicy">
@@ -1249,8 +1304,8 @@
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>16777215</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="suffix">
@@ -1269,6 +1324,27 @@
            </item>
            <item>
             <widget class="QComboBox" name="simStepUnitBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="currentText">
+              <string notr="true">ps</string>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="maxCount">
+              <number>10</number>
+             </property>
              <item>
               <property name="text">
                <string notr="true">ps</string>
@@ -1294,35 +1370,8 @@
                <string notr="true">s</string>
               </property>
              </item>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <height>0</height>
-               <width>0</width>
-              </size>
-             </property>
-             <property name="currentText">
-              <string notr="true">ps</string>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
-           <property name="spacing">
-            <number>6</number>
-           </property>
           </layout>
          </item>
          <item>
@@ -1335,12 +1384,12 @@
            </property>
            <property name="minimumSize">
             <size>
-             <height>32</height>
              <width>280</width>
+             <height>32</height>
             </size>
            </property>
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -1354,11 +1403,10 @@
            </property>
            <property name="font">
             <font>
-             <bold>false</bold>
              <family>Ubuntu</family>
-             <italic>false</italic>
              <pointsize>12</pointsize>
-             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -1368,12 +1416,18 @@
             <string>Reactive</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="topMargin">
+            <number>9</number>
+           </property>
            <item>
             <widget class="QLabel" name="reactiveStep">
              <property name="sizePolicy">
@@ -1408,6 +1462,21 @@
            </item>
            <item>
             <widget class="QComboBox" name="reactStepUnitBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="currentText">
+              <string notr="true">ps</string>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="maxCount">
+              <number>10</number>
+             </property>
              <item>
               <property name="text">
                <string notr="true">ps</string>
@@ -1433,33 +1502,18 @@
                <string notr="true">s</string>
               </property>
              </item>
-             <property name="currentText">
-              <string notr="true">ps</string>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
-           <property name="spacing">
-            <number>6</number>
-           </property>
           </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_20">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="topMargin">
+            <number>9</number>
+           </property>
            <item>
             <widget class="QLabel" name="realStep">
              <property name="sizePolicy">
@@ -1497,6 +1551,24 @@
            </item>
            <item>
             <widget class="QComboBox" name="realStepUnitBox">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="currentText">
+              <string notr="true">ps</string>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="maxCount">
+              <number>10</number>
+             </property>
              <item>
               <property name="text">
                <string notr="true">ps</string>
@@ -1522,44 +1594,20 @@
                <string notr="true">s</string>
               </property>
              </item>
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="currentText">
-              <string notr="true">ps</string>
-             </property>
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <property name="maxCount">
-              <number>10</number>
-             </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
-           <property name="spacing">
-            <number>6</number>
-           </property>
           </layout>
          </item>
          <item>
           <widget class="Line" name="line">
            <property name="minimumSize">
             <size>
-             <height>32</height>
              <width>280</width>
+             <height>32</height>
             </size>
            </property>
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -1573,11 +1621,10 @@
            </property>
            <property name="font">
             <font>
-             <bold>false</bold>
              <family>Ubuntu</family>
-             <italic>false</italic>
              <pointsize>12</pointsize>
-             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -1587,12 +1634,15 @@
             <string>NonLinear</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <property name="topMargin">
+            <number>9</number>
+           </property>
            <item>
             <widget class="QLabel" name="label_14">
              <property name="sizePolicy">
@@ -1616,14 +1666,14 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>100</width>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <height>16777215</height>
                <width>16777215</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="suffix">
@@ -1637,9 +1687,6 @@
              </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
           </layout>
          </item>
          <item>
@@ -1652,12 +1699,12 @@
            </property>
            <property name="minimumSize">
             <size>
-             <height>32</height>
              <width>280</width>
+             <height>32</height>
             </size>
            </property>
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Orientation::Horizontal</enum>
            </property>
           </widget>
          </item>
@@ -1671,11 +1718,10 @@
            </property>
            <property name="font">
             <font>
-             <bold>false</bold>
              <family>Ubuntu</family>
-             <italic>false</italic>
              <pointsize>12</pointsize>
-             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
            </property>
            <property name="styleSheet">
@@ -1688,6 +1734,9 @@
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="topMargin">
+            <number>9</number>
+           </property>
            <item>
             <widget class="QLabel" name="label_2">
              <property name="text">
@@ -1705,8 +1754,8 @@
              </property>
              <property name="minimumSize">
               <size>
-               <height>0</height>
                <width>100</width>
+               <height>0</height>
               </size>
              </property>
              <property name="suffix">
@@ -1717,46 +1766,25 @@
              </property>
             </widget>
            </item>
-           <property name="topMargin">
-            <number>9</number>
-           </property>
           </layout>
          </item>
          <item>
           <spacer name="verticalSpacer">
            <property name="orientation">
-            <enum>Qt::Vertical</enum>
+            <enum>Qt::Orientation::Vertical</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <height>40</height>
              <width>20</width>
+             <height>40</height>
             </size>
            </property>
           </spacer>
          </item>
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <property name="leftMargin">
-          <number>9</number>
-         </property>
-         <property name="topMargin">
-          <number>9</number>
-         </property>
-         <property name="rightMargin">
-          <number>9</number>
-         </property>
-         <property name="bottomMargin">
-          <number>9</number>
-         </property>
         </layout>
        </widget>
       </widget>
      </item>
-     <property name="spacing">
-      <number>9</number>
-     </property>
     </layout>
    </item>
    <item>
@@ -1769,8 +1797,8 @@
      </property>
      <property name="minimumSize">
       <size>
-       <height>0</height>
        <width>290</width>
+       <height>0</height>
       </size>
      </property>
      <property name="acceptDrops">
@@ -1784,63 +1812,24 @@
      </property>
      <property name="html">
       <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="textInteractionFlags">
-      <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      <set>Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
      <property name="placeholderText">
       <string notr="true"/>
      </property>
     </widget>
    </item>
-   <property name="rightMargin">
-    <number>6</number>
-   </property>
-   <property name="bottomMargin">
-    <number>6</number>
-   </property>
-   <property name="leftMargin">
-    <number>6</number>
-   </property>
-   <property name="topMargin">
-    <number>6</number>
-   </property>
   </layout>
-  <property name="geometry">
-   <rect>
-    <height>570</height>
-    <width>673</width>
-    <x>0</x>
-    <y>0</y>
-   </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <height>100</height>
-    <width>320</width>
-   </size>
-  </property>
-  <property name="windowTitle">
-   <string>Settings</string>
-  </property>
-  <property name="sizeGripEnabled">
-   <bool>true</bool>
-  </property>
-  <property name="modal">
-   <bool>false</bool>
-  </property>
-  <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
-  </property>
  </widget>
+ <resources/>
+ <connections/>
 </ui>
