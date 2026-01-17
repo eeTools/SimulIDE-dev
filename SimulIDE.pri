@@ -27,6 +27,7 @@ INCLUDEPATH += $$PWD/src \
     $$PWD/src/components/meters \
     $$PWD/src/components/micro \
     $$PWD/src/components/other \
+    $$PWD/src/components/other/plantmodel \
     $$PWD/src/components/other/truthtable \
     $$PWD/src/components/outputs \
     $$PWD/src/components/outputs/displays \

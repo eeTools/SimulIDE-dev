@@ -1,10 +1,11 @@
+
 /***************************************************************************
- *   Copyright (C) 2012 by Santiago González                               *
+ *   Copyright (C) 2026 by Stefan Persson                                  *
  *                                                                         *
  ***( see copyright.txt file at root folder )*******************************/
 
 #pragma once
-#include "pythonprocessor.h"
+#include "plant_model/pythonprocessor.h"
 #include "component.h"
 #include "e-element.h"
 
@@ -21,52 +22,59 @@ public:
     static Component* construct( QString type, QString id );
     static LibraryItem *libraryItem();
 
-
     virtual void stamp() override;
     virtual void updateStep() override;
 
-    int sizeInput() { return m_size_input; }
-    int sizeOutput() { return m_size_output; }
+    int getSizeInput() { return python_input_v.size(); }
+    int getSizeOutput() { return python_output_v.size();  }
 
-    QString pyFileName() { return m_file_name; }
-    QString pyClassName() { return m_class_name; };
-
-
-    QString runsetFile(){QString a; return a;};
+    QString getPyFileName() { return m_complete_file_name; }
+    QString getPyClassName() { return py_class_name; };
 
     void setSizeInput( int sizeInput );
     void setSizeOutput( int sizeOutput );
-
     void setPyFileName( QString pyFileName );
+    void setPyClassName( QString pyClassName ) {py_class_name = pyClassName;};
 
-    void setPyClassName( QString pyClassName ) {m_class_name = pyClassName;};
-
-    void createInputs( int c );
+    void createInputs( unsigned int c );
     void deleteInputs( int d );
     void createOutputs( int c );
     void deleteOutputs( int d );
 
     virtual void remove() override;
-
     virtual void paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w ) override;
+
+    void showErrorLater(const QString &title, const QString &msg);
+    void showCriticalErrorLater(const QString &title, const QString &msg);
 
 protected slots:
     virtual void slotProperties() override;
 
+
 private:
     void updtProperties();
 
-
-    int m_size_output, m_size_input, m_size_total;
-    QString m_folder_name = "";
-    QString m_file_name = "";
-
-    QString m_class_name = "Processor";
+    QString m_complete_file_name; // = "";
+    QString m_folder_name; // = "";
+    QString m_file_name; // = "";
+    QString m_file_extension; // = "";
+    QString py_class_name; // = "Processor";
 
     PythonProcessor python_processor;
 
-    std::vector<IoPin*> m_pin;
-    std::vector<eResistor*> m_resistor;
+    std::vector<IoPin*> pin_input, pin_output;
+    std::vector<double> python_input_v, python_output_v;
 
-    static eNode m_puEnode;
+    const int comp_x_pos_min = -20;
+    const int comp_x_pos_max = 60;
+    const int comp_x_left_pin_offset = 8;
+    const int comp_x_right_pin_offset = 12;
+    const int comp_pin_space = 8;
+    const int comp_y_pos_min = -10;
+    int maxWithOffset(int a, int b){
+        return std::max(6, std::max(a, b));
+    }
+    void updateGeometry();
+
+    bool hasLoadedPyFile = false;
 };
