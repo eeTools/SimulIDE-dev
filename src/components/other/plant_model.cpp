@@ -4,14 +4,35 @@
  ***( see copyright.txt file at root folder )*******************************/
 
 #include "plant_model.h"
+#include "circuitwidget.h"
 #include "itemlibrary.h"
-
-#include "intprop.h"
-#include "boolprop.h"
-#include <iostream>
+//#include "connector.h"
+#include "simulator.h"
+#include "circuit.h"
+//#include "pin.h"
+#include "resistor.h"
+//#include "e-resistor.h"
+#include "label.h"
+#include "propdialog.h"
+#include "mainwindow.h"
 #include "iopin.h"
+//#include "doubleprop.h"
+#include "intprop.h"
+//#include "boolprop.h"
+#include "pythonprocessor.h"
+#include <iostream>
+#include <QFileDialog>
+#include "pathval.h"
+
+#include <QFileInfo>
+
+
+#include "stringprop.h"
+#include "stringprop.h"
 
 #define tr(str) simulideTr("PlantModel",str)
+
+eNode PlantModel::m_puEnode("");
 
 Component* PlantModel::construct( QString type, QString id )
 { return new PlantModel( type, id ); }
@@ -19,88 +40,211 @@ Component* PlantModel::construct( QString type, QString id )
 LibraryItem* PlantModel::libraryItem()
 {
     return new LibraryItem(
-        tr("Plant Model" ),
+        tr("PlantModel"),
         "Other",
-        "plantmodel.png",
-        "Plant Model",
-        PlantModel::construct );
+        "PlantModel.png",
+        "PlantModel",
+        PlantModel::construct);
 }
 
 PlantModel::PlantModel( QString type, QString id )
-       : Gate( type, id, 2 )
-        //Component( type, id )
+    : Component( type, id )
+    , eElement( id )
 {
-    PlantModel::updatePath();
-    PlantModel::setNumInputs(1);
-    setNumOutputs(1);
-    m_minInputs = 1;
+    m_changed   = false;
+    m_size_input = 0;
+    m_size_output = 0;
+    m_size_total = 0;
+    setSizeInput(1);
+    setSizeOutput(1);
+    setPyFileName("");
+    setPyClassName("Processor");
 
-    addPropGroup( { tr("Main"), IoComponent::familyProps(), 0 } );
 
-    addPropGroup( { tr("Inputs"),
-        //IoComponent::inputProps()
-        QList<ComProperty*>({
-            new IntProp <PlantModel>("Num_Inputs", tr("Input Size"),""
-                                 , this, &PlantModel::numInps, &PlantModel::setNumInputs, propNoCopy,"uint" ),
+    setLabelPos(-24,-40, 0);
 
-        })
-    ,0 } ); // setNumOutputs
+    Simulator::self()->addToUpdateList( this );
 
-    addPropGroup( { tr("Outputs"),
-        // Gate::outputProps()
-       //+ IoComponent::outputType()
-       QList<ComProperty*>({
-           //new ComProperty("", tr("Invert Output by Right-Click on Pin"),"","",0),
-           new IntProp <PlantModel>("Num_Outputs", tr("Output Size"),""
-                                                  , this, &PlantModel::numOuts, &PlantModel::setNumOutputs, propNoCopy,"uint" ),
-       })
-    ,0 } );
+    addPropGroup( { tr("Main"), { // new StrProp <PlantModel>("File", tr("File"), ""
+                                    //                      , this, &PlantModel::setFile, &PlantModel::runsetFile, propNoCopy,"string" ),
+                                  new IntProp <PlantModel>("Size Input", tr("Size Input"), ""
+                                                           , this, &PlantModel::sizeInput, &PlantModel::setSizeInput, propNoCopy,"uint" ),
+                                  new IntProp <PlantModel>("Size Output", tr("Size Output"), ""
+                                                          , this, &PlantModel::sizeOutput, &PlantModel::setSizeOutput, propNoCopy,"uint" ),
+
+                                  new StrProp <PlantModel>("Py file", tr("py file"), ""
+                                                          , this, &PlantModel::pyFileName, &PlantModel::setPyFileName, propNoCopy,"file" ),
+                                  new StrProp <PlantModel>("Py file", tr("py file"), ""
+                                                          , this, &PlantModel::pyClassName, &PlantModel::setPyClassName, propNoCopy,"string" ),
+
+
+
+
+                              },0 } );
 
 }
-
-void PlantModel::setNumOutputs( int outs )
-{
-    if( outs < 1 ) return;
-    IoComponent::setNumOuts( outs, "");
-    updtInPins();
-    updtOutPins();
-    updatePath();
-    std::cout << "Num inputs: " << m_inpPin.size() << " Num outputs: " << m_outPin.size() << std::endl;
-
-}
-
-void PlantModel::setNumInputs( int inputs )
-{
-    if( inputs < m_minInputs ) return;
-    IoComponent::setNumInps( inputs, "");
-    updtInPins();
-    updtOutPins();
-    //m_outPin  [0]->setY( 0 );
-    numPinsInOutMax = std::max(m_inpPin.size(), m_outPin.size());
-    updatePath();
-    std::cout << "Num inputs: " << m_inpPin.size() << " Num outputs: " << m_outPin.size() << std::endl;
-}
-
-
 PlantModel::~PlantModel(){}
 
-void PlantModel::updatePath()
+void PlantModel::stamp()
 {
-    int endY = m_area.height()/2;
-    int endX = m_area.width()/2;
+    if( !Simulator::self()->isPaused() ) m_changed = true;
+}
 
-    m_path = QPainterPath();
-    m_path.moveTo(-endX,-endY);
-    m_path.lineTo(-endX,endY+8);
-    m_path.lineTo(endX,endY+8);
-    m_path.lineTo(endX,-endY);
-    m_path.lineTo(-endX,-endY);
-    std::cout << endX << "  " << endY << std::endl;
+void PlantModel::updateStep()
+{
+    if( !m_changed ) return;
+    float in_1  =m_pin[0]->getVoltage();
 
-    double volt = m_outPin[0]->getVoltage();
-    double volt2 = m_inpPin[0]->getVoltage();
+    std::cout << "Voltage on pin 0: " << in_1 << std::endl;
+    //m_pin[1]->setVoltage( 2*in_1 );
+
+    std::cout << Simulator::self()->circTime() << std::endl;  // Simulation time is in ps simulates (confirmed) and it simulates every 5 ms?
+
+    //PyGILState_STATE gstate = PyGILState_Ensure();
+    // // call Python
+    //PyGILState_Release(gstate);
+
+    std::pair<int, int> value_1 =python_processor.process(in_1);
+    m_pin[1]->setVoltage( value_1.first );
+    std::cout << "The value is " << value_1.first  << std::endl;
 
 
+    m_changed = false;
+    update();
+    stamp();
+}
+
+void PlantModel::createInputs( int c )
+{
+    int start = m_size_input;
+    m_size_input=m_size_input+c;
+    m_size_total=m_size_total+c;
+
+    for( int i=start; i<m_size_input; i++ )
+    {
+        int index = i;
+        QString reid = m_id;
+        reid.append(QString("-resistor"+QString::number(i)));
+         m_pin.insert(m_pin.begin() + index, new IoPin( 180, QPoint(-16,-32+8+i*8 ), reid+"-ePin"+QString::number(index), 0, this, pinMode_t::input));
+    }
+}
+
+void PlantModel::deleteInputs( int d )
+{
+    if( d > m_size_input ) d = m_size_input;
+    int start = m_size_input-d;
+
+    for( int i=start; i<m_size_input; ++i )
+    {
+        deletePin( m_pin[i] );
+        m_pin.erase(m_pin.begin() + i);
+    }
+    m_size_input = m_size_input-d;
+    m_size_total = m_size_total-d;
+}
+
+void PlantModel::createOutputs( int c )
+{
+    int start = m_size_total;
+    m_size_output=m_size_output+c;
+    m_size_total=m_size_total+c;
+
+    for( int i=start; i<m_size_total; i++ )
+    {
+        int index = i;
+        QString reid = m_id;
+        reid.append(QString("-resistor"+QString::number(i)));
+        m_pin.insert(m_pin.begin() + index, new IoPin( 0, QPoint( 16,-32+8+(i-m_size_input)*8), reid+"-ePin"+QString::number(index+1), 0, this, pinMode_t::source));
+    }
 
 
+}
+
+void PlantModel::deleteOutputs( int d )
+{
+    if( d > m_size_output ) d = m_size_output;
+    int start = m_size_total-d;
+
+    for( int i=start; i<m_size_total; ++i )
+    {
+        deletePin( m_pin[i] );
+        m_pin.erase(m_pin.begin() + i); 
+    }
+    m_size_output = m_size_output-d;
+    m_size_total = m_size_total-d;
+}
+
+void PlantModel::setSizeInput( int size )
+{
+    if( size == m_size_input || size < 1 ) return;
+    if( Simulator::self()->isRunning() )  CircuitWidget::self()->powerCircOff();
+
+    if     ( size < m_size_input ) deleteInputs( m_size_input-size );
+    else if( size > m_size_input ) createInputs( size-m_size_input );
+
+    m_area = QRect( -10, -30, 20, std::max(m_size_input, m_size_output)*8+4 );
+    Circuit::self()->update();
+}
+
+void PlantModel::setSizeOutput( int size )
+{
+    std::cout <<" size " << size << " m_size_total " << m_size_total << std::endl;
+    if( size == m_size_output || size < 1 ) return;
+    if( Simulator::self()->isRunning() )  CircuitWidget::self()->powerCircOff();
+
+    if     ( size < m_size_output ) deleteOutputs( m_size_output-size );
+    else if( size > m_size_output ) createOutputs( size-m_size_output );
+
+    m_area = QRect( -10, -30, 20, std::max(m_size_input, m_size_output)*8+4 );
+    Circuit::self()->update();
+}
+
+void PlantModel::setPyFileName( QString pyFileName )
+{
+    if(pyFileName!=""){
+    QFileInfo info(pyFileName);
+
+    QString folder    = info.absolutePath();           // or info.path()
+    QString fileName  = info.baseName();               // name without extension
+    QString extension = info.suffix();
+
+    std::cout << "The string is: " << pyFileName.toStdString() << std::endl;
+    m_folder_name = folder;
+    m_file_name = fileName;
+    //python_processor.setPyFileName(m_folder_name.toStdString(), m_file_name.toStdString());
+    python_processor.PythonProcessorLoadFile(folder.toUtf8().constData(),
+                                             fileName.toUtf8().constData(),
+                                             m_class_name.toUtf8().constData());
+    }
+}
+
+void PlantModel::updtProperties()
+{
+    if( !m_propDialog ) return;
+    m_propDialog->adjustWidgets();
+}
+
+void PlantModel::slotProperties()
+{
+    Component::slotProperties();
+    updtProperties();
+}
+
+void PlantModel::remove()
+{
+    //deleteInputs( m_size_input );
+    //deleteOutputs( m_size_output );
+
+    Component::remove();
+}
+
+void PlantModel::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w )
+{
+    Component::paint( p, o, w );
+
+    if( m_ansiSymbol ){
+        for( int i=0; i<m_size_total; i++ ) {} //Resistor::drawAnsi( p, 0,-32+8+i*8, 0.7, 0.6 );
+    }
+    else p->drawRoundedRect( QRect(-9,-28, 18, std::max(m_size_input, m_size_output)*8 ), 2, 2 );
+    Component::paintSelected( p );
 }
