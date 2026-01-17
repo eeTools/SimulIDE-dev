@@ -274,6 +274,7 @@
         <file alias="blanc.png">../src/icons/components/blanc.png</file>
         <file alias="font2.png">../src/icons/font/font2.png</file>
         
+        <file alias="andgate.png">../src/icons/components/andgate.png</file>
     </qresource>
 </RCC>
 
