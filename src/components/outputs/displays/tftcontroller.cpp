@@ -18,6 +18,7 @@ TftController::TftController( QString type, QString id )
 
     m_maxX = 0;
     m_maxY = 0;
+    m_scale = 1;
 
     Simulator::self()->addToUpdateList( this );
 }

@@ -72,7 +72,7 @@ OpAmp::OpAmp( QString type, QString id )
     setPowerPins( false );
 
     m_gain = 1000;
-    m_outImp = cero_doub;
+    m_outImp = low_imp;
     m_voltPosDef = 5;
     m_voltNegDef = 0;
 
@@ -180,7 +180,7 @@ void OpAmp::voltChanged() // Called when any pin node change volt
 
 void OpAmp::setOutImp( double imp )
 {
-    if( imp < cero_doub ) imp = cero_doub;
+    if( imp < low_imp ) imp = low_imp;
     m_outImp = imp;
     m_changed = true;
     if( !Simulator::self()->isRunning() ) updateStep();

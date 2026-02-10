@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
  *   Copyright (C) 2012 by Santiago González                               *
  *                                                                         *
  ***( see copyright.txt file at root folder )*******************************/
@@ -33,6 +33,14 @@ double getMultiplier( QString mult )
 QString multToValStr( double value, QString mult )
 {
     return QString::number( value*getMultiplier( mult ) );
+}
+
+QString toHex32( uint32_t d )
+{
+    QString vHex = QString::number( d, 16 );
+    while( vHex.size() < 8 ) vHex = "0"+vHex;
+    vHex.prepend("0x");
+    return vHex.toUpper();
 }
 
 QString val2hex( int d )
@@ -178,7 +186,7 @@ QString fileToString( QString fileName, QString caller )
         return "";
     }
     QTextStream in(&file);
-    in.setEncoding( QStringConverter::Utf8 );
+    in.setCodec("UTF-8");
     QString text = in.readAll();
     file.close();
 

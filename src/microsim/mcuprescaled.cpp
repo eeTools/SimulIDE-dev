@@ -14,6 +14,7 @@ McuPrescaled::~McuPrescaled( ){}
 
 void McuPrescaled::setPrescIndex( uint16_t p )
 {
+    if( p >= m_prescList.size() ) p = 0;
     m_prIndex = p;
     m_prescaler = m_prescList.at( m_prIndex );
 }

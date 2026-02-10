@@ -10,6 +10,7 @@
 
 #include "mainwindow.h"
 #include "circuitwidget.h"
+#include "editorwindow.h"
 #include "batchtest.h"
 
 void myMessageOutput( QtMsgType type, const QMessageLogContext &context, const QString &msg )
@@ -82,30 +83,45 @@ int main( int argc, char *argv[] )
     window.setLoc( locale );
     window.show();
 
-    if( argc > 1 )
+    for( int i=1; i<argc; ++i )
     {
-        QString arg = QString::fromStdString( argv[1] );
+        QString arg = QString::fromStdString( argv[i] );
 
-        if( arg == "-test" )
+        if( arg == "-nogui")
         {
-            if( argc > 2 ){
-                arg = QString::fromStdString( argv[2] );
-                QTimer::singleShot( 300, [arg](){ BatchTest::doBatchTest( arg ); } );
-            }
+            window.hideGui();
         }
-        else if( arg.endsWith(".sim2") || arg.endsWith(".sim1"))
+        else if( arg == "-test" )
         {
-            if( argc > 2 ){
-                QString arg2 = QString::fromStdString( argv[2] );
-                if( arg2 == "-nogui") window.hideGui();
+            i++;
+            if( i >= argc ){
+                qDebug() <<"ERROR: missing argument for"<< arg;
+                break;
             }
+            arg = QString::fromStdString( argv[i] );
+            QTimer::singleShot( 500, [arg](){ BatchTest::doBatchTest( arg ); } );
+            break;
+        }
+        else{
             QString file = "file://";
             if( arg.startsWith( file ) ) arg.replace( file, "" ).replace("\r\n", "" ).replace("%20", " ");
-        #ifdef _WIN32
+#ifdef _WIN32
             if( arg.startsWith( "/" )) arg.remove( 0, 1 );
-        #endif
-            QTimer::singleShot( 300, CircuitWidget::self()
-                              , [arg]()->void{ CircuitWidget::self()->loadCirc( arg ); } );
+#endif
+            if( !QFile::exists( arg ) ){
+                qDebug() <<"ERROR: unrecognized argument"<< arg;
+                break;
+            }
+            if( arg.endsWith(".sim2") || arg.endsWith(".sim1"))
+            {
+                QTimer::singleShot( 500, CircuitWidget::self()
+                                  , [arg]()->void{ CircuitWidget::self()->loadCirc( arg ); } );
+            }
+            else{
+                QTimer::singleShot( 500, CircuitWidget::self()
+                                   , [arg]()->void{ EditorWindow::self()->loadFile( arg ); } );
+            }
+            break;
         }
     }
 

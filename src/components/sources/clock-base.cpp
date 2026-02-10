@@ -38,7 +38,7 @@ bool ClockBase::propNotFound( QString prop, QString val )
         setRunning( val == "true" );   // Old: TODELETE
         return true;
     }
-    return false;
+    return FixedVolt::propNotFound( prop, val );
 }
 
 void ClockBase::stamp()

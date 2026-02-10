@@ -80,9 +80,9 @@ void PicMrCore::MOVWF( uint8_t f )
     SET_RAM( f, *m_Wreg);
 }
 
-void PicMrCore::CLRF( uint8_t f )
+void PicMrCore::CLR( uint8_t f, uint8_t d )
 {
-    SET_RAM( f, 0 );
+    setValue( 0, f, d );
     write_S_Bit( Z, true );
 }
 
@@ -303,7 +303,7 @@ void PicMrCore::decode( uint16_t instr )
         if( (instr & 0x3800) == 0 ) {
             switch( instr & 0x0700) {
                 case 0x0000: MOVWF( f );    return; // MOVWF f   00 0000 1fff ffff
-                case 0x0100: CLRF( f );     return; // CLR   f   00 0001 1fff ffff
+                case 0x0100: CLR( f, d );   return; // CLR   f   00 0001 dfff ffff
                 case 0x0200: SUBWF( f, d ); return; // SUBWF f,d 00 0010 dfff ffff
                 case 0x0300: DECF( f, d );  return; // DECF  f,d 00 0011 dfff ffff
                 case 0x0400: IORWF( f, d ); return; // IORWF f,d 00 0100 dfff ffff

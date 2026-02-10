@@ -10,6 +10,7 @@
 
 #include "doubleprop.h"
 #include "stringprop.h"
+#include "boolprop.h"
 #include "intprop.h"
 
 #define tr(str) simulideTr("Ssd1306",str)
@@ -32,6 +33,8 @@ Ssd1306::Ssd1306( QString type, QString id )
 {
     m_address = m_cCode = 0b00111100; // 0x3A - 60
 
+    m_rotate = true;
+
     setColorStr("White");
 
     setSize( 128,64 );
@@ -46,6 +49,9 @@ Ssd1306::Ssd1306( QString type, QString id )
 
         new IntProp <Ssd1306>("Height", tr("Height"), "_px"
                              ,this,&Ssd1306::height, &Ssd1306::setHeight, propNoCopy,"uint" ),
+
+        new BoolProp<Ssd1306>("Rotate", tr("Rotate"), ""
+                             , this, &Ssd1306::imgRotated, &Ssd1306::setImgRotated ),
     }, 0} );
 
     addPropGroup( { tr("I2C"), {
@@ -89,13 +95,16 @@ void Ssd1306::proccessCommand()
         case 0x20: m_readBytes = 1;    break; // Memory Addressing Mode
         case 0x21: m_readBytes = 2;    break; // Column Address (Start-End)
         case 0x22: m_readBytes = 2;    break; // Page Address (Start-End)
+        case 0x23: m_readBytes = 1;    break; // Fade Out / Blinking Mode
         case 0x26:                            // Continuous Horizontal Right Scroll Setup
         case 0x27: m_readBytes = 6;    break; // Continuous Horizontal Left Scroll Setup
         case 0x29:                            // Continuous Vertical and Horizontal Right Scroll Setup
         case 0x2A: m_readBytes = 5;    break; // Continuous Vertical and Horizontal Left Scroll Setup
+        case 0x2C:                            // One Column Horizontal Right Scroll Setup
+        case 0x2D: m_readBytes = 6;    break; // One Column Horizontal Left Scroll Setup
         case 0x2E: m_scroll = false;   break; // Deactivate scroll
         case 0x2F: m_scroll = true;           // Activate scroll
-            m_scrollCount = 0;   //qDebug() << "Activate Scroll" << m_scrollCount<<"\n";
+            m_scrollCount = 0;
             break;
         case 0x81: m_readBytes = 1;    break; // Contrast Control
         case 0x8D: m_readBytes = 1;    break; // Charge Pump
@@ -113,6 +122,7 @@ void Ssd1306::proccessCommand()
         case 0xC8: m_scanInv = true;   break; // COM Output Scan Inverted ON
         case 0xD3: m_readBytes = 1;    break; // Display Offset
         case 0xD5: m_readBytes = 1;    break; // Display Clock Divide Ratio/Oscillator Frequency
+        case 0xD6: m_readBytes = 1;    break; // Zoom in Mode
         case 0xD9: m_readBytes = 1;    break; // Precharge
         case 0xDA: m_readBytes = 1;    break; // COM Pins Hardware Configuration
         case 0xDB: m_readBytes = 1;    break; // VCOM DETECT
@@ -128,44 +138,25 @@ void Ssd1306::parameter()
 
     switch( m_lastCommand )
     {
-        case 0x20: m_addrMode = m_rxReg & 3; break; // Memory Addressing Mode
-        case 0x21:{                                 // Set Column Address (Start-End)
+        case 0x20: m_addrMode = m_rxReg & 3; break;      // Memory Addressing Mode
+        case 0x21:{                                      // Set Column Address (Start-End)
             if( m_addrMode == PAGE_ADDR_MODE ) return;
-            if( m_readIndex == 1 ) m_startX = m_rxReg & 0x7F; // 0b01111111
+            if( m_readIndex == 1 ) m_addrX=m_startX = m_rxReg & 0x7F; // 0b01111111
             else                   m_endX   = m_rxReg & 0x7F; // 0b01111111
         }break;
-        case 0x22:{                                 // 22 34 Set Page Address (Start-End)
+        case 0x22:{                                      // Set Page Address (Start-End)
             if( m_addrMode == PAGE_ADDR_MODE ) return;
-            if( m_readIndex == 1 ) m_startY = m_rxReg & m_rowMask; // 0b00000111
+            if( m_readIndex == 1 ) m_addrY=m_startY = m_rxReg & m_rowMask; // 0b00000111
             else                   m_endY   = m_rxReg & m_rowMask; // 0b00000111
         }break;
-        case 0x26:                       // Horizontal Right Scroll Setup
-        case 0x27:                       // Horizontal Left Scroll Setup
-        case 0x29:                       // Vertical and Horizontal Right Scroll Setup
-        case 0x2A:{                      // Vertical and Horizontal Left Scroll Setup
-            m_scrollV   = m_lastCommand > 0x27;
-            m_scrollDir = m_lastCommand & 0b11;
-
-            switch( m_readIndex ) {
-            case 1:                                       break;
-            case 2: m_scrollStartY = m_rxReg & m_rowMask; break; // Define start page address
-            case 3:{                                             // Scroll step time in terms of frame frequency
-                switch( m_rxReg & m_rowMask ){
-                case 0: m_scrollStep = 5;
-                case 1: m_scrollStep = 64;
-                case 2: m_scrollStep = 128;
-                case 3: m_scrollStep = 256;
-                case 4: m_scrollStep = 3;
-                case 5: m_scrollStep = 4;
-                case 6: m_scrollStep = 25;
-                case 7: m_scrollStep = 2;
-                }
-            }break;
-            case 4: m_scrollEndY    = m_rxReg & m_rowMask; break; // Define end page address
-            case 5: m_vScrollOffset = m_rxReg & m_lineMask; break; // Vertical scrolling offset
-            case 6: break;
-            }
-        }break;
+        case 0x26:                                       // Horizontal Right Scroll Setup
+        case 0x27:                                       // Horizontal Left Scroll Setup
+        case 0x29:                                       // Vertical and Horizontal Right Scroll Setup
+        case 0x2A: configScroll( m_lastCommand ); break; // Vertical and Horizontal Left Scroll Setup
+        case 0x2C:                                       // One Column Horizontal Right Scroll Setup
+        case 0x2D: m_scrollSingle = true;                // One Column Horizontal Left Scroll Setup
+            configScroll( m_lastCommand-6 );             // Same than 0x26/27
+            break;
         case  0xA3:{                                     // Vertical Scroll Area
             switch( m_readIndex ) {
             case 1: m_scrollTop  = m_rxReg & m_lineMask; break;
@@ -178,5 +169,31 @@ void Ssd1306::parameter()
             if( muxRatio > 14 ) m_mr = muxRatio;
         }break;
         case 0xD3: m_dispOffset = m_rxReg & m_lineMask; break; // Display Offset Set vertical shift by COM from 0d~63d
+    }
+}
+
+void Ssd1306::configScroll( uint8_t command )
+{
+    m_scrollV   = command > 0x27;
+    m_scrollDir = command & 0b11;
+
+    switch( m_readIndex ) {
+    case 1:                                       break;
+    case 2: m_scrollStartY = m_rxReg & m_rowMask; break; // Define start page address
+    case 3:{                                             // Scroll step time in terms of frame frequency
+        switch( m_rxReg & m_rowMask ){
+        case 0: m_scrollStep = 5;
+        case 1: m_scrollStep = 64;
+        case 2: m_scrollStep = 128;
+        case 3: m_scrollStep = 256;
+        case 4: m_scrollStep = 3;
+        case 5: m_scrollStep = 4;
+        case 6: m_scrollStep = 25;
+        case 7: m_scrollStep = 2;
+        }
+    }break;
+    case 4: m_scrollEndY    = m_rxReg & m_rowMask; break; // Define end page address
+    case 5: m_vScrollOffset = m_rxReg & m_lineMask; break; // Vertical scrolling offset
+    case 6: break;
     }
 }

@@ -22,6 +22,8 @@ OledController::OledController( QString type, QString id )
 {
     m_graphical = true;
 
+    m_rotate = false;
+
     m_pin.resize( 2 );
     m_pin[0] = m_clkPin = new IoPin( 270, QPoint(-48, 48), id+"-PinSck", 0, this, openCo );
     m_clkPin->setLabelText("SCL");
@@ -56,12 +58,16 @@ void OledController::stamp()
 void OledController::updateStep()
 {
     update();
-    if( !m_scroll ) return;
+    if( !m_scrollSingle && !m_scroll ) return;
+    if( Simulator::self()->isPaused() ) return;
 
-    m_scrollCount++;
-    if( m_scrollCount < m_scrollStep ) return;
-
-    m_scrollCount = 0;
+    if( m_scrollSingle ){
+        m_scrollSingle = false;
+    }else{
+        m_scrollCount++;
+        if( m_scrollCount < m_scrollStep ) return;
+        m_scrollCount = 0;
+    }
 
     int maxX = m_width-1;
     bool scrollRight = false;
@@ -96,7 +102,12 @@ void OledController::updateStep()
         }
         if( ramCol == 0 ) continue;
 
-        ramCol = (ramCol << m_vScrollOffset) | (ramCol >> (64-m_vScrollOffset));
+        uint8_t nBits = (m_scrollEndY-m_scrollStartY+1)*8;
+        uint64_t mask = (1ULL << m_vScrollOffset) - 1;
+
+        uint64_t upper = (ramCol & mask) << (nBits-m_vScrollOffset);
+        uint64_t lower = ramCol >> m_vScrollOffset ;
+        ramCol = upper | lower;
 
         for( int row=m_scrollStartY; row<=m_scrollEndY; row++ )
         {
@@ -123,6 +134,7 @@ void OledController::reset()
     m_scroll   = false;
     m_scrollV  = false;
     m_scrollDir = false;
+    m_scrollSingle = false;
     m_scrollStartY = 0;
     m_scrollEndY   = 7;
     m_scrollStep   = 5;
@@ -151,14 +163,19 @@ void OledController::readByte()
 
     if( m_start )  // Read Control byte
     {
-        if( (m_rxReg & 0b00111111) != 0 ){ qDebug() << "OledController::readByte Control Byte Error"; return; }
-
-        m_start = m_rxReg & 0b10000000;
-        m_data  = m_rxReg & 0b01111111;
+        m_start = 0;
+        if( (m_rxReg & 0b00111111) != 0 ){
+            qDebug() << "OledController::readByte Control Byte Error";
+            //return;
+        }
+        m_Co    = m_rxReg & 0b10000000;
+        m_data  = m_rxReg & 0b01000000;
     }
     else if( m_data )      writeData();
     else if( m_readBytes ) parameter();
     else                   proccessCommand();
+
+    if( !m_readBytes ) m_start = m_Co; // If Co bit then next byte should be Control Byte
 }
 
 void OledController::writeData()
@@ -187,8 +204,8 @@ void OledController::writeData()
 
 void OledController::clearDDRAM()
 {
-    for( int col=0; col<128; col++ )
-        for( int row=0; row<16; row++ )
+    for( int col=0; col<m_width; col++ )
+        for( int row=0; row<m_rows; row++ )
             m_DDRAM[col][row] = 0;
 }
 
@@ -236,8 +253,8 @@ void OledController::setSize( int w, int h )
     m_maxHeight = h;
     setWidth( w );
     setHeight( h );
-    updateSize();
-    m_DDRAM.resize( m_width, std::vector<uint8_t>(m_height, 0) );
+
+    m_DDRAM.resize( m_width, std::vector<uint8_t>(m_rows, 0) );
 }
 
 void OledController::updateSize()
@@ -267,11 +284,8 @@ void OledController::paint( QPainter* p, const QStyleOptionGraphicsItem*, QWidge
         painter.begin( &img );
         painter.fillRect( 0, 0, m_width*3, m_height*3, Qt::black );
 
-        bool scanInv = m_remap ? !m_scanInv : m_scanInv;
-
         if( m_dispOn  ){
             for( int col=0; col<m_width; col++ ){
-                int dx = col*3;
                 for( int row=0; row<m_rows; row++ )
                 {
                     int ramY = row*8;
@@ -306,8 +320,13 @@ void OledController::paint( QPainter* p, const QStyleOptionGraphicsItem*, QWidge
                         else          pixel = byte1 & 1<<(bit-startBit);
 
                         if( pixel ){
-                            if( scanInv ) dy = m_height-1-dy;
-                            painter.fillRect( dx, dy*3, 3, 3, m_foreground );
+                            int screenY = m_scanInv ? m_height-1-dy : dy;
+                            int screenX = m_remap   ? m_width-1-col : col;
+                            if( m_rotate ){
+                                screenY = m_height-1-screenY;
+                                screenX = m_width-1-screenX;
+                            }
+                            painter.fillRect( screenX*3, screenY*3, 3, 3, m_foreground );
                         }
                         dy++;
                         if( dy >= m_height ) dy -= m_height;

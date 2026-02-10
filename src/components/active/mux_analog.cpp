@@ -74,7 +74,7 @@ void MuxAnalog::stamp()
     for( int i=0; i<m_channels; ++i )
     {
         m_ePin[i]->setEnode( enode );
-        double admit = (i == 0) ? m_admit : cero_doub;
+        double admit = (i == 0) ? m_admit : low_imp;
         m_resistor[i]->setAdmit( admit );
     }
 
@@ -110,15 +110,15 @@ void MuxAnalog::runEvent()
 {
     if( !m_enabled )
     {
-        for( int i=0; i<m_channels; ++i ) m_resistor[i]->setAdmit( cero_doub );
+        for( int i=0; i<m_channels; ++i ) m_resistor[i]->setAdmit( low_imp );
         return;
     }
 
     for( int i=0; i<m_channels; ++i )
     {
         if( i == m_address )
-        {    if( m_resistor[i]->admit() == cero_doub ) m_resistor[i]->setAdmit( m_admit ); }
-        else if( m_resistor[i]->admit() != cero_doub ) m_resistor[i]->setAdmit( cero_doub );
+        {    if( m_resistor[i]->admit() == low_imp ) m_resistor[i]->setAdmit( m_admit ); }
+        else if( m_resistor[i]->admit() != low_imp ) m_resistor[i]->setAdmit( low_imp );
 }   }
 
 void MuxAnalog::setImpedance( double i )
@@ -197,7 +197,7 @@ void MuxAnalog::createResistors( int c )
         m_chanPin[i]->setLabelColor( QColor( 0, 0, 0 ) );
         m_resistor[i]->setEpin( 1, m_chanPin[i] );
 
-        m_resistor[i]->setAdmit( cero_doub );
+        m_resistor[i]->setAdmit( low_imp );
 }   }
 
 void MuxAnalog::deleteResistors( int d )
@@ -230,7 +230,7 @@ void MuxAnalog::remove()
 void MuxAnalog::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w )
 {
     Component::paint( p, o, w );
-    p->drawRoundedRect( m_area, 4, 4 );
+    p->drawRect( m_area );
 
     Component::paintSelected( p );
 }

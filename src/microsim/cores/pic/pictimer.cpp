@@ -106,7 +106,7 @@ void PicTimer0::configureA( uint8_t NewOPTION )
 
     if( getRegBitsBool( NewOPTION, m_PSA ) )
          m_prescaler = 1;                    // Prescaler asigned to Watchdog
-    else m_prescaler = m_prescList.at( ps ); // Prescaler asigned to TIMER0
+    else setPrescIndex( ps );                // Prescaler asigned to TIMER0
 
     m_psPerTick = m_prescaler*m_mcu->psInst();
 
@@ -142,8 +142,9 @@ void PicTimer2::configureA( uint8_t NewT2CON )
 {
     uint8_t presc = getRegBitsVal( NewT2CON, m_T2CKPS );
     uint8_t postc = getRegBitsVal( NewT2CON, m_TOUTPS );
-    m_prescaler = m_prescList.at( presc ) * (postc+1);
-    m_psPerTick     = m_prescaler*m_mcu->psInst();
+
+    setPrescIndex( presc );
+    m_psPerTick = m_prescaler* (postc+1)*m_mcu->psInst();
 
     bool en = getRegBitsBool( NewT2CON, m_TMR2ON );
     if( en != m_running ) enable( en );
@@ -180,7 +181,7 @@ void PicTimer16bit::configureA( uint8_t NewT1CON )
 
     uint8_t ps = getRegBitsVal( NewT1CON, m_T1CKPS );
 
-    m_prescaler = m_prescList.at( ps );
+    setPrescIndex( ps );
 
     m_mode  = getRegBitsVal(  NewT1CON, m_TMR1CS );
     m_t1Osc = getRegBitsBool( NewT1CON, m_T1OSCEN ) && m_mode; // T1 osc depends on TMR1CS

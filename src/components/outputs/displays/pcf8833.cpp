@@ -31,7 +31,7 @@ PCF8833::PCF8833( QString type, QString id )
     m_maxWidth  = 132;
     m_maxHeight = 132;
     setDisplaySize( m_maxWidth, m_maxHeight );
-    setScale( 1 );
+
     m_area = QRectF(-m_width/2-6,-m_height/2-6, m_width+12, m_height+12+8);
 
     m_pin.resize( 4 );
@@ -49,15 +49,13 @@ PCF8833::PCF8833( QString type, QString id )
 }
 PCF8833::~PCF8833(){}
 
-void PCF8833::stamp()
+void PCF8833::initialize()
 {
+    clearDDRAM();
     displayReset();
-    //clearDDRAM();
-
-    m_pinCK.changeCallBack( this );
-    m_pinRS.changeCallBack( this );
-    m_pinCS.changeCallBack( this );
+    updateStep();
 }
+
 
 void PCF8833::displayReset()
 {
@@ -68,6 +66,7 @@ void PCF8833::displayReset()
 
 void PCF8833::endTransaction()
 {
+    Spi3Pins::endTransaction();
     m_rxReg = m_buffer;
     if( m_isData ) dataReceived();
     else           commandReceived();

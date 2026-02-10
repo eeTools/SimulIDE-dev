@@ -88,6 +88,8 @@ void I2CRam::initialize()
 {
     TwiModule::initialize();
 
+    if( !m_persistent ) m_ram.fill( 0 );
+
     m_addrPtr = 0;
     m_phase = 3;
 }

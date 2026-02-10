@@ -76,7 +76,7 @@ void PicWdt::sleep( int mode )
 //-- PIC Wdt Type 00 -----------------------------------
 
 PicWdt00::PicWdt00( eMcu* mcu, QString name )
-    : PicWdt( mcu, name )
+        : PicWdt( mcu, name )
 {
 }
 PicWdt00::~PicWdt00(){}
@@ -91,11 +91,14 @@ void PicWdt00::configureA( uint8_t newOPTION ) // OPTION Written
 {
     if( !m_wdtFuse ) return;
 
-    if( getRegBitsVal( newOPTION, m_PSA ) )
-        m_prescaler = getRegBitsVal( newOPTION, m_PS );  // Prescaler asigned to Watchdog
-    else m_prescaler = 0;                                // Prescaler asigned to TIMER0
+    uint8_t prIndex = m_prIndex;
 
-    m_ovfPeriod = m_clkPeriod*m_prescList[ m_prescaler ];
+    if( getRegBitsVal( newOPTION, m_PSA ) )
+        prIndex = getRegBitsVal( newOPTION, m_PS );  // Prescaler asigned to Watchdog
+    else prIndex = 0;                                // Prescaler asigned to TIMER0
+
+    setPrescIndex( prIndex );
+    m_ovfPeriod = m_clkPeriod*m_prescaler;
 }
 
 //------------------------------------------------------
@@ -116,7 +119,6 @@ void PicWdt01::setup()
 void PicWdt01::configureA( uint8_t newWDTCON ) // WDTCON Written
 {
     m_wdtSoft   = getRegBitsBool( newWDTCON, m_SWDTEN );
-    m_prescaler = getRegBitsVal(  newWDTCON, m_WDTPS );
-
-    m_ovfPeriod = m_clkPeriod*m_prescList[ m_prescaler ];
+    setPrescIndex( getRegBitsVal( newWDTCON, m_WDTPS ) );
+    m_ovfPeriod = m_clkPeriod*m_prescaler;
 }

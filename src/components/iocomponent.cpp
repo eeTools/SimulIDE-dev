@@ -29,7 +29,7 @@ IoComponent::IoComponent( QString type, QString id)
     m_invInputs  = false;
     m_invOutputs = false;
 
-    m_openImp = 100/eElement::cero_doub;
+    m_openImp = 1e9;
 
     addPropGroup( { "IoHidden", {
         new StrProp<IoComponent>("invertPins","",""

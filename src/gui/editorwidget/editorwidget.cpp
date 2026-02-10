@@ -395,7 +395,7 @@ bool EditorWidget::saveFile( QString fileName )
     QApplication::setOverrideCursor( Qt::WaitCursor );
 
     QTextStream out( &file );
-    out.setEncoding( QStringConverter::Utf8 );
+    out.setCodec("UTF-8");
 
     CodeEditor* ce = getCodeEditor();
     out << ce->toPlainText();

@@ -9,6 +9,7 @@
 
 #include "serialterm.h"
 #include "serialmon.h"
+#include "terminal.h"
 #include "itemlibrary.h"
 #include "simulator.h"
 #include "circuit.h"
@@ -73,11 +74,16 @@ SerialTerm::SerialTerm( QString type, QString id )
     font.setFamily( MainWindow::self()->defaultFontName() );
     font.setPixelSize(12);
     m_button->setFont( font );
-    QObject::connect( m_button, &CustomButton::clicked  , [=](){ onbuttonclicked(); });
+    QObject::connect( m_button, &CustomButton::clicked, [=](){ onbuttonclicked(); });
 
     m_proxy = Circuit::self()->addWidget( m_button );
     m_proxy->setParentItem( this );
     m_proxy->setPos( QPoint( 8,-10) );
+
+    m_terminal = new Terminal( MainWindow::self() );
+    m_terminal->setWindowTitle( id );
+    QObject::connect( m_terminal, &Terminal::sendBytes, [=](QByteArray d){ sendByteArray( d ); } );
+    QObject::connect( m_terminal, &Terminal::closed   , [=](){ TerminalClosed(); } );
 
     setBaudRate( 9600 );
 
@@ -103,7 +109,10 @@ SerialTerm::SerialTerm( QString type, QString id )
                                 , this, &SerialTerm::serialMon, &SerialTerm::setSerialMon ),
     }, groupHidden} );
 }
-SerialTerm::~SerialTerm(){}
+SerialTerm::~SerialTerm()
+{
+    m_terminal->close();
+}
 
 void SerialTerm::stamp()
 {
@@ -133,6 +142,11 @@ void SerialTerm::runEvent()
     m_uartData = m_uartData.right( m_uartData.size()-1 );
 }
 
+void SerialTerm::sendByteArray( QByteArray data )
+{
+    m_uartData += data;
+}
+
 void SerialTerm::sendByte( uint8_t data )
 {
     m_uartData += data;
@@ -142,6 +156,7 @@ void SerialTerm::byteReceived( uint8_t byte )
 {
     m_receiver->getData();
     if( m_monitor ) m_monitor->printIn( byte );
+    m_terminal->received( byte );
     m_receiving = true;
 }
 
@@ -159,31 +174,43 @@ void SerialTerm::frameSent( uint8_t data )
 
 void SerialTerm::onbuttonclicked()
 {
-    if( m_button->isChecked() ) slotOpenTerm();
-    else                        m_monitor->close();
+    if( m_button->isChecked() ){
+        m_terminal->show(); //slotOpenTerm();
+        m_button->setText( tr("Close") );
+    }else{
+        m_terminal->hide(); //m_monitor->close();
+        m_button->setText( tr("Open") );
+    }
 }
 
 void SerialTerm::setIdLabel( QString id )
 {
     Component::setIdLabel( id );
     if( m_monitor ) m_monitor->setWindowTitle( id );
+    m_terminal->setWindowTitle( id );
 }
 
 void SerialTerm::slotOpenTerm()
 {
-    openMonitor( idLabel(), 0, /*send=*/true );
-    m_monitor->activateSend();
+    UsartModule::openMonitor( idLabel(), 0, /*send=*/false );
+    //m_monitor->activateSend();
 }
 
 void SerialTerm::setSerialMon( bool s )
 {
-    if( s ) slotOpenTerm();
+    if( s ) m_terminal->show(); //slotOpenTerm();
 }
 
 void SerialTerm::monitorClosed()
 {
     UsartModule::monitorClosed();
+    //m_button->setChecked( false );
+}
+
+void SerialTerm::TerminalClosed()
+{
     m_button->setChecked( false );
+    m_button->setText( tr("Open") );
 }
 
 void SerialTerm::setflip()

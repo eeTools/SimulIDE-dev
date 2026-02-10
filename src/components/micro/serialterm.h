@@ -11,6 +11,7 @@
 
 class LibraryItem;
 class CustomButton;
+class Terminal;
 class QGraphicsProxyWidget;
 
 class SerialTerm : public Component, public UsartModule, public eElement
@@ -28,6 +29,7 @@ class SerialTerm : public Component, public UsartModule, public eElement
 
         void setSerialMon( bool s );
 
+        void sendByteArray( QByteArray data );
         virtual void sendByte( uint8_t data ) override;
 
         virtual void setIdLabel( QString id ) override;
@@ -36,6 +38,7 @@ class SerialTerm : public Component, public UsartModule, public eElement
         virtual void frameSent( uint8_t data ) override;
 
         virtual void monitorClosed() override;
+        void TerminalClosed();
 
         virtual void paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w ) override;
 
@@ -49,6 +52,8 @@ class SerialTerm : public Component, public UsartModule, public eElement
     private:
         bool m_receiving;
         bool m_sending;
+
+        Terminal* m_terminal;
 
         CustomButton* m_button;
         QGraphicsProxyWidget* m_proxy;

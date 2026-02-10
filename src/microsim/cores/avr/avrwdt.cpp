@@ -38,8 +38,9 @@ void AvrWdt::initialize()
     m_ovfReset = false;
     m_disabled = true;
     m_allowChanges = false;
-    m_prescaler = 0;
-    m_ovfPeriod = m_clkPeriod/m_prescList[ m_prescaler ];
+    m_prescaler = 1;
+    setPrescIndex( 0 );
+    m_ovfPeriod = m_clkPeriod/m_prescaler;
 }
 
 void AvrWdt::runEvent()
@@ -84,7 +85,7 @@ void AvrWdt::configureA( uint8_t newWDTCSR ) // WDTCSR Written
     else if( m_allowChanges && !WDCE ) // WDP & WDE changes allowed
     {
         updtPrescaler( newWDTCSR );
-        m_ovfPeriod  = m_clkPeriod/m_prescList[ m_prescaler ];
+        m_ovfPeriod  = m_clkPeriod/m_prescaler;
         m_ovfReset   = WDE;
         wdtEnable();
         runEvent();
@@ -154,8 +155,10 @@ void AvrWdt00::configureA( uint8_t newWDTCSR ) // WDTCSR Written
 
 void AvrWdt00::updtPrescaler( uint8_t newWDTCSR )
 {
-    m_prescaler  = getRegBitsVal( newWDTCSR, m_WDP02 );
-    m_prescaler |= getRegBitsVal( newWDTCSR, m_WDP3 ) << 3;
+    uint8_t prIndex = getRegBitsVal( newWDTCSR, m_WDP02 );
+    prIndex |= getRegBitsVal( newWDTCSR, m_WDP3 ) << 3;
+
+    setPrescIndex( prIndex );
 }
 
 //------------------------------------------------------
@@ -182,5 +185,5 @@ void AvrWdt01::configureA( uint8_t newWDTCSR ) // WDTCSR Written
 
 void AvrWdt01::updtPrescaler( uint8_t newWDTCSR )
 {
-    m_prescaler  = getRegBitsVal( newWDTCSR, m_WDP02 );
+    setPrescIndex( getRegBitsVal( newWDTCSR, m_WDP02 ) );
 }

@@ -45,6 +45,7 @@ class Pin;
 double getMultiplier( QString mult );
 QString multToValStr( double value, QString mult );
 
+QString toHex32( uint32_t d );
 QString val2hex( int d );
 QString toDigit( int d );
 QString decToBase( int value, int base, int digits );

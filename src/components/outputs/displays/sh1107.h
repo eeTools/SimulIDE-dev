@@ -18,8 +18,13 @@ class Sh1107 : public OledController
  static Component* construct( QString type, QString id );
  static LibraryItem* libraryItem();
 
+        bool xoffset() { return m_xOffset; }
+        void setXoffset( bool o ) { m_xOffset = o; }
 
     protected:
         void proccessCommand() override;
         void parameter() override;
+        void writeData() override;
+
+        bool m_xOffset;
 };

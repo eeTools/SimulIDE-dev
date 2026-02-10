@@ -310,6 +310,7 @@ void TwiModule::ACK()
 void TwiModule::masterStart()
 {
     m_i2cState = I2C_START;
+    Simulator::self()->cancelEvents( this );
     runEvent();               // Start Clock
 }
 

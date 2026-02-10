@@ -6,8 +6,8 @@
 #include <QCoreApplication>
 #include <QPainter>
 #include <QtMath>
-#include <QMediaDevices>
-#include <QAudioSink>
+//#include <QMediaDevices>
+//#include <QAudioSink>
 
 #include "audio_out.h"
 #include "connector.h"
@@ -63,10 +63,10 @@ AudioOut::AudioOut( QString type, QString id )
     m_buzzer = false;
     m_audioOutput = nullptr;
 
-    m_deviceinfo = QMediaDevices::defaultAudioOutput();
+    QAudioDeviceInfo::defaultOutputDevice();
     if( m_deviceinfo.isNull() )
     {
-        const auto deviceInfos = QMediaDevices::audioOutputs();
+        const auto deviceInfos = QAudioDeviceInfo::availableDevices( QAudio::AudioOutput );
         if( deviceInfos.isEmpty() )
         {
             qDebug() <<"   Error: No Audio Output Devices Found at all";
@@ -75,28 +75,29 @@ AudioOut::AudioOut( QString type, QString id )
             qDebug() <<"   Error: No default Audio Output Device Found";
             qDebug() <<"Audio Output Devices available:";
 
-            for( const QAudioDevice &deviceInfo : deviceInfos )
-                qDebug() << "Device name: " << deviceInfo.description();
+            for( const QAudioDeviceInfo &deviceInfo : deviceInfos )
+                qDebug() << "Device name: " << deviceInfo.deviceName();
         }
         qDebug() <<" ";
         return;
     }
+    //int refreshPeriod = 10; // mS
+    //int sampleRate    = 40000; // samples/S
     m_format = m_deviceinfo.preferredFormat();
-    /// m_format.setCodec( "audio/pcm" );
+    m_format.setCodec( "audio/pcm" );
+    //m_format.setSampleRate( sampleRate );
     m_format.setChannelCount( 1 );
-    m_format.setSampleFormat(QAudioFormat::UInt8);
-    //m_format.setSampleSize( 8 );
-    //m_format.setSampleType( QAudioFormat::UnSignedInt );
-    //m_format.setByteOrder( QAudioFormat::LittleEndian );
+    m_format.setSampleSize( 8 );
+    m_format.setSampleType( QAudioFormat::UnSignedInt );
+    m_format.setByteOrder( QAudioFormat::LittleEndian );
 
     if( !m_deviceinfo.isFormatSupported( m_format ))
     {
         qDebug() << "Warning: Default format not supported - trying to use nearest";
-        m_format = m_deviceinfo.preferredFormat(); //m_format = m_deviceinfo.nearestFormat( m_format );
-        //qDebug() << m_format.sampleRate() << m_format.channelCount()<<m_format.sampleSize();
-        qDebug() << m_format.sampleRate() << m_format.channelCount() << m_format.bytesPerSample()*8;
+        m_format = m_deviceinfo.nearestFormat( m_format );
+        qDebug() << m_format.sampleRate() << m_format.channelCount()<<m_format.sampleSize();
     }
-    m_audioOutput = new QAudioSink( m_deviceinfo, m_format );
+    m_audioOutput = new QAudioOutput( m_deviceinfo, m_format );
 
     addPropGroup( { tr("Main"), {
         new BoolProp<AudioOut>("Buzzer", tr("Buzzer"), ""
@@ -137,11 +138,11 @@ void AudioOut::stamp()
     if( m_deviceinfo.isNull() ) return;
 
     m_audioBuffer = m_audioOutput->start();
-    m_dataSize    = m_audioOutput->bytesFree(); // m_audioOutput->bufferSize() // Qt5: m_audioOutput->periodSize();
+    m_audioOutput->periodSize();
     m_dataBuffer.reserve( m_dataSize );
 
     if( m_ePin[0]->isConnected() && m_ePin[1]->isConnected() )
-            Simulator::self()->addEvent( 1, this );
+        Simulator::self()->addEvent( 1, this );
 }
 
 void AudioOut::updateStep()

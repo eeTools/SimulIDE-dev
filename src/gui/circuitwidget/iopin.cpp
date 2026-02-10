@@ -33,7 +33,7 @@ IoPin::IoPin( int angle, const QPoint pos, QString id, int index, Component* par
     m_gndAdmEx = 0;
 
     m_inputImp = high_imp;
-    m_openImp  = 100/cero_doub;
+    m_openImp  = 1e9;
     m_outputImp = 40;
     m_admit = 1/cero_doub;
 
@@ -161,8 +161,8 @@ void IoPin::setPinMode( pinMode_t mode )
             break;
         case source:
             m_hasCurrent = true;
-            m_vddAdmit = 1/cero_doub;
-            m_gndAdmit = cero_doub;
+            m_vddAdmit = high_imp;
+            m_gndAdmit = low_imp;
             m_outState = true;
             break;
     }

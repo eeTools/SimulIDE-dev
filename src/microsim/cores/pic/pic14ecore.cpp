@@ -228,7 +228,7 @@ void Pic14eCore::decode( uint16_t instr )
             else if( instr == 0x000A ) CALLW(); // CALLW 00 0000 0000 1010
             else if( instr == 0x000B ) BRW();   // BRW   00 0000 0000 1011
         }
-        else if( (instr & 0x0030) == 1 )
+        else if( (instr & 0x0030) == 0x10 )
         {
             uint8_t n = instr & 1<<2;
             if( (instr & 0x0008) == 0 ){
@@ -238,8 +238,7 @@ void Pic14eCore::decode( uint16_t instr )
                     case 2: MOVIW_Fi( n ); return; // MOVIW FSRn++ 00 0000 0001 0n10
                     case 3: MOVIW_Fd( n ); return; // MOVIW FSRn−− 00 0000 0001 0n11
                 }
-            }
-            else if( (instr & 0x0008) == 1 ){
+            }else{
                 switch( instr & 0x0003) {
                     case 0: MOVWI_iF( n ); return; // MOVWI ++FSRn 00 0000 0001 1n00
                     case 1: MOVWI_dF( n ); return; // MOVWI −−FSRn 00 0000 0001 1n01

@@ -17,6 +17,7 @@
 #include <QDebug>
 #include <QStyleFactory>
 #include <QProcessEnvironment>
+#include <QDirIterator>
 
 #include "mainwindow.h"
 #include "circuit.h"
@@ -333,9 +334,15 @@ QString MainWindow::getHelp( QString name, bool save )
     else locale = "";
 
     name = name.toLower().replace( " ", "" );
-    QString dfPath = getDataFilePath("help/"+localeFolder+name+locale+".txt");
 
-    if( !QFileInfo::exists( dfPath ) ) dfPath = getDataFilePath( "help/"+name+".txt" );
+    QString                dfPath = getFilePath( name+locale, m_userDir+"help" );
+    if( dfPath.isEmpty() ) dfPath = getFilePath( name+locale, m_configDir.absoluteFilePath("help") );
+    if( dfPath.isEmpty() ) dfPath = getFilePath( name+locale, ":/help" );
+    if( dfPath.isEmpty() ) dfPath = getFilePath( name, m_userDir+"help" );
+    if( dfPath.isEmpty() ) dfPath = getFilePath( name, m_configDir.absoluteFilePath("help") );
+    if( dfPath.isEmpty() ) dfPath = getFilePath( name, ":/help" );
+    if( dfPath.isEmpty() ) return help;
+
     if( QFileInfo::exists( dfPath ) )
     {
         help.clear();
@@ -353,6 +360,18 @@ QString MainWindow::getHelp( QString name, bool save )
     }
     if( save ) m_help[name] = help;
     return help;
+}
+
+QString MainWindow::getFilePath( QString filename, QString directory )
+{
+    QDirIterator it( directory, QDirIterator::Subdirectories );
+    while( it.hasNext() ) {
+        it.next();
+        QFileInfo fileInfo( it.filePath() );
+        if( fileInfo.isFile() && fileInfo.baseName() == filename )
+            return it.filePath();
+    }
+    return "";
 }
 
 void MainWindow::getUserPath()

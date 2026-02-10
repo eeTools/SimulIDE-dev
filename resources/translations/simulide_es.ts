@@ -12,7 +12,7 @@
         <location filename="../../src/components/logic/adc.cpp" line="44"/>
         <location filename="../../src/components/logic/adc.cpp" line="52"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/adc.cpp" line="45"/>
@@ -72,22 +72,27 @@
         <translation>Colaboradores:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/about.ui" line="540"/>
+        <location filename="../../src/gui/appdialogs/about.ui" line="537"/>
+        <source>Sergey Roenko</source>
+        <translation>Sergey Roenko</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/about.ui" line="547"/>
         <source>Translations</source>
         <translation>Traducciones</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/about.ui" line="667"/>
+        <location filename="../../src/gui/appdialogs/about.ui" line="677"/>
         <source>T_Chinese:       </source>
         <translation>Chino trad.:       </translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/about.ui" line="683"/>
+        <location filename="../../src/gui/appdialogs/about.ui" line="619"/>
         <source>Pt. Brasil:       </source>
         <translation>Pt. Brasil:       </translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/about.ui" line="612"/>
+        <location filename="../../src/gui/appdialogs/about.ui" line="661"/>
         <source>Spanish:       </source>
         <translation>Español:       </translation>
     </message>
@@ -96,7 +101,7 @@
         <translation type="vanished">Chino simp.:       </translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/about.ui" line="567"/>
+        <location filename="../../src/gui/appdialogs/about.ui" line="561"/>
         <source>Czech:       </source>
         <translation>Checo:       </translation>
     </message>
@@ -105,7 +110,7 @@
         <translation type="vanished">Ruso:       </translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/about.ui" line="583"/>
+        <location filename="../../src/gui/appdialogs/about.ui" line="603"/>
         <source>German:       </source>
         <translation>Alemán:       </translation>
     </message>
@@ -120,7 +125,7 @@
     <message>
         <location filename="../../src/components/outputs/displays/aip31068_i2c.cpp" line="52"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/displays/aip31068_i2c.cpp" line="53"/>
@@ -167,7 +172,7 @@
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="32"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_and.cpp" line="37"/>
@@ -194,7 +199,12 @@
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/gate_and.cpp" line="50"/>
+        <location filename="../../src/components/logic/gate_and.cpp" line="49"/>
+        <source>Invert Output by Right-Click on Pin</source>
+        <translation>Invertir Salida haciendo Clic Derecho en el Pin</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/gate_and.cpp" line="53"/>
         <source>Timing</source>
         <translation>Tiempos</translation>
     </message>
@@ -207,19 +217,19 @@
         <translation>Configuración</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="115"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="114"/>
         <source>App Settings</source>
         <translation>Cofiguración de Aplicación</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="131"/>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="469"/>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1080"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="130"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="515"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1190"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="179"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="177"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
@@ -229,72 +239,81 @@
         <translation>Escalar Fuente</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="406"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="422"/>
+        <source>Updates:</source>
+        <translation>Actualizaciones:</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="432"/>
+        <source>Check for updates at start</source>
+        <translation>Verificar actualizaciones al iniciar</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="453"/>
         <source>Circuit</source>
         <translation>Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="453"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="499"/>
         <source>Circuit Canvas</source>
         <translation>Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="481"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="527"/>
         <source>Draw Grid</source>
         <translation>Mostrar Rejilla</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="488"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="534"/>
         <source>Show ScrollBars</source>
         <translation>Mostrar ScrollBars</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="495"/>
         <source>Animate</source>
-        <translation>Animar</translation>
+        <translation type="vanished">Animar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="632"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="685"/>
         <source>Canvas Refresh</source>
         <translation>Refresco Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="725"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="837"/>
         <source>Other</source>
         <translation>Otros</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="787"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="899"/>
         <source>Seconds</source>
         <translation>Segundos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="871"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="983"/>
         <source>Simulation</source>
         <translation>Simulacion</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1331"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1440"/>
         <source>Target Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Paso Objetivo</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1417"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1526"/>
         <source>Real Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Paso Real</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1624"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1731"/>
         <source>Logic Outputs Edges</source>
         <translation>Flancos de Salidas Lógicas</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1636"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1743"/>
         <source>Slope Steps</source>
         <translation>Pasos de Flanco</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1307"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1416"/>
         <source>Reactive</source>
         <translation>Reactivos</translation>
     </message>
@@ -304,32 +323,57 @@
         <translation>App</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="685"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="541"/>
+        <source>Animate Logic</source>
+        <translation>Animar Lógica</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="548"/>
+        <source>Animate Currents</source>
+        <translation>Animar Corrientes</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="738"/>
         <source>FPS</source>
         <translation>FPS</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="737"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="777"/>
+        <source>Components</source>
+        <translation>Componentes</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="787"/>
+        <source>ANSI Symbols</source>
+        <translation>Símbolos ANSI</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="800"/>
+        <source>Component Shortcuts</source>
+        <translation>Atajos de Componentes</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="849"/>
         <source>Auto Backup</source>
         <translation>Auto guardar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="798"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="910"/>
         <source>Undo Steps</source>
         <translation>Pasos deshacer</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1183"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1293"/>
         <source>Steps per Second    </source>
         <translation>Pasos por Segundo    </translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1526"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1634"/>
         <source>NonLinear</source>
         <translation>No Lineal</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1547"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1655"/>
         <source>Max. Iterations</source>
         <translation>Iteracciones Máximas</translation>
     </message>
@@ -348,33 +392,33 @@
         <translation>Seleccionar ruta al compilador:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="918"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="1029"/>
         <source>Speed</source>
         <translation>Velocidad </translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="245"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="248"/>
         <source>Font</source>
         <translation>Fuente</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="161"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="159"/>
         <source>Restart required to apply new settings.</source>
         <translation>Reiniciar para aplicar cambios.</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="504"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="557"/>
         <source>Canvas Width</source>
         <translation>Ancho</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="557"/>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="621"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="610"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="674"/>
         <source>pixels</source>
         <translation>pixels</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/appdialog.ui" line="568"/>
+        <location filename="../../src/gui/appdialogs/appdialog.ui" line="621"/>
         <source>Canvas Height</source>
         <translation>Alto</translation>
     </message>
@@ -382,27 +426,27 @@
 <context>
     <name>AudioOut</name>
     <message>
-        <location filename="../../src/components/outputs/audio_out.cpp" line="29"/>
+        <location filename="../../src/components/outputs/audio_out.cpp" line="31"/>
         <source>Audio Out</source>
         <translation>Salida Audio</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/audio_out.cpp" line="97"/>
+        <location filename="../../src/components/outputs/audio_out.cpp" line="102"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/audio_out.cpp" line="98"/>
+        <location filename="../../src/components/outputs/audio_out.cpp" line="103"/>
         <source>Buzzer</source>
         <translation>Zumbador</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/audio_out.cpp" line="101"/>
+        <location filename="../../src/components/outputs/audio_out.cpp" line="106"/>
         <source>Impedance</source>
         <translation>Impedancia</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/audio_out.cpp" line="104"/>
+        <location filename="../../src/components/outputs/audio_out.cpp" line="109"/>
         <source>Frequency</source>
         <translation>Frecuencia</translation>
     </message>
@@ -415,22 +459,22 @@
         <translation>BJT</translation>
     </message>
     <message>
-        <location filename="../../src/components/active/bjt.cpp" line="48"/>
+        <location filename="../../src/components/active/bjt.cpp" line="51"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/active/bjt.cpp" line="49"/>
+        <location filename="../../src/components/active/bjt.cpp" line="52"/>
         <source>PNP</source>
         <translation>PNP</translation>
     </message>
     <message>
-        <location filename="../../src/components/active/bjt.cpp" line="52"/>
+        <location filename="../../src/components/active/bjt.cpp" line="55"/>
         <source>Gain</source>
         <translation>Ganancia</translation>
     </message>
     <message>
-        <location filename="../../src/components/active/bjt.cpp" line="55"/>
+        <location filename="../../src/components/active/bjt.cpp" line="58"/>
         <source>Threshold</source>
         <translation>Umbral</translation>
     </message>
@@ -473,7 +517,7 @@
     <message>
         <location filename="../../src/components/sources/battery.cpp" line="48"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/battery.cpp" line="49"/>
@@ -494,18 +538,18 @@
         <translation>Bcd a 7S.</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="66"/>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="77"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="64"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="72"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="67"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="65"/>
         <source>Custom Characters CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV de Caracteres Personalizados</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="70"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="68"/>
         <source>Reset Pin</source>
         <translation>Pin Reset</translation>
     </message>
@@ -514,7 +558,7 @@
         <translation type="vanished">Reset Invertido</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="79"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="74"/>
         <source>Inputs</source>
         <translation>Entradas</translation>
     </message>
@@ -523,22 +567,22 @@
         <translation type="vanished">Eléctricas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="82"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="77"/>
         <source>Invert Inputs</source>
         <translation>Invertir Entradas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="86"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="81"/>
         <source>Outputs</source>
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="90"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="85"/>
         <source>Tristate</source>
         <translation>Tri-estado</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/bcdto7s.cpp" line="95"/>
+        <location filename="../../src/components/logic/bcdto7s.cpp" line="90"/>
         <source>Timing</source>
         <translation>Tiempos</translation>
     </message>
@@ -554,7 +598,7 @@
         <location filename="../../src/components/logic/bcdtodec.cpp" line="43"/>
         <location filename="../../src/components/logic/bcdtodec.cpp" line="48"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bcdtodec.cpp" line="44"/>
@@ -597,7 +641,7 @@
         <location filename="../../src/components/logic/bincounter.cpp" line="72"/>
         <location filename="../../src/components/logic/bincounter.cpp" line="96"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <source>Use Set Pin</source>
@@ -632,7 +676,7 @@
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="77"/>
         <source>Top Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor Máximo</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="80"/>
@@ -642,7 +686,7 @@
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="83"/>
         <source>Use RCO &amp; RBO</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar RCO y RBO</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bincounter.cpp" line="86"/>
@@ -685,7 +729,7 @@
         <location filename="../../src/components/logic/buffer.cpp" line="38"/>
         <location filename="../../src/components/logic/buffer.cpp" line="43"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/buffer.cpp" line="39"/>
@@ -698,23 +742,32 @@
         <translation>Entradas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/buffer.cpp" line="53"/>
+        <location filename="../../src/components/logic/buffer.cpp" line="48"/>
+        <source>Invert Input by Right-Click on Pin</source>
+        <translation>Invertir Entrada haciendo Clic Derecho en el Pin</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/buffer.cpp" line="52"/>
         <source>Outputs</source>
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/buffer.cpp" line="57"/>
+        <location filename="../../src/components/logic/buffer.cpp" line="56"/>
         <source>Tristate</source>
         <translation>Tri-estado</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/buffer.cpp" line="58"/>
+        <source>Invert Output by Right-Click on Pin</source>
+        <translation>Invertir Salida haciendo Clic Derecho en el Pin</translation>
     </message>
     <message>
         <source>Electric</source>
         <translation type="vanished">Eléctricas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/buffer.cpp" line="48"/>
         <source>Invert Inputs</source>
-        <translation>Invertir Entradas</translation>
+        <translation type="vanished">Invertir Entradas</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/buffer.cpp" line="62"/>
@@ -732,7 +785,7 @@
     <message>
         <location filename="../../src/components/logic/bus.cpp" line="51"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/bus.cpp" line="52"/>
@@ -758,7 +811,7 @@
     <message>
         <location filename="../../src/components/passive/reactive/capacitorbase.cpp" line="24"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/passive/reactive/capacitorbase.cpp" line="25"/>
@@ -783,52 +836,56 @@
 <context>
     <name>Circuit</name>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuit.cpp" line="460"/>
+        <location filename="../../src/gui/circuitwidget/circuit.cpp" line="474"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>No se pudo escribir el archivo %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuit.cpp" line="498"/>
+        <location filename="../../src/gui/circuitwidget/circuit.cpp" line="512"/>
         <source>Import Circuit</source>
         <translation>Importar Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuit.cpp" line="499"/>
+        <location filename="../../src/gui/circuitwidget/circuit.cpp" line="513"/>
+        <source>Circuits (*.sim*);;All files (*.*)</source>
+        <translation>Circuitos (*.sim*);;Todos los archivos (*.*)</translation>
+    </message>
+    <message>
         <source>Circuits (*.sim1);;All files (*.*)</source>
-        <translation>Circuitos (*.sim1);;Todos los archivos (*.*)</translation>
+        <translation type="vanished">Circuitos (*.sim1);;Todos los archivos (*.*)</translation>
     </message>
 </context>
 <context>
     <name>CircuitView</name>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="242"/>
+        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="253"/>
         <source>Paste</source>
         <translation>Pegar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="246"/>
+        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="257"/>
         <source>Undo</source>
         <translation>Deshacer</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="250"/>
+        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="261"/>
         <source>Redo</source>
         <translation>Rehacer</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="256"/>
+        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="267"/>
         <source>Import Circuit</source>
         <translation>Importar Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="260"/>
+        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="271"/>
         <source>Save Circuit as Image</source>
         <translation>Grabar Circuito como Imagen</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="305"/>
+        <location filename="../../src/gui/circuitwidget/circuitview.cpp" line="316"/>
         <source>Save as Image</source>
         <translation>Grabar Como Imagen</translation>
     </message>
@@ -836,83 +893,83 @@
 <context>
     <name>CircuitWidget</name>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="110"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="133"/>
         <source>New C&amp;ircuit	Ctrl+N</source>
         <translation>Nuevo C&amp;ircuito	Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="111"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="134"/>
         <source>Create a new Circuit</source>
         <translation>Crear Nuevo Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="115"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="138"/>
         <source>&amp;Open Circuit	Ctrl+O</source>
         <translation>Abrir Circuito	Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="116"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="139"/>
         <source>Open an existing Circuit</source>
         <translation>Abrir un Circuito existente</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="120"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="143"/>
         <source>&amp;Save Circuit	Ctrl+S</source>
         <translation>Guardar Circuito	Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="121"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="144"/>
         <source>Save the Circuit to disk</source>
         <translation>Grabar el Circuito a Disco</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="125"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="148"/>
         <source>Save Circuit &amp;As...	Ctrl+Shift+S</source>
         <translation>Guardar Circuito Como...	Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="126"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="149"/>
         <source>Save the Circuit under a new name</source>
         <translation>Grabar el Circuito con un nuevo nombre</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="151"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="152"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="387"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="450"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="174"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="175"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="414"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="477"/>
         <source>Pause Simulation</source>
         <translation>Pausar Simulacion</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="166"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="167"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="189"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="190"/>
         <source>About SimulIDE</source>
         <translation>Sobre SimulIDE</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="171"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="172"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="194"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="195"/>
         <source>About Qt</source>
         <translation>Sobre Qt</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="156"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="157"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="179"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="180"/>
         <source>Settings</source>
         <translation>Configuración</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="192"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="215"/>
         <source>Last Circuits</source>
         <translation>Ultimos Circuitos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="235"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="258"/>
         <source>Info</source>
         <translation>Información</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="253"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="276"/>
         <source>
 Circuit has been modified.
 Do you want to save your changes?
@@ -922,28 +979,28 @@ El Circuito ha sido modificado.
 Quiere guardar los cambios?</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="267"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="290"/>
         <source>New Circuit</source>
         <translation>Nuevo Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="302"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="325"/>
         <source>Load Circuit</source>
         <translation>Abrir Circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="335"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="361"/>
         <source>Save Circuit</source>
         <translation>Guardar circuito</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="161"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="162"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="184"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="185"/>
         <source>SimulIDE Website</source>
         <translation>Sitio Web</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="284"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="307"/>
         <source>
 Can&apos;t find file:
 </source>
@@ -952,85 +1009,89 @@ No se pudo encontrar el archivo:
 </translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="286"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="309"/>
         <source>Do you want to remove it from Recent Circuits?
 </source>
         <translation>Quiere eliminarlo de la lista?
 </translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="303"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="336"/>
         <source>Circuits (*.sim1);;All files (*.*)</source>
-        <translation>Circuitos (*.sim1);;Todos los archivos (*.*)</translation>
+        <translation type="vanished">Circuitos (*.sim1);;Todos los archivos (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="130"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="153"/>
         <source>Zoom to fit</source>
         <translation>Zoom para ajustar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="131"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="154"/>
         <source>Zoom Circuit to fit all components</source>
         <translation>Ampliar Circuito a todos los componentes</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="135"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="158"/>
         <source>Zoom to selected</source>
         <translation>Ampliar a seleccionados</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="136"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="159"/>
         <source>Zoom Circuit to fit all selected components</source>
         <translation>Ampliar Circuito a seleccionados</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="140"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="163"/>
         <source>Zoom to Scale 1</source>
         <translation>Ampliar a escala 1:1</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="141"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="164"/>
         <source>Zoom Circuit to Scale 1:1</source>
         <translation>Ampliar Circuito a escala 1:1</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="404"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="422"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="428"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="326"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="362"/>
+        <source>Circuits (*.sim*);;All files (*.*)</source>
+        <translation>Circuitos (*.sim*);;Todos los archivos (*.*)</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="431"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="449"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="455"/>
         <source>Debug</source>
         <translation>Depurar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="438"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="465"/>
         <source>Paused</source>
         <translation>Pausado</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="373"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="448"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="400"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="475"/>
         <source>Running</source>
         <translation>Simulando</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="145"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="146"/>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="383"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="168"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="169"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="410"/>
         <source>Start Simulation</source>
         <translation>Iniciar Simulación</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="367"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="394"/>
         <source>Stop Simulation</source>
         <translation>Parar Simulación</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="440"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="467"/>
         <source>Resume Simulation</source>
         <translation>Reanudar Simulación</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="389"/>
+        <location filename="../../src/gui/circuitwidget/circuitwidget.cpp" line="416"/>
         <source>Stopped</source>
         <translation>Parado</translation>
     </message>
@@ -1046,7 +1107,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/sources/clock.cpp" line="34"/>
         <location filename="../../src/components/sources/clock.cpp" line="36"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/clock.cpp" line="37"/>
@@ -1067,12 +1128,12 @@ No se pudo encontrar el archivo:
 <context>
     <name>CodeEditor</name>
     <message>
-        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="400"/>
+        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="399"/>
         <source> File: </source>
         <translation> Archivo: </translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="436"/>
+        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="435"/>
         <source>File recognized as: </source>
         <translation>Archivo reconocido como: </translation>
     </message>
@@ -1162,7 +1223,7 @@ No se pudo encontrar el archivo:
         <translation>Restaurar archivos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="823"/>
+        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="822"/>
         <source>Cannot write file</source>
         <translation>No se puede escribir al archivo</translation>
     </message>
@@ -1172,7 +1233,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/properties/colorval.cpp" line="57"/>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar Color</translation>
     </message>
 </context>
 <context>
@@ -1282,48 +1343,48 @@ No se pudo encontrar el archivo:
 <context>
     <name>Component</name>
     <message>
-        <location filename="../../src/components/component.cpp" line="334"/>
+        <location filename="../../src/components/component.cpp" line="337"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="340"/>
+        <location filename="../../src/components/component.cpp" line="343"/>
         <source>Remove</source>
         <translation>Eliminar</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="327"/>
-        <location filename="../../src/components/component.cpp" line="346"/>
+        <location filename="../../src/components/component.cpp" line="330"/>
+        <location filename="../../src/components/component.cpp" line="349"/>
         <source>Properties</source>
         <translation>Propiedades</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="350"/>
+        <location filename="../../src/components/component.cpp" line="353"/>
         <source>Rotate CW</source>
         <translation>Rotar Derecha</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="353"/>
+        <location filename="../../src/components/component.cpp" line="356"/>
         <source>Rotate CCW</source>
         <translation>Rotar Izquierda</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="356"/>
+        <location filename="../../src/components/component.cpp" line="359"/>
         <source>Rotate 180</source>
         <translation>Rotar 180</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="359"/>
+        <location filename="../../src/components/component.cpp" line="362"/>
         <source>Horizontal Flip</source>
         <translation>Espejo Horizontal</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="362"/>
+        <location filename="../../src/components/component.cpp" line="365"/>
         <source>Vertical Flip</source>
         <translation>Espejo Vertical</translation>
     </message>
     <message>
-        <location filename="../../src/components/component.cpp" line="337"/>
+        <location filename="../../src/components/component.cpp" line="340"/>
         <source>Cut</source>
         <translation>Cortar</translation>
     </message>
@@ -1347,20 +1408,24 @@ No se pudo encontrar el archivo:
         <translation type="vanished">Herramientas</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/componentlist.cpp" line="95"/>
-        <location filename="../../src/gui/componentlist/componentlist.cpp" line="156"/>
+        <location filename="../../src/gui/componentlist/componentlist.cpp" line="109"/>
+        <location filename="../../src/gui/componentlist/componentlist.cpp" line="186"/>
         <source>    Loading Component sets at:</source>
         <translation>    Cargando grupo de componentes desde:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/componentlist.cpp" line="258"/>
+        <location filename="../../src/gui/componentlist/componentlist.cpp" line="297"/>
         <source>        Loaded Component set:           </source>
         <translation>        Grupo de Componentes Cargado:           </translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/componentlist.cpp" line="394"/>
+        <location filename="../../src/gui/componentlist/componentlist.cpp" line="441"/>
+        <source>Manage Shortcuts</source>
+        <translation>Administrar Atajos</translation>
+    </message>
+    <message>
         <source>Manage Components</source>
-        <translation>Configurar Componentes</translation>
+        <translation type="vanished">Configurar Componentes</translation>
     </message>
 </context>
 <context>
@@ -1368,7 +1433,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/circuitwidget/connbase.cpp" line="26"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/gui/circuitwidget/connbase.cpp" line="27"/>
@@ -1379,7 +1444,7 @@ No se pudo encontrar el archivo:
 <context>
     <name>ConnectorLine</name>
     <message>
-        <location filename="../../src/gui/circuitwidget/connectorline.cpp" line="308"/>
+        <location filename="../../src/gui/circuitwidget/connectorline.cpp" line="324"/>
         <source>Remove</source>
         <translation>Eliminar</translation>
     </message>
@@ -1389,13 +1454,13 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="21"/>
         <source>Simple Counter</source>
-        <translation type="unfinished"></translation>
+        <translation>Contador Simple</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="52"/>
         <location filename="../../src/components/logic/counter.cpp" line="66"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/counter.cpp" line="53"/>
@@ -1445,7 +1510,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/csource.cpp" line="71"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/csource.cpp" line="75"/>
@@ -1488,7 +1553,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/currsource.cpp" line="38"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/currsource.cpp" line="42"/>
@@ -1517,7 +1582,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/dac.cpp" line="43"/>
         <location filename="../../src/components/logic/dac.cpp" line="51"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/dac.cpp" line="44"/>
@@ -1559,28 +1624,28 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/micro/ds1307.cpp" line="58"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
 </context>
 <context>
     <name>DS1621</name>
     <message>
-        <location filename="../../src/components/micro/ds1621.cpp" line="29"/>
+        <location filename="../../src/components/micro/ds1621.cpp" line="32"/>
         <source>DS1621</source>
         <translation>DS1621</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/ds1621.cpp" line="107"/>
+        <location filename="../../src/components/micro/ds1621.cpp" line="109"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/ds1621.cpp" line="108"/>
+        <location filename="../../src/components/micro/ds1621.cpp" line="110"/>
         <source>Temperature</source>
         <translation>Temperatura</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/ds1621.cpp" line="111"/>
+        <location filename="../../src/components/micro/ds1621.cpp" line="113"/>
         <source>Temp. increment</source>
         <translation>Incremento Temp.</translation>
     </message>
@@ -1604,29 +1669,34 @@ No se pudo encontrar el archivo:
 <context>
     <name>DcMotor</name>
     <message>
-        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="26"/>
+        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="30"/>
         <source>Dc Motor</source>
         <translation>Motor DC</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="65"/>
+        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="70"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="66"/>
+        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="71"/>
         <source>Nominal Speed</source>
         <translation>Velocidad Nominal</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="69"/>
+        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="74"/>
         <source>Nominal Voltage</source>
         <translation>Voltage Nominal</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="72"/>
+        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="77"/>
         <source>Resistance</source>
         <translation>Resistencia</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/motors/dcmotor.cpp" line="188"/>
+        <source>Open Monitor</source>
+        <translation>Abrir Monitor</translation>
     </message>
 </context>
 <context>
@@ -1640,7 +1710,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/dectobcd.cpp" line="52"/>
         <location filename="../../src/components/logic/dectobcd.cpp" line="57"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/dectobcd.cpp" line="53"/>
@@ -1688,7 +1758,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/demux.cpp" line="57"/>
         <location filename="../../src/components/logic/demux.cpp" line="62"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/demux.cpp" line="58"/>
@@ -1723,22 +1793,32 @@ No se pudo encontrar el archivo:
 <context>
     <name>Dht22</name>
     <message>
-        <location filename="../../src/components/micro/dht22.cpp" line="101"/>
+        <location filename="../../src/components/micro/dht22.cpp" line="91"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/dht22.cpp" line="102"/>
+        <location filename="../../src/components/micro/dht22.cpp" line="92"/>
         <source>Model</source>
         <translation>Modelo</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/dht22.cpp" line="105"/>
+        <location filename="../../src/components/micro/dht22.cpp" line="95"/>
+        <source>Tempature</source>
+        <translation>Temperatura</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/dht22.cpp" line="98"/>
         <source>Temp. increment</source>
         <translation>Incremento Temp.</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/dht22.cpp" line="108"/>
+        <location filename="../../src/components/micro/dht22.cpp" line="101"/>
+        <source>Humidity</source>
+        <translation>Humedad</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/dht22.cpp" line="104"/>
         <source>Humid. increment</source>
         <translation>Incremento Hum.</translation>
     </message>
@@ -1753,7 +1833,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/diac.cpp" line="71"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/diac.cpp" line="72"/>
@@ -1787,7 +1867,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/other/dial.cpp" line="61"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/other/dial.cpp" line="63"/>
@@ -1858,7 +1938,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/diode.cpp" line="64"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/diode.cpp" line="65"/>
@@ -1911,7 +1991,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/micro/ds18b20.cpp" line="99"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/ds18b20.cpp" line="103"/>
@@ -1927,43 +2007,48 @@ No se pudo encontrar el archivo:
 <context>
     <name>DynamicMemory</name>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="30"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="31"/>
         <source>Dynamic Ram</source>
         <translation>Ram Dinámica</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="82"/>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="96"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="83"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="97"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="83"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="84"/>
         <source>Row Address Size</source>
         <translation>Bits Filas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="86"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="87"/>
         <source>Column Address Size</source>
         <translation>Bits Columnas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="89"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="90"/>
         <source>Data Size</source>
         <translation>Tamaño Datos</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="92"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="93"/>
         <source>Refresh period</source>
         <translation>Periodo de refresco</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="98"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="99"/>
         <source>Inputs</source>
         <translation>Entradas</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/dynamic_memory.cpp" line="102"/>
+        <source>Invert Inputs</source>
+        <translation>Invertir Entradas</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="107"/>
         <source>Outputs</source>
         <translation>Salidas</translation>
     </message>
@@ -1972,22 +2057,22 @@ No se pudo encontrar el archivo:
         <translation type="vanished">Eléctricas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="357"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="364"/>
         <source>Load data</source>
         <translation>Cargar datos</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="360"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="367"/>
         <source>Save data</source>
         <translation>Guardar datos</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="363"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="370"/>
         <source>Show Memory Table</source>
         <translation>Mostrar Tabla de Memoria</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/dynamic_memory.cpp" line="107"/>
+        <location filename="../../src/components/logic/dynamic_memory.cpp" line="112"/>
         <source>Timing</source>
         <translation>Tiempos</translation>
     </message>
@@ -1995,67 +2080,67 @@ No se pudo encontrar el archivo:
 <context>
     <name>EditDialog</name>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="729"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="734"/>
         <source>Pin Name:</source>
         <translation>Nombre de Pin</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="765"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="770"/>
         <source>Invert Pin</source>
         <translation>Invertir Pin</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="767"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="772"/>
         <source>Unused Pin</source>
         <translation>Pin no Usado</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="770"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="775"/>
         <source>Point Pin</source>
         <translation>Pin Corto</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="800"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="805"/>
         <source>Edit Pin </source>
         <translation>Editar Pin </translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="737"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="742"/>
         <source>Pin Id:   </source>
         <translation>Id. de Pin:   </translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="757"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="762"/>
         <source>Pin Angle:</source>
         <translation>Ángulo de Pin:</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="759"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="764"/>
         <source>Right</source>
         <translation>Derecha</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="759"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="764"/>
         <source>Left</source>
         <translation>Izquierda</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="759"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="764"/>
         <source>Top</source>
         <translation>Arriba</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="759"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="764"/>
         <source>Bottom</source>
         <translation>Abajo</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="745"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="750"/>
         <source>Space to Label:</source>
         <translation>Espacio al texto:</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="773"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="778"/>
         <source>Bus Pin</source>
         <translation>Pin de Bus</translation>
     </message>
@@ -2069,25 +2154,25 @@ No se pudo encontrar el archivo:
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="243"/>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="369"/>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="370"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="372"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="373"/>
         <source>All files</source>
         <translation>Todos los Archivos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="372"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="375"/>
         <source>Save Document As</source>
         <translation>Guardar Documento Como</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="387"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="390"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>No se pudo escribir el archivo %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="419"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="422"/>
         <source>
 The Document has been modified.
 Do you want to save your changes?
@@ -2098,206 +2183,206 @@ Quiere guardar los cambios?</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="45"/>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="683"/>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="684"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="686"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="687"/>
         <source>Editor Settings</source>
         <translation>Configuracion de Editor</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="688"/>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="692"/>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="693"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="691"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="695"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="696"/>
         <source>Compiler Settings</source>
         <translation>Configuración de Compilador</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="705"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="708"/>
         <source>&amp;New	Ctrl+N</source>
         <translation>&amp;Nuevo	Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="706"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="709"/>
         <source>Create a new file</source>
         <translation>Crear nuevo documento</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="709"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="712"/>
         <source>&amp;Open...	Ctrl+O</source>
         <translation>Abrir...	Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="710"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="713"/>
         <source>Open an existing file</source>
         <translation>Abrir un Archivo existente</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="713"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="716"/>
         <source>&amp;Save	Ctrl+S</source>
         <translation>Guardar	Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="714"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="717"/>
         <source>Save the document to disk</source>
         <translation>Guardar el Documento a disco</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="718"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="721"/>
         <source>Save &amp;As...	Ctrl+Shift+S</source>
         <translation>Guardar Como...	Ctrl+Shift+S</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="719"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="722"/>
         <source>Save the document under a new name</source>
         <translation>Guardar el documento con otro nombre</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="723"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="726"/>
         <source>Cu&amp;t	Ctrl+X</source>
         <translation>Cortar	Ctrl+X</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="724"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="727"/>
         <source>Cut the current selection&apos;s contents to the clipboard</source>
         <translation>Cortar la seleccion actual al portapapeles</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="728"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="731"/>
         <source>&amp;Copy	Ctrl+C</source>
         <translation>Copiar	Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="729"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="732"/>
         <source>Copy the current selection&apos;s contents to the clipboard</source>
         <translation>Copiarr la seleccion actual al portapapeles</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="733"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="736"/>
         <source>&amp;Paste	Ctrl+V</source>
         <translation>Pegar	Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="734"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="737"/>
         <source>Paste the clipboard&apos;s contents into the current selection</source>
         <translation>Pegar el contenido del portapapeles sobre la seleccion actual</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="738"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="741"/>
         <source>Undo	Ctrl+Z</source>
         <translation>Deshacer	Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="739"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="742"/>
         <source>Undo the last action</source>
         <translation>Deshacer la ultima accion</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="743"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="746"/>
         <source>Redo	Ctrl+Shift+Z</source>
         <translation>Rehacer	Ctrl+Shift+Z</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="744"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="747"/>
         <source>Redo the last action</source>
         <translation>Rehacer la ultima accion</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="748"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="751"/>
         <source>Run To Breakpoint</source>
         <translation>Ir hasta Breakpoint</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="749"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="752"/>
         <source>Run to next breakpoint</source>
         <translation>Ejecutar hasta siguiente punto de corte</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="753"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="756"/>
         <source>Step</source>
         <translation>Paso</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="754"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="757"/>
         <source>Step debugger</source>
         <translation>Avanzar un paso</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="758"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="761"/>
         <source>StepOver</source>
         <translation>Saltar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="759"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="762"/>
         <source>Step Over</source>
         <translation>Saltar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="764"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="767"/>
         <source>Pause</source>
         <translation>Pausar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="765"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="768"/>
         <source>Pause debugger</source>
         <translation>Pausar depurador</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="769"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="772"/>
         <source>Reset</source>
         <translation>Reset</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="770"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="773"/>
         <source>Reset debugger</source>
         <translation>Resetear depurador</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="774"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="777"/>
         <source>Stop Debugger</source>
         <translation>Detener Depurador</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="775"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="778"/>
         <source>Stop debugger</source>
         <translation>Terminar sesion de depuracion</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="779"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="782"/>
         <source>Compile</source>
         <translation>Compilar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="780"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="783"/>
         <source>Compile Source</source>
         <translation>Compilar el archivo actual</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="784"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="787"/>
         <source>UpLoad</source>
         <translation>Cargar firmware al Mcu</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="785"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="788"/>
         <source>Load Firmware</source>
         <translation>Cargar Firmware</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="789"/>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="790"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="792"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="793"/>
         <source>Find Replace</source>
         <translation>Buscar Reemplazar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="794"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="797"/>
         <source>Debug</source>
         <translation>Depurar</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="795"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="798"/>
         <source>Start Debugger</source>
         <translation>Iniciar depurador</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="807"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="810"/>
         <source>Settings</source>
         <translation>Configuración</translation>
     </message>
@@ -2324,7 +2409,7 @@ No se pudo encontrar el archivo:
         <translation>No existe el archivo</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="814"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="817"/>
         <source>Last Files</source>
         <translation>Archivos recientes</translation>
     </message>
@@ -2354,39 +2439,39 @@ No se pudo encontrar el archivo:
         <translation>NUEVO</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="687"/>
+        <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="690"/>
         <source>File Settings</source>
         <translation>Configuracion de archivo</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="58"/>
         <source>Auto close pairs:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar pares automáticamente:</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="60"/>
         <source>Auto close Parenthesis ( )</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar paréntesis automáticamente ( )</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="63"/>
         <source>Auto close Braces { }</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar llaves automáticamente { }</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="66"/>
         <source>Auto close Brackets [ ]</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar corchetes automáticamente [ ]</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="69"/>
         <source>Auto close Quotes &quot; &quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar comillas automáticamente &quot; &quot;</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="72"/>
         <source>Auto close Single Quotes &apos; &apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar comillas simples automáticamente &apos; &apos;</translation>
     </message>
 </context>
 <context>
@@ -2417,17 +2502,17 @@ No se pudo encontrar el archivo:
         <translation>Depurador Detenido </translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwindow.cpp" line="293"/>
+        <location filename="../../src/gui/editorwidget/editorwindow.cpp" line="296"/>
         <source>    Loading Compilers at:</source>
         <translation>    Carcango Compiladores en:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwindow.cpp" line="316"/>
+        <location filename="../../src/gui/editorwidget/editorwindow.cpp" line="319"/>
         <source>        Found Compiler: </source>
         <translation>        Compilador Encontrado: </translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/editorwindow.cpp" line="318"/>
+        <location filename="../../src/gui/editorwidget/editorwindow.cpp" line="321"/>
         <source>Error Loading Compiler at:</source>
         <translation>Error al Cargar el Compilador en:</translation>
     </message>
@@ -2453,40 +2538,50 @@ No se pudo encontrar el archivo:
 <context>
     <name>Esp01</name>
     <message>
-        <location filename="../../src/components/micro/esp01.cpp" line="83"/>
+        <location filename="../../src/components/micro/esp01.cpp" line="71"/>
         <source>Baudrate</source>
         <translation>Baudios</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/esp01.cpp" line="92"/>
+        <location filename="../../src/components/micro/esp01.cpp" line="80"/>
         <source>Show Debug messages</source>
         <translation>Mostrar Mensajes</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/esp01.cpp" line="441"/>
+        <location filename="../../src/components/micro/esp01.cpp" line="421"/>
         <source>Open Serial Monitor.</source>
         <translation>Abrir Monitor Serial.</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/esp01.cpp" line="82"/>
+        <location filename="../../src/components/micro/esp01.cpp" line="70"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
 </context>
 <context>
     <name>FileBrowser</name>
     <message>
-        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="132"/>
+        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="156"/>
         <source>Add Bookmark</source>
         <translation>Añadir Marcador</translation>
     </message>
     <message>
-        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="138"/>
+        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="162"/>
         <source>Open in editor</source>
         <translation>Abrir en Editor</translation>
     </message>
     <message>
-        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="144"/>
+        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="168"/>
+        <source>Open externally</source>
+        <translation>Abrir externamente</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="171"/>
+        <source>Open Parent Dir externally</source>
+        <translation>Abrir Directorio Padre externamente</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/filebrowser/filebrowser.cpp" line="175"/>
         <source>Show Hidden</source>
         <translation>Mostrar Ocultos</translation>
     </message>
@@ -2499,7 +2594,7 @@ No se pudo encontrar el archivo:
         <translation>Subir</translation>
     </message>
     <message>
-        <location filename="../../src/gui/filebrowser/filewidget.cpp" line="173"/>
+        <location filename="../../src/gui/filebrowser/filewidget.cpp" line="181"/>
         <source>Remove Bookmark</source>
         <translation>Eliminar Marcador</translation>
     </message>
@@ -2572,7 +2667,7 @@ No se pudo encontrar el archivo:
         <translation>Buscar y Reemplazar</translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/gui/editorwidget/dialogs/findreplace.cpp" line="50"/>
+        <location filename="../../src/gui/editorwidget/dialogs/findreplace.cpp" line="52"/>
         <source>Found %n occurrence(s)</source>
         <translation>
             <numerusform>Encontrada(s) %n coincidencia(s)</numerusform>
@@ -2580,7 +2675,7 @@ No se pudo encontrar el archivo:
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../../src/gui/editorwidget/dialogs/findreplace.cpp" line="90"/>
+        <location filename="../../src/gui/editorwidget/dialogs/findreplace.cpp" line="92"/>
         <source>Replaced %n occurrence(s)</source>
         <translation>
             <numerusform>Reemplazadas %n coincidencia(s)</numerusform>
@@ -2593,7 +2688,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/fixedvolt.cpp" line="61"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/fixedvolt.cpp" line="62"/>
@@ -2617,7 +2712,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/flipflopbase.cpp" line="23"/>
         <location filename="../../src/components/logic/flipflopbase.cpp" line="37"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <source>Clock Inverted</source>
@@ -2694,7 +2789,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/meters/freqmeter.cpp" line="61"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/meters/freqmeter.cpp" line="62"/>
@@ -2727,7 +2822,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/fulladder.cpp" line="44"/>
         <location filename="../../src/components/logic/fulladder.cpp" line="49"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/fulladder.cpp" line="45"/>
@@ -2748,38 +2843,38 @@ No se pudo encontrar el archivo:
 <context>
     <name>Function</name>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="33"/>
+        <location filename="../../src/components/logic/function.cpp" line="34"/>
         <source>Function</source>
         <translation>Funcion</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="79"/>
-        <location filename="../../src/components/logic/function.cpp" line="84"/>
+        <location filename="../../src/components/logic/function.cpp" line="80"/>
+        <location filename="../../src/components/logic/function.cpp" line="85"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="86"/>
+        <location filename="../../src/components/logic/function.cpp" line="87"/>
         <source>Inputs</source>
         <translation>Entradas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="90"/>
+        <location filename="../../src/components/logic/function.cpp" line="91"/>
         <source>Input Size</source>
         <translation>Entradas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="97"/>
+        <location filename="../../src/components/logic/function.cpp" line="98"/>
         <source>Outputs</source>
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="101"/>
+        <location filename="../../src/components/logic/function.cpp" line="102"/>
         <source>Output Size</source>
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="80"/>
+        <location filename="../../src/components/logic/function.cpp" line="81"/>
         <source>Functions</source>
         <translation>Funciones</translation>
     </message>
@@ -2788,39 +2883,39 @@ No se pudo encontrar el archivo:
         <translation type="vanished">Eléctricas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="239"/>
+        <location filename="../../src/components/logic/function.cpp" line="240"/>
         <source>Load Functions</source>
         <translation>Cargar Funciones</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="242"/>
+        <location filename="../../src/components/logic/function.cpp" line="243"/>
         <source>Save Functions</source>
         <translation>Grabar Funciones</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="391"/>
+        <location filename="../../src/components/logic/function.cpp" line="392"/>
         <source>Set Function</source>
         <translation>Establecer Funcion</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="392"/>
+        <location filename="../../src/components/logic/function.cpp" line="393"/>
         <source> Function:</source>
         <translation> Funcion:</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="277"/>
+        <location filename="../../src/components/logic/function.cpp" line="278"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>No se pudo escribir el archivo %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="93"/>
+        <location filename="../../src/components/logic/function.cpp" line="94"/>
         <source>Invert Inputs</source>
         <translation>Invertir Entradas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/function.cpp" line="107"/>
+        <location filename="../../src/components/logic/function.cpp" line="108"/>
         <source>Timing</source>
         <translation>Tiempos</translation>
     </message>
@@ -2828,7 +2923,7 @@ No se pudo encontrar el archivo:
 <context>
     <name>Gate</name>
     <message>
-        <location filename="../../src/components/logic/gate.cpp" line="33"/>
+        <location filename="../../src/components/logic/gate.cpp" line="43"/>
         <source>Initial High State</source>
         <translation>Estado Alto Inicial</translation>
     </message>
@@ -2846,7 +2941,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/displays/hd44780.cpp" line="59"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/displays/hd44780.cpp" line="60"/>
@@ -2869,7 +2964,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/connectors/header.cpp" line="36"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/connectors/header.cpp" line="37"/>
@@ -2905,7 +3000,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/logic/i2cram.cpp" line="66"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/i2cram.cpp" line="67"/>
@@ -2951,17 +3046,17 @@ No se pudo encontrar el archivo:
         <translation>I2C a Paralelo</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/i2ctoparallel.cpp" line="64"/>
+        <location filename="../../src/components/logic/i2ctoparallel.cpp" line="65"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/i2ctoparallel.cpp" line="68"/>
+        <location filename="../../src/components/logic/i2ctoparallel.cpp" line="69"/>
         <source>I2C Frequency</source>
         <translation>Frecuencia I2C</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/i2ctoparallel.cpp" line="65"/>
+        <location filename="../../src/components/logic/i2ctoparallel.cpp" line="66"/>
         <source>I2C Address</source>
         <translation>Dirección I2C</translation>
     </message>
@@ -3000,7 +3095,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/passive/reactive/inductor.cpp" line="40"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/passive/reactive/inductor.cpp" line="41"/>
@@ -3025,12 +3120,12 @@ No se pudo encontrar el archivo:
 <context>
     <name>InfoWidget</name>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.cpp" line="84"/>
+        <location filename="../../src/gui/appdialogs/infowidget.cpp" line="83"/>
         <source>Speed: Debugger</source>
         <translation>Velocidad: Depurador</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.cpp" line="85"/>
+        <location filename="../../src/gui/appdialogs/infowidget.cpp" line="84"/>
         <source>Circuit ERROR!!!</source>
         <translation>ERROR de Circuito!!!</translation>
     </message>
@@ -3067,99 +3162,150 @@ No se pudo encontrar el archivo:
     </message>
 </context>
 <context>
+    <name>InstallItem</name>
+    <message>
+        <location filename="../../src/gui/componentlist/installitem.cpp" line="46"/>
+        <source>Information</source>
+        <translation>Información</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/componentlist/installitem.cpp" line="53"/>
+        <source>Update</source>
+        <translation>Actualizar</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/componentlist/installitem.cpp" line="172"/>
+        <source>Uninstall</source>
+        <translation>Desinstalar</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/componentlist/installitem.cpp" line="178"/>
+        <source>Install</source>
+        <translation>Instalar</translation>
+    </message>
+</context>
+<context>
     <name>IoComponent</name>
     <message>
         <source>Inputs:</source>
         <translation type="vanished">Entradas:</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="53"/>
+        <location filename="../../src/components/iocomponent.cpp" line="58"/>
         <source>Low to High Threshold</source>
         <translation>Umbral Bajo a Alto</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="56"/>
+        <location filename="../../src/components/iocomponent.cpp" line="61"/>
         <source>High to Low Threshold</source>
         <translation>Umbral Alto a Bajo</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="59"/>
+        <location filename="../../src/components/iocomponent.cpp" line="64"/>
         <source>Input Impedance</source>
         <translation>Impedancia de Entrada</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="62"/>
+        <location filename="../../src/components/iocomponent.cpp" line="67"/>
         <source>Input pullups</source>
-        <translation type="unfinished"></translation>
+        <translation>Pull-ups de entrada</translation>
     </message>
     <message>
         <source>Outputs:</source>
         <translation type="vanished">Salidas:</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="74"/>
+        <location filename="../../src/components/iocomponent.cpp" line="79"/>
         <source>Output High Voltage</source>
         <translation>Voltage alto de Salida</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="77"/>
+        <location filename="../../src/components/iocomponent.cpp" line="82"/>
         <source>Output Low Voltage</source>
         <translation>Voltaje Bajo de Salida</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="80"/>
+        <location filename="../../src/components/iocomponent.cpp" line="85"/>
         <source>Output Impedance</source>
         <translation>Impedancia de Salida</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="83"/>
+        <location filename="../../src/components/iocomponent.cpp" line="88"/>
         <source>Output Z Impedance</source>
-        <translation type="unfinished"></translation>
+        <translation>Impedancia Z de salida</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="92"/>
+        <location filename="../../src/components/iocomponent.cpp" line="97"/>
         <source>Ouput pullups</source>
-        <translation type="unfinished"></translation>
+        <translation>Pull-ups de salida</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="111"/>
+        <location filename="../../src/components/iocomponent.cpp" line="116"/>
         <source>Rise Time</source>
-        <translation>Tempo de Subida</translation>
+        <translation>Tiempo de Subida</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="114"/>
+        <location filename="../../src/components/iocomponent.cpp" line="119"/>
         <source>Fall Time</source>
         <translation>Tiempo de Bajada</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="95"/>
+        <location filename="../../src/components/iocomponent.cpp" line="100"/>
         <source>Invert Outputs</source>
         <translation>Invertir Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="98"/>
+        <location filename="../../src/components/iocomponent.cpp" line="103"/>
         <source>Open Drain</source>
         <translation>Drenaje Abierto</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="40"/>
+        <location filename="../../src/components/iocomponent.cpp" line="45"/>
         <source>Logic Family</source>
         <translation>Familia Lógica</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="43"/>
+        <location filename="../../src/components/iocomponent.cpp" line="48"/>
         <source>Supply Voltage</source>
         <translation>Voltage alimentación</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="105"/>
+        <location filename="../../src/components/iocomponent.cpp" line="110"/>
         <source>Delay Multiplier</source>
         <translation>Multiplicador retardo</translation>
     </message>
     <message>
-        <location filename="../../src/components/iocomponent.cpp" line="108"/>
+        <location filename="../../src/components/iocomponent.cpp" line="113"/>
         <source>Family Delay</source>
         <translation>Retardo de Familia</translation>
+    </message>
+</context>
+<context>
+    <name>Jfet</name>
+    <message>
+        <location filename="../../src/components/active/jfet.cpp" line="24"/>
+        <source>Jfet</source>
+        <translation>Jfet</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/active/jfet.cpp" line="48"/>
+        <source>Electric</source>
+        <translation>Eléctrico</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/active/jfet.cpp" line="49"/>
+        <source>Idss</source>
+        <translation>Idss</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/active/jfet.cpp" line="52"/>
+        <source>Vp</source>
+        <translation>Vp</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/active/jfet.cpp" line="55"/>
+        <source>1/Lambda</source>
+        <translation>1/Lambda</translation>
     </message>
 </context>
 <context>
@@ -3169,9 +3315,9 @@ No se pudo encontrar el archivo:
         <translation type="vanished">KY-023</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/ky023.cpp" line="34"/>
+        <location filename="../../src/components/micro/ky023.cpp" line="33"/>
         <source>Joystick Dual Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Joystick de Eje Dual</translation>
     </message>
 </context>
 <context>
@@ -3182,12 +3328,12 @@ No se pudo encontrar el archivo:
         <translation>Encoder rotativo (relativo)</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/ky040.cpp" line="95"/>
+        <location filename="../../src/components/micro/ky040.cpp" line="96"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/micro/ky040.cpp" line="96"/>
+        <location filename="../../src/components/micro/ky040.cpp" line="97"/>
         <source>Steps per Rotation</source>
         <translation>Pasos por Vuelta</translation>
     </message>
@@ -3202,7 +3348,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/switches/keypad.cpp" line="47"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/switches/keypad.cpp" line="54"/>
@@ -3235,7 +3381,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/displays/ks0108.cpp" line="78"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/displays/ks0108.cpp" line="79"/>
@@ -3246,22 +3392,22 @@ No se pudo encontrar el archivo:
 <context>
     <name>LAnalizer</name>
     <message>
-        <location filename="../../src/components/meters/logicanalizer.cpp" line="95"/>
+        <location filename="../../src/components/meters/logicanalizer.cpp" line="96"/>
         <source>Export</source>
         <translation>Exportar</translation>
     </message>
     <message>
-        <location filename="../../src/components/meters/logicanalizer.cpp" line="96"/>
+        <location filename="../../src/components/meters/logicanalizer.cpp" line="97"/>
         <source>Base Time Step</source>
         <translation>Unidad de Tiempo</translation>
     </message>
     <message>
-        <location filename="../../src/components/meters/logicanalizer.cpp" line="99"/>
+        <location filename="../../src/components/meters/logicanalizer.cpp" line="100"/>
         <source>Export at pause</source>
         <translation>Exportar al pausar</translation>
     </message>
     <message>
-        <location filename="../../src/components/meters/logicanalizer.cpp" line="34"/>
+        <location filename="../../src/components/meters/logicanalizer.cpp" line="35"/>
         <source>Logic Analyzer</source>
         <translation>Analizador Lógico</translation>
     </message>
@@ -3286,42 +3432,42 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="119"/>
         <source>Ch 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 1</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="124"/>
         <source>Ch 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 2</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="129"/>
         <source>Ch 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 3</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="134"/>
         <source>Ch 4</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 4</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="139"/>
         <source>Ch 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 5</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="144"/>
         <source>Ch 6</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 6</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="149"/>
         <source>Ch 7</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 7</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="154"/>
         <source>Ch 8</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal 8</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="194"/>
@@ -3332,22 +3478,22 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="103"/>
         <source>Trigger:</source>
-        <translation type="unfinished"></translation>
+        <translation>Disparador:</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="246"/>
         <source>Time Div</source>
-        <translation type="unfinished"></translation>
+        <translation>Div Tiempo</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="376"/>
         <source>Time Pos</source>
-        <translation type="unfinished"></translation>
+        <translation>Pos Tiempo</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="724"/>
         <source>Threshold</source>
-        <translation type="unfinished">Umbral</translation>
+        <translation>Umbral</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/lawidget.ui" line="513"/>
@@ -3365,7 +3511,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/lamp.cpp" line="47"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/lamp.cpp" line="48"/>
@@ -3389,7 +3535,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/latchd.cpp" line="55"/>
         <location filename="../../src/components/logic/latchd.cpp" line="66"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/latchd.cpp" line="56"/>
@@ -3439,52 +3585,52 @@ No se pudo encontrar el archivo:
 <context>
     <name>Ldr</name>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="24"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="25"/>
         <source>LDR</source>
         <translation>LDR</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="39"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="40"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="40"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="41"/>
         <source>Current Value</source>
         <translation>Valor Actual</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="43"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="44"/>
         <source>Minimum Value</source>
         <translation>Valor Mínimo</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="46"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="47"/>
         <source>Maximum Value</source>
         <translation>Valor Máximo</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="49"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="50"/>
         <source>Dial Step</source>
         <translation>Paso del Dial</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="52"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="53"/>
         <source>Parameters</source>
         <translation>Parámetros</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="53"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="54"/>
         <source>Gamma</source>
         <translation>Gamma</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="56"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="57"/>
         <source>R1</source>
         <translation>R1</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="59"/>
+        <location filename="../../src/components/passive/resist_sensors/ldr.cpp" line="60"/>
         <source>Dial</source>
         <translation>Dial</translation>
     </message>
@@ -3512,7 +3658,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/leds/ledbar.cpp" line="49"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/leds/ledbar.cpp" line="53"/>
@@ -3555,7 +3701,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/leds/ledbase.cpp" line="39"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/leds/ledbase.cpp" line="40"/>
@@ -3633,7 +3779,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/leds/ledmatrix.cpp" line="51"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/leds/ledmatrix.cpp" line="55"/>
@@ -3741,17 +3887,17 @@ No se pudo encontrar el archivo:
 <context>
     <name>LineNumberArea</name>
     <message>
-        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="1079"/>
+        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="1084"/>
         <source>Add BreakPoint</source>
         <translation>Añadir Punto Ruptura</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="1083"/>
+        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="1088"/>
         <source>Remove BreakPoint</source>
         <translation>Eliminar Punto Ruptura</translation>
     </message>
     <message>
-        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="1089"/>
+        <location filename="../../src/gui/editorwidget/codeeditor.cpp" line="1094"/>
         <source>Clear All BreakPoints</source>
         <translation>BorrarTodos los Puntos de Ruptura</translation>
     </message>
@@ -3837,7 +3983,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/subcircuits/logicsubc.cpp" line="56"/>
         <source>Rise Time</source>
-        <translation>Tempo de Subida</translation>
+        <translation>Tiempo de Subida</translation>
     </message>
     <message>
         <location filename="../../src/components/subcircuits/logicsubc.cpp" line="59"/>
@@ -3871,7 +4017,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/magnitudecomp.cpp" line="46"/>
         <location filename="../../src/components/logic/magnitudecomp.cpp" line="51"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/magnitudecomp.cpp" line="47"/>
@@ -3901,59 +4047,68 @@ No se pudo encontrar el archivo:
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="100"/>
+        <location filename="../../src/mainwindow.cpp" line="97"/>
         <source>Looks like SimulIDE crashed...</source>
         <translation>Parece que SimulIDE se cerró inesperadamente...</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="101"/>
+        <location filename="../../src/mainwindow.cpp" line="98"/>
         <source>There is an auto-saved copy of the Circuit
 </source>
         <translation>Hay una copia del último Circuito
 </translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="102"/>
+        <location filename="../../src/mainwindow.cpp" line="99"/>
         <source>You must save it with any other name if you want to keep it</source>
         <translation>Debería guardarla con otro nonbre si quiere conservarla</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="103"/>
+        <location filename="../../src/mainwindow.cpp" line="100"/>
         <source>This file will be auto-deleted!!</source>
         <translation>Este archivo será borrado automaticamente</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="104"/>
+        <location filename="../../src/mainwindow.cpp" line="101"/>
         <source>Do you want to open the auto-saved copy of the Circuit?</source>
         <translation>Quiere abrir la copia del último Circuito?</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="258"/>
+        <location filename="../../src/mainwindow.cpp" line="266"/>
         <source>Search Components</source>
         <translation>Buscar Componentes</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="280"/>
+        <location filename="../../src/mainwindow.cpp" line="293"/>
         <source>Components</source>
         <translation>Componentes</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="281"/>
+        <location filename="../../src/mainwindow.cpp" line="294"/>
+        <source>Libraries</source>
+        <translation>Bibliotecas</translation>
+    </message>
+    <message>
+        <location filename="../../src/mainwindow.cpp" line="295"/>
+        <source>Files</source>
+        <translation>Archivos</translation>
+    </message>
+    <message>
         <source>File explorer</source>
-        <translation>Explorador de Archivos</translation>
+        <translation type="vanished">Explorador de Archivos</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="312"/>
+        <location filename="../../src/mainwindow.cpp" line="325"/>
         <source>No help available</source>
-        <translation>No ahy ayuda disponible</translation>
+        <translation>No hay ayuda disponible</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="347"/>
+        <location filename="../../src/mainwindow.cpp" line="360"/>
         <source>Select User data directory</source>
         <translation>Seleccionar carpeta de usuario</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.cpp" line="266"/>
+        <location filename="../../src/mainwindow.cpp" line="274"/>
         <source>Clear search</source>
         <translation>Borrar búsqueda</translation>
     </message>
@@ -3963,7 +4118,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/leds/max72xx_matrix.cpp" line="75"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/leds/max72xx_matrix.cpp" line="78"/>
@@ -3984,109 +4139,114 @@ No se pudo encontrar el archivo:
 <context>
     <name>Mcu</name>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="95"/>
-        <location filename="../../src/microsim/mcu.cpp" line="238"/>
+        <location filename="../../src/microsim/mcu.cpp" line="93"/>
+        <location filename="../../src/microsim/mcu.cpp" line="236"/>
+        <location filename="../../src/microsim/mcu.cpp" line="241"/>
         <location filename="../../src/microsim/mcu.cpp" line="243"/>
-        <location filename="../../src/microsim/mcu.cpp" line="245"/>
-        <location filename="../../src/microsim/mcu.cpp" line="251"/>
-        <location filename="../../src/microsim/mcu.cpp" line="254"/>
-        <location filename="../../src/microsim/mcu.cpp" line="257"/>
-        <location filename="../../src/microsim/mcu.cpp" line="261"/>
+        <location filename="../../src/microsim/mcu.cpp" line="249"/>
+        <location filename="../../src/microsim/mcu.cpp" line="252"/>
+        <location filename="../../src/microsim/mcu.cpp" line="255"/>
+        <location filename="../../src/microsim/mcu.cpp" line="259"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="243"/>
+        <location filename="../../src/microsim/mcu.cpp" line="241"/>
         <source>Frequency</source>
         <translation>Frecuencia</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="251"/>
+        <location filename="../../src/microsim/mcu.cpp" line="243"/>
+        <source>Force this frequency</source>
+        <translation>Forzar esta frecuencia</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/mcu.cpp" line="249"/>
         <source>PGM persistent</source>
-        <translation type="unfinished"></translation>
+        <translation>PGM persistente</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="254"/>
+        <location filename="../../src/microsim/mcu.cpp" line="252"/>
         <source>Firmware</source>
-        <translation type="unfinished"></translation>
+        <translation>Firmware</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="257"/>
+        <location filename="../../src/microsim/mcu.cpp" line="255"/>
         <source>Reload hex at Simulation Start</source>
         <translation>Recargar hex al inicio</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="261"/>
+        <location filename="../../src/microsim/mcu.cpp" line="259"/>
         <source>EEPROM persistent</source>
-        <translation type="unfinished"></translation>
+        <translation>EEPROM persistente</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="266"/>
+        <location filename="../../src/microsim/mcu.cpp" line="264"/>
         <source>Config</source>
         <translation>Configuracion</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="270"/>
+        <location filename="../../src/microsim/mcu.cpp" line="268"/>
         <source>Enable Reset Pin</source>
         <translation>Habilitar Pin Reset</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="274"/>
+        <location filename="../../src/microsim/mcu.cpp" line="272"/>
         <source>External Oscillator</source>
         <translation>Oscilador Externo</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="278"/>
+        <location filename="../../src/microsim/mcu.cpp" line="276"/>
         <source>Enable WatchDog</source>
         <translation>Habilitar WatchDog</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="494"/>
+        <location filename="../../src/microsim/mcu.cpp" line="493"/>
         <source>Load Firmware</source>
         <translation>Cargar Firmware</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="505"/>
+        <location filename="../../src/microsim/mcu.cpp" line="504"/>
         <source>No File to reload </source>
         <translation>No hay Archivo que recargar </translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="548"/>
+        <location filename="../../src/microsim/mcu.cpp" line="547"/>
         <source>Main Mcu</source>
         <translation>Mcu Principal</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="559"/>
+        <location filename="../../src/microsim/mcu.cpp" line="558"/>
         <source>Load firmware</source>
         <translation>Cargar firmware</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="562"/>
+        <location filename="../../src/microsim/mcu.cpp" line="561"/>
         <source>Reload firmware</source>
         <translation>Recargar firmware</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="570"/>
+        <location filename="../../src/microsim/mcu.cpp" line="569"/>
         <source>Load EEPROM data from file</source>
         <translation>Cargar datos EEPROM desde archivo</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="573"/>
+        <location filename="../../src/microsim/mcu.cpp" line="572"/>
         <source>Save EEPROM data to file</source>
         <translation>Guardar datos EEPROM a archivo</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="578"/>
+        <location filename="../../src/microsim/mcu.cpp" line="577"/>
         <source>Open Mcu Monitor.</source>
         <translation>Abrir Monitor Mcu</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="583"/>
+        <location filename="../../src/microsim/mcu.cpp" line="582"/>
         <source>Open Serial Monitor.</source>
         <translation>Abrir Monitor.Serial </translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="495"/>
+        <location filename="../../src/microsim/mcu.cpp" line="494"/>
         <source>All files (*.*);;Hex Files (*.hex)</source>
         <translation>Todos (*.*);;Archivos Hex (*.hex)</translation>
     </message>
@@ -4095,33 +4255,56 @@ No se pudo encontrar el archivo:
         <translation type="vanished">Biestable Persistente</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="267"/>
+        <location filename="../../src/microsim/mcu.cpp" line="265"/>
         <source>Changes applied after Simulation Restart</source>
         <translation>Cambios aplicados despés de Reiniciar Simulación</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="282"/>
+        <location filename="../../src/microsim/mcu.cpp" line="280"/>
         <source>Clock Out</source>
         <translation>Salida de reloj</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="553"/>
+        <location filename="../../src/microsim/mcu.cpp" line="552"/>
         <source>Link to Component</source>
         <translation>Enlazar a Componente</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="238"/>
+        <location filename="../../src/microsim/mcu.cpp" line="236"/>
         <source>Package</source>
-        <translation type="unfinished"></translation>
+        <translation>Paquete</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/mcu.cpp" line="245"/>
-        <source>Force this frequency</source>
-        <translation>Forzar esta frecuencia</translation>
+        <source>Time Pos</source>
+        <translation type="vanished">Pos Tiempo</translation>
     </message>
     <message>
-        <source>PGM persitent</source>
-        <translation type="vanished">PGM persistente</translation>
+        <source>Volt Div</source>
+        <translation type="vanished">Div Voltaje</translation>
+    </message>
+    <message>
+        <source>Volt Pos</source>
+        <translation type="vanished">Pos Voltaje</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="vanished">Filtro</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="vanished">Auto</translation>
+    </message>
+    <message>
+        <source>Trigger</source>
+        <translation type="vanished">Disparador</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation type="vanished">Ocultar</translation>
+    </message>
+    <message>
+        <source>Tracks</source>
+        <translation type="vanished">Pistas</translation>
     </message>
 </context>
 <context>
@@ -4129,12 +4312,12 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/memory/mcumonitor.ui" line="61"/>
         <source>Byte PC</source>
-        <translation>PC en Bytes</translation>
+        <translation>Byte PC</translation>
     </message>
     <message>
         <location filename="../../src/gui/memory/mcumonitor.ui" line="83"/>
         <source>Jump to active Address</source>
-        <translation>Saltar A Direccion activa</translation>
+        <translation>Saltar a Dirección Activa</translation>
     </message>
 </context>
 <context>
@@ -4147,7 +4330,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/memory/memtable.ui" line="147"/>
         <source>Load Data</source>
-        <translation>Cargar datos</translation>
+        <translation>Cargar Datos</translation>
     </message>
 </context>
 <context>
@@ -4161,7 +4344,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/memory.cpp" line="72"/>
         <location filename="../../src/components/logic/memory.cpp" line="86"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/memory.cpp" line="73"/>
@@ -4171,31 +4354,12 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/logic/memory.cpp" line="76"/>
         <source>Data Size</source>
-        <translation>Tamaño Datos</translation>
+        <translation>Tamaño de Datos</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/memory.cpp" line="79"/>
         <source>Persistent</source>
         <translation>Persistente</translation>
-    </message>
-    <message>
-        <source>Electric</source>
-        <translation type="vanished">Eléctricas</translation>
-    </message>
-    <message>
-        <location filename="../../src/components/logic/memory.cpp" line="306"/>
-        <source>Load data</source>
-        <translation>Cargar Datos</translation>
-    </message>
-    <message>
-        <location filename="../../src/components/logic/memory.cpp" line="309"/>
-        <source>Save data</source>
-        <translation>Guardar Datos</translation>
-    </message>
-    <message>
-        <location filename="../../src/components/logic/memory.cpp" line="312"/>
-        <source>Show Memory Table</source>
-        <translation>Mostrar Tabla de Memoria</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/memory.cpp" line="82"/>
@@ -4208,14 +4372,34 @@ No se pudo encontrar el archivo:
         <translation>Entradas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/memory.cpp" line="90"/>
+        <location filename="../../src/components/logic/memory.cpp" line="91"/>
+        <source>Invert Inputs</source>
+        <translation>Invertir Entradas</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/memory.cpp" line="95"/>
         <source>Outputs</source>
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/memory.cpp" line="94"/>
+        <location filename="../../src/components/logic/memory.cpp" line="99"/>
         <source>Timing</source>
-        <translation>Tiempos</translation>
+        <translation>Temporización</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/memory.cpp" line="313"/>
+        <source>Load data</source>
+        <translation>Cargar datos</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/memory.cpp" line="316"/>
+        <source>Save data</source>
+        <translation>Guardar datos</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/memory.cpp" line="319"/>
+        <source>Show Memory Table</source>
+        <translation>Mostrar Tabla de Memoria</translation>
     </message>
 </context>
 <context>
@@ -4223,7 +4407,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/subcircuits/module.cpp" line="22"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/subcircuits/module.cpp" line="23"/>
@@ -4241,7 +4425,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/mosfet.cpp" line="46"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/mosfet.cpp" line="47"/>
@@ -4251,12 +4435,12 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/mosfet.cpp" line="50"/>
         <source>Depletion</source>
-        <translation>Deplexion</translation>
+        <translation>Agotamiento</translation>
     </message>
     <message>
         <location filename="../../src/components/active/mosfet.cpp" line="54"/>
         <source>Electric</source>
-        <translation>Eléctricas</translation>
+        <translation>Eléctrico</translation>
     </message>
     <message>
         <location filename="../../src/components/active/mosfet.cpp" line="55"/>
@@ -4274,13 +4458,13 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="27"/>
         <source>Mux</source>
-        <translation>Multiplexor</translation>
+        <translation>Mux</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="60"/>
         <location filename="../../src/components/logic/mux.cpp" line="65"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="61"/>
@@ -4303,18 +4487,14 @@ No se pudo encontrar el archivo:
         <translation>Salidas</translation>
     </message>
     <message>
-        <source>Electric</source>
-        <translation type="vanished">Eléctricas</translation>
+        <location filename="../../src/components/logic/mux.cpp" line="77"/>
+        <source>Tristate</source>
+        <translation>Tristate</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/mux.cpp" line="82"/>
         <source>Timing</source>
-        <translation>Tiempos</translation>
-    </message>
-    <message>
-        <location filename="../../src/components/logic/mux.cpp" line="77"/>
-        <source>Tristate</source>
-        <translation>Tri-estado</translation>
+        <translation>Temporización</translation>
     </message>
 </context>
 <context>
@@ -4322,12 +4502,12 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/mux_analog.cpp" line="28"/>
         <source>Analog Mux</source>
-        <translation>Multiplexor Analogico</translation>
+        <translation>Mux Analógico</translation>
     </message>
     <message>
         <location filename="../../src/components/active/mux_analog.cpp" line="58"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/mux_analog.cpp" line="59"/>
@@ -4345,12 +4525,12 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/op_amp.cpp" line="29"/>
         <source>OpAmp</source>
-        <translation>Amplificador Operacional</translation>
+        <translation>OpAmp</translation>
     </message>
     <message>
         <location filename="../../src/components/active/op_amp.cpp" line="79"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/op_amp.cpp" line="80"/>
@@ -4365,7 +4545,17 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/op_amp.cpp" line="87"/>
         <source>Supply</source>
-        <translation>Alimentacion</translation>
+        <translation>Suministro</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/active/op_amp.cpp" line="88"/>
+        <source>Use Supply Pins</source>
+        <translation>Usar Pines de Suministro</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/active/op_amp.cpp" line="91"/>
+        <source>Switch Supply Pins</source>
+        <translation>Cambiar Pines de Suministro</translation>
     </message>
     <message>
         <location filename="../../src/components/active/op_amp.cpp" line="94"/>
@@ -4377,42 +4567,28 @@ No se pudo encontrar el archivo:
         <source>V-</source>
         <translation>V-</translation>
     </message>
-    <message>
-        <location filename="../../src/components/active/op_amp.cpp" line="91"/>
-        <source>Switch Supply Pins</source>
-        <translation>Cambiar Pines Aliment.</translation>
-    </message>
-    <message>
-        <location filename="../../src/components/active/op_amp.cpp" line="88"/>
-        <source>Use Supply Pins</source>
-        <translation>Usar Pines de Alimentación</translation>
-    </message>
 </context>
 <context>
     <name>OrGate</name>
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="20"/>
         <source>Or Gate</source>
-        <translation>Puerta Or</translation>
+        <translation>Puerta OR</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="32"/>
         <source>Main</source>
-        <translation>Basico</translation>
-    </message>
-    <message>
-        <location filename="../../src/components/logic/gate_or.cpp" line="37"/>
-        <source>Input Size</source>
-        <translation>Entradas</translation>
-    </message>
-    <message>
-        <source>Electric</source>
-        <translation type="vanished">Eléctricas</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="34"/>
         <source>Inputs</source>
         <translation>Entradas</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/gate_or.cpp" line="37"/>
+        <source>Input Size</source>
+        <translation>Tamaño de Entrada</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_or.cpp" line="40"/>
@@ -4425,9 +4601,14 @@ No se pudo encontrar el archivo:
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/gate_or.cpp" line="50"/>
+        <location filename="../../src/components/logic/gate_or.cpp" line="49"/>
+        <source>Invert Output by Right-Click on Pin</source>
+        <translation>Invertir Salida haciendo Clic Derecho en el Pin</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/gate_or.cpp" line="53"/>
         <source>Timing</source>
-        <translation>Tiempos</translation>
+        <translation>Temporización</translation>
     </message>
 </context>
 <context>
@@ -4435,22 +4616,22 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/dataplotwidget/oscwidget.ui" line="352"/>
         <source>Time Div</source>
-        <translation type="unfinished"></translation>
+        <translation>Div Tiempo</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/oscwidget.ui" line="454"/>
         <source>Time Pos</source>
-        <translation type="unfinished"></translation>
+        <translation>Pos Tiempo</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/oscwidget.ui" line="581"/>
         <source>Volt Div</source>
-        <translation type="unfinished"></translation>
+        <translation>Div Volt</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/oscwidget.ui" line="680"/>
         <source>Volt Pos</source>
-        <translation type="unfinished"></translation>
+        <translation>Pos Volt</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/oscwidget.ui" line="783"/>
@@ -4465,7 +4646,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/dataplotwidget/oscwidget.ui" line="1042"/>
         <source>Trigger</source>
-        <translation type="unfinished"></translation>
+        <translation>Disparador</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/oscwidget.ui" line="1194"/>
@@ -4497,7 +4678,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/properties/pathval.cpp" line="44"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo</translation>
     </message>
 </context>
 <context>
@@ -4505,7 +4686,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/dataplotwidget/plotbase.cpp" line="73"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/plotbase.cpp" line="80"/>
@@ -4535,43 +4716,43 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/dataplotwidget/plotbase.cpp" line="90"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/plotbase.cpp" line="91"/>
         <source>Test Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de Prueba</translation>
     </message>
     <message>
         <location filename="../../src/gui/dataplotwidget/plotbase.cpp" line="94"/>
         <source>Do Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Hacer Prueba</translation>
     </message>
 </context>
 <context>
     <name>Potentiometer</name>
     <message>
-        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="28"/>
+        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="29"/>
         <source>Potentiometer</source>
         <translation>Potenciometro</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="71"/>
+        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="72"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="72"/>
+        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="73"/>
         <source>Resistance</source>
         <translation>Resistencia</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="75"/>
+        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="76"/>
         <source>Current Value</source>
         <translation>Valor Actual</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="79"/>
+        <location filename="../../src/components/passive/resistors/potentiometer.cpp" line="80"/>
         <source>Dial</source>
         <translation>Dial</translation>
     </message>
@@ -4586,7 +4767,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/meters/probe.cpp" line="66"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/meters/probe.cpp" line="67"/>
@@ -4606,7 +4787,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/meters/probe.cpp" line="174"/>
         <source>Pause at state change</source>
-        <translation type="unfinished"></translation>
+        <translation>Pausar en cambio de estado</translation>
     </message>
 </context>
 <context>
@@ -4629,7 +4810,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/gui/properties/propdialog.ui" line="174"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/gui/properties/propdialog.ui" line="122"/>
@@ -4647,7 +4828,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/switches/push.cpp" line="40"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/switches/push.cpp" line="41"/>
@@ -4668,112 +4849,110 @@ No se pudo encontrar el archivo:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="151"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="159"/>
         <source>Sources</source>
         <translation>Fuentes</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="249"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="276"/>
         <source>Logic</source>
         <translation>Logica</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="234"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="259"/>
         <source>Sensors</source>
         <translation>Sensores</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="240"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="266"/>
         <source>Peripherals</source>
         <translation>Periféricos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="143"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="151"/>
         <source>Meters</source>
         <translation>Medida</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="292"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="323"/>
         <source>Graphical</source>
         <translation>Graficos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="202"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="215"/>
         <source>Outputs</source>
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="211"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="225"/>
         <source>Displays</source>
         <translation>Pantallas</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="203"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="216"/>
         <source>Leds</source>
-        <translation type="unfinished"></translation>
+        <translation>LEDs</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="218"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="238"/>
         <source>Motors</source>
         <translation>Motores</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="180"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="190"/>
         <source>Reactive</source>
         <translation>Reactivos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="175"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="184"/>
         <source>Resistive Sensors</source>
         <translation>Sensores Resistivos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="170"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="178"/>
         <source>Resistors</source>
         <translation>Resistencias</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="169"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="177"/>
         <source>Passive</source>
         <translation>Pasivos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="226"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="247"/>
         <source>Micro</source>
-        <translation type="unfinished"></translation>
+        <translation>Micro</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="232"/>
         <source>Arduino</source>
-        <translation type="unfinished">Arduino</translation>
+        <translation type="vanished">Arduino</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="233"/>
         <source>Shields</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Shields</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="250"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="277"/>
         <source>Gates</source>
         <translation>Puertas</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="255"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="283"/>
         <source>Arithmetic</source>
         <translation>Aritmetica</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="262"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="291"/>
         <source>Memory</source>
         <translation>Memoria</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="271"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="301"/>
         <source>Converters</source>
         <translation>Conversores</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="278"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="309"/>
         <source>Other Logic</source>
         <translation>Otros (Logica)</translation>
     </message>
@@ -4783,12 +4962,12 @@ No se pudo encontrar el archivo:
         <translation>Warning: No existe el archivo elf:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="187"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="197"/>
         <source>Rectifiers</source>
         <translation>Rectificadores</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="186"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="196"/>
         <source>Active</source>
         <translation>Activos</translation>
     </message>
@@ -4798,57 +4977,57 @@ No se pudo encontrar el archivo:
         <translation>Error: el  archivo lst no existe:</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="114"/>
+        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="113"/>
         <source>Cpu</source>
-        <translation type="unfinished"></translation>
+        <translation>CPU</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="118"/>
+        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="117"/>
         <source>Producer</source>
         <translation>Fabricante</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="121"/>
+        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="120"/>
         <source>CMOS</source>
-        <translation type="unfinished"></translation>
+        <translation>CMOS</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="124"/>
+        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="123"/>
         <source>Single cycle I/O</source>
         <translation>I/O de ciclo sencillo</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="127"/>
+        <location filename="../../src/microsim/cores/z80/z80core.cpp" line="126"/>
         <source>Interrupt Vector 0xFF</source>
         <translation>Vector de Interrupción 0xFF</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="162"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="170"/>
         <source>Switches</source>
         <translation>Interruptores</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="286"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="317"/>
         <source>Connectors</source>
         <translation>Conectores</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="299"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="330"/>
         <source>Other</source>
         <translation>Otros</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="193"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="204"/>
         <source>Transistors</source>
         <translation>Transistores</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="196"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="209"/>
         <source>Other Active</source>
         <translation>Otros Activos</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="222"/>
+        <location filename="../../src/gui/componentlist/itemlibrary.cpp" line="243"/>
         <source>Other Outputs</source>
         <translation>Otras Salidas</translation>
     </message>
@@ -4863,41 +5042,89 @@ No se pudo encontrar el archivo:
         <translation>Eliminar Pin </translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="97"/>
-        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="101"/>
+        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="96"/>
+        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="100"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="98"/>
+        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="97"/>
         <source>Type</source>
         <translation>Tipo</translation>
     </message>
     <message>
-        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="102"/>
+        <location filename="../../src/microsim/cores/z80/ula_zx48k.cpp" line="101"/>
         <source>Screen</source>
         <translation>Pantalla</translation>
     </message>
     <message>
-        <location filename="../../src/gui/circuitwidget/iopin.cpp" line="308"/>
+        <location filename="../../src/gui/circuitwidget/iopin.cpp" line="332"/>
         <source>Invert Pin</source>
-        <translation type="unfinished">Invertir Pin</translation>
+        <translation>Invertir Pin</translation>
+    </message>
+</context>
+<context>
+    <name>QemuDevice</name>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="122"/>
+        <source>Main</source>
+        <translation>Principal</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="123"/>
+        <source>Firmware</source>
+        <translation>Firmware</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="126"/>
+        <source>Extra arguments</source>
+        <translation>Argumentos extra</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="438"/>
+        <source>Load Firmware</source>
+        <translation>Cargar Firmware</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="439"/>
+        <source>All files (*.*);;Hex Files (*.hex)</source>
+        <translation>Todos los archivos (*.*);;Archivos Hex (*.hex)</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="449"/>
+        <source>No File to reload </source>
+        <translation>Ningún Archivo para recargar</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="484"/>
+        <source>Load firmware</source>
+        <translation>Cargar firmware</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="487"/>
+        <source>Reload firmware</source>
+        <translation>Recargar firmware</translation>
+    </message>
+    <message>
+        <location filename="../../src/microsim/cores/qemu/qemudevice.cpp" line="498"/>
+        <source>Open Serial Monitor.</source>
+        <translation>Abrir Monitor Serial.</translation>
     </message>
 </context>
 <context>
     <name>RTD</name>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/rtd.cpp" line="28"/>
+        <location filename="../../src/components/passive/resist_sensors/rtd.cpp" line="29"/>
         <source>RTD</source>
-        <translation type="unfinished"></translation>
+        <translation>RTD</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/rtd.cpp" line="38"/>
+        <location filename="../../src/components/passive/resist_sensors/rtd.cpp" line="39"/>
         <source>Parameters</source>
         <translation>Parámetros</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/rtd.cpp" line="43"/>
+        <location filename="../../src/components/passive/resist_sensors/rtd.cpp" line="44"/>
         <source>Dial</source>
         <translation>Dial</translation>
     </message>
@@ -4907,7 +5134,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/rail.cpp" line="47"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/rail.cpp" line="48"/>
@@ -4917,7 +5144,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/rail.cpp" line="24"/>
         <source>Rail</source>
-        <translation type="unfinished"></translation>
+        <translation>Carril</translation>
     </message>
 </context>
 <context>
@@ -4996,7 +5223,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/switches/relay.cpp" line="62"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/switches/relay.cpp" line="63"/>
@@ -5021,12 +5248,12 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/switches/relay.cpp" line="74"/>
         <source>IOn</source>
-        <translation type="unfinished"></translation>
+        <translation>IOn</translation>
     </message>
     <message>
         <location filename="../../src/components/switches/relay.cpp" line="77"/>
         <source>IOff</source>
-        <translation type="unfinished"></translation>
+        <translation>IOff</translation>
     </message>
     <message>
         <location filename="../../src/components/switches/relay.cpp" line="81"/>
@@ -5058,7 +5285,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/passive/resistors/resistor.cpp" line="39"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/passive/resistors/resistor.cpp" line="40"/>
@@ -5069,32 +5296,32 @@ No se pudo encontrar el archivo:
 <context>
     <name>ResistorDip</name>
     <message>
-        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="32"/>
+        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="33"/>
         <source>ResistorDip</source>
         <translation>Resistencia Dip</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="59"/>
+        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="60"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="60"/>
+        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="61"/>
         <source>Resistance</source>
         <translation>Resistencia</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="63"/>
+        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="64"/>
         <source>Size</source>
         <translation>Tamaño</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="66"/>
+        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="67"/>
         <source>Pullup</source>
-        <translation type="unfinished"></translation>
+        <translation>Pull-up</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="69"/>
+        <location filename="../../src/components/passive/resistors/resistordip.cpp" line="70"/>
         <source>Pullup Voltage</source>
         <translation>Voltaje Pullup</translation>
     </message>
@@ -5109,7 +5336,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/scr.cpp" line="72"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/scr.cpp" line="73"/>
@@ -5125,6 +5352,57 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/active/scr.cpp" line="79"/>
         <source>Holding Current</source>
         <translation>Corriente Mantenimiento</translation>
+    </message>
+</context>
+<context>
+    <name>SR04</name>
+    <message>
+        <location filename="../../src/components/micro/sr04.cpp" line="85"/>
+        <source>Main</source>
+        <translation>Principal</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/sr04.cpp" line="86"/>
+        <source>Use slider</source>
+        <translation>Usar deslizador</translation>
+    </message>
+</context>
+<context>
+    <name>SdCard</name>
+    <message>
+        <location filename="../../src/components/micro/sdcard.cpp" line="34"/>
+        <source>SD Card Reader</source>
+        <translation>Lector de Tarjeta SD</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/sdcard.cpp" line="83"/>
+        <source>Main</source>
+        <translation>Principal</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/sdcard.cpp" line="84"/>
+        <source>File</source>
+        <translation>Archivo</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/sdcard.cpp" line="334"/>
+        <source>Load Disk Image</source>
+        <translation>Cargar Imagen de Disco</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/sdcard.cpp" line="335"/>
+        <source>img files (*.img);;All files (*.*)</source>
+        <translation>archivos img (*.img);;Todos los archivos (*.*)</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/sdcard.cpp" line="408"/>
+        <source>Load .img File</source>
+        <translation>Cargar Archivo .img</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/micro/sdcard.cpp" line="412"/>
+        <source>Eject SD card</source>
+        <translation>Expulsar tarjeta SD</translation>
     </message>
 </context>
 <context>
@@ -5248,7 +5526,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/micro/serialport.cpp" line="90"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/serialport.cpp" line="91"/>
@@ -5276,7 +5554,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/micro/serialterm.cpp" line="86"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/serialterm.cpp" line="91"/>
@@ -5314,7 +5592,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/motors/servo.cpp" line="61"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/motors/servo.cpp" line="62"/>
@@ -5352,7 +5630,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/leds/sevensegment.cpp" line="74"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/leds/sevensegment.cpp" line="78"/>
@@ -5405,7 +5683,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/logic/sevensegment_bcd.cpp" line="71"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/sevensegment_bcd.cpp" line="72"/>
@@ -5419,11 +5697,44 @@ No se pudo encontrar el archivo:
     </message>
 </context>
 <context>
+    <name>Sh1107</name>
+    <message>
+        <location filename="../../src/components/outputs/displays/sh1107.cpp" line="37"/>
+        <source>Main</source>
+        <translation>Principal</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/sh1107.cpp" line="38"/>
+        <source>Width</source>
+        <translation>Ancho</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/sh1107.cpp" line="41"/>
+        <source>Height</source>
+        <translation>Alto</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/sh1107.cpp" line="45"/>
+        <source>I2C</source>
+        <translation>I2C</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/sh1107.cpp" line="46"/>
+        <source>I2C Address</source>
+        <translation>Dirección I2C</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/sh1107.cpp" line="49"/>
+        <source>I2C Frequency</source>
+        <translation>Frecuencia I2C</translation>
+    </message>
+</context>
+<context>
     <name>Shape</name>
     <message>
         <location filename="../../src/components/graphical/shape.cpp" line="33"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/graphical/shape.cpp" line="43"/>
@@ -5481,7 +5792,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/logic/shiftreg.cpp" line="71"/>
         <location filename="../../src/components/logic/shiftreg.cpp" line="88"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <source>Clock Inverted</source>
@@ -5539,12 +5850,12 @@ No se pudo encontrar el archivo:
 <context>
     <name>Simulator</name>
     <message>
-        <location filename="../../src/simulator/simulator.cpp" line="121"/>
+        <location filename="../../src/simulator/simulator.cpp" line="124"/>
         <source>Running</source>
         <translation>Simulando</translation>
     </message>
     <message>
-        <location filename="../../src/simulator/simulator.cpp" line="52"/>
+        <location filename="../../src/simulator/simulator.cpp" line="55"/>
         <source>Stopped</source>
         <translation>Detenido</translation>
     </message>
@@ -5560,59 +5871,81 @@ No se pudo encontrar el archivo:
 <context>
     <name>Ssd1306</name>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="75"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="41"/>
         <source>White</source>
         <translation>Blanco</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="75"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="41"/>
         <source>Blue</source>
         <translation>Azul</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="75"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="41"/>
         <source>Yellow</source>
         <translation>Amarillo</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="74"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="40"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="75"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="41"/>
         <source>Color</source>
         <translation>Color</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="89"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="52"/>
         <source>I2C Address</source>
         <translation>Dirección I2C</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="92"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="55"/>
         <source>I2C Frequency</source>
         <translation>Frecuencia I2C</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="78"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="44"/>
         <source>Width</source>
         <translation>Ancho</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="81"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="47"/>
         <source>Height</source>
         <translation>Alto</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="84"/>
         <source>Rotate</source>
-        <translation>Rotar</translation>
+        <translation type="vanished">Rotar</translation>
     </message>
     <message>
-        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="88"/>
+        <location filename="../../src/components/outputs/displays/ssd1306.cpp" line="51"/>
         <source>I2C</source>
         <translation>I2C</translation>
+    </message>
+</context>
+<context>
+    <name>St77xx</name>
+    <message>
+        <location filename="../../src/components/outputs/displays/st77xx.cpp" line="32"/>
+        <source>Main</source>
+        <translation>Principal</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/st77xx.cpp" line="33"/>
+        <source>Width</source>
+        <translation>Ancho</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/st77xx.cpp" line="36"/>
+        <source>Height</source>
+        <translation>Alto</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/outputs/displays/st77xx.cpp" line="39"/>
+        <source>Scale</source>
+        <translation>Escala</translation>
     </message>
 </context>
 <context>
@@ -5625,7 +5958,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/motors/stepper.cpp" line="87"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/motors/stepper.cpp" line="88"/>
@@ -5653,7 +5986,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/passive/resist_sensors/strain.cpp" line="44"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/passive/resist_sensors/strain.cpp" line="45"/>
@@ -5699,56 +6032,61 @@ No se pudo encontrar el archivo:
 <context>
     <name>SubCircuit</name>
     <message>
-        <location filename="../../src/components/subcircuits/subcircuit.cpp" line="151"/>
+        <location filename="../../src/components/subcircuits/subcircuit.cpp" line="154"/>
         <source>Subcircuit</source>
         <translation>Subcircuito</translation>
     </message>
     <message>
-        <location filename="../../src/components/subcircuits/subcircuit.cpp" line="124"/>
+        <location filename="../../src/components/subcircuits/subcircuit.cpp" line="127"/>
         <location filename="../../src/components/subcircuits/subcircuit.cpp" line="164"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/subcircuits/subcircuit.cpp" line="125"/>
+        <location filename="../../src/components/subcircuits/subcircuit.cpp" line="128"/>
         <source>Package</source>
-        <translation type="unfinished"></translation>
+        <translation>Paquete</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/subcircuits/subcircuit.cpp" line="446"/>
+        <source>Open Subcircuit</source>
+        <translation>Abrir Subcircuito</translation>
     </message>
 </context>
 <context>
     <name>SubPackage</name>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="69"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="72"/>
         <source>Board Mode</source>
         <translation>Modo Placa</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="82"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="85"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="83"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="86"/>
         <source>Type</source>
         <translation>Tipo</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="86"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="89"/>
         <source>Width</source>
         <translation>Ancho</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="89"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="92"/>
         <source>Height</source>
         <translation>Alto</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="92"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="95"/>
         <source>Name</source>
         <translation>Nombre</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="95"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="98"/>
         <source>Package File</source>
         <translation>Archivo package</translation>
     </message>
@@ -5757,54 +6095,54 @@ No se pudo encontrar el archivo:
         <translation type="vanished">Fondo</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="98"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="101"/>
         <source>Logic Symbol</source>
         <translation>Símbolo Lógico</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="101"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="104"/>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Personalizado</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="104"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="107"/>
         <source>Background Color</source>
         <translation>Color de Fondo</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="107"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="110"/>
         <source>Background image</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de fondo</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="110"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="113"/>
         <source>Border</source>
         <translation>Borde</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="260"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="263"/>
         <source>Load Package</source>
         <translation>Cargar Package</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="263"/>
-        <location filename="../../src/components/other/subpackage.cpp" line="567"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="266"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="570"/>
         <source>Save Package</source>
         <translation>Guardar Package</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="568"/>
-        <location filename="../../src/components/other/subpackage.cpp" line="587"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="571"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="590"/>
         <source>Packages (*.package);;All files (*.*)</source>
         <translation>Packages (*.package);;Todos (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="586"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="589"/>
         <source>Load Package File</source>
         <translation>Cargar Archivo package</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="608"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="611"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>No se pudo escribir el archivo %1:
@@ -5813,35 +6151,35 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/other/subpackage.cpp" line="46"/>
         <source>Package</source>
-        <translation type="unfinished"></translation>
+        <translation>Paquete</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="273"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="276"/>
         <source>Select Exposed Components</source>
         <translation>Seleccionar Componentes Expuestos</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="80"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="83"/>
         <source>None</source>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="80"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="83"/>
         <source>Logic</source>
         <translation>Logica</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="80"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="83"/>
         <source>Board</source>
         <translation>Placa</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="80"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="83"/>
         <source>Shield</source>
-        <translation type="unfinished"></translation>
+        <translation>Escudo</translation>
     </message>
     <message>
-        <location filename="../../src/components/other/subpackage.cpp" line="80"/>
+        <location filename="../../src/components/other/subpackage.cpp" line="83"/>
         <source>Module</source>
         <translation>Módulo</translation>
     </message>
@@ -5856,7 +6194,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/switches/switch.cpp" line="44"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/switches/switch.cpp" line="45"/>
@@ -5889,7 +6227,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/switches/switchdip.cpp" line="55"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/switches/switchdip.cpp" line="56"/>
@@ -5912,12 +6250,12 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/other/testunit.cpp" line="27"/>
         <source>Test Unit</source>
-        <translation type="unfinished"></translation>
+        <translation>Unidad de Prueba</translation>
     </message>
     <message>
         <location filename="../../src/components/other/testunit.cpp" line="51"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/other/testunit.cpp" line="52"/>
@@ -5932,7 +6270,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/other/testunit.cpp" line="62"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <location filename="../../src/components/other/testunit.cpp" line="63"/>
@@ -5942,60 +6280,60 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/other/testunit.cpp" line="228"/>
         <source>Show Table</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar Tabla</translation>
     </message>
 </context>
 <context>
     <name>TextComponent</name>
     <message>
         <location filename="../../src/components/graphical/textcomponent.cpp" line="31"/>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="95"/>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="108"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="96"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="109"/>
         <source>Text</source>
         <translation>Texto</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="81"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="82"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="82"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="83"/>
         <source>Margin</source>
         <translation>Margen</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="85"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="86"/>
         <source>Border</source>
         <translation>Borde</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="91"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="92"/>
         <source>Opacity</source>
         <translation>Opacidad</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="96"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="97"/>
         <source>Font</source>
         <translation>Fuente</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="102"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="103"/>
         <source>Font Size</source>
         <translation>Tamaño Texto</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="105"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="106"/>
         <source>Fixed_Width</source>
         <translation>Ancho_Fijo</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="88"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="89"/>
         <source>Background Color</source>
         <translation>Color de Fondo</translation>
     </message>
     <message>
-        <location filename="../../src/components/graphical/textcomponent.cpp" line="99"/>
+        <location filename="../../src/components/graphical/textcomponent.cpp" line="100"/>
         <source>Font Color</source>
         <translation>Color de Texto</translation>
     </message>
@@ -6003,17 +6341,17 @@ No se pudo encontrar el archivo:
 <context>
     <name>Thermistor</name>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/thermistor.cpp" line="23"/>
+        <location filename="../../src/components/passive/resist_sensors/thermistor.cpp" line="24"/>
         <source>Thermistor</source>
         <translation>Termistor</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/thermistor.cpp" line="36"/>
+        <location filename="../../src/components/passive/resist_sensors/thermistor.cpp" line="37"/>
         <source>Parameters</source>
         <translation>Parámetros</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resist_sensors/thermistor.cpp" line="43"/>
+        <location filename="../../src/components/passive/resist_sensors/thermistor.cpp" line="44"/>
         <source>Dial</source>
         <translation>Dial</translation>
     </message>
@@ -6023,7 +6361,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/passive/resist_sensors/thermistorbase.cpp" line="22"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/passive/resist_sensors/thermistorbase.cpp" line="23"/>
@@ -6056,7 +6394,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/micro/touchpad.cpp" line="102"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/touchpad.cpp" line="103"/>
@@ -6081,22 +6419,22 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/micro/touchpad.cpp" line="114"/>
         <source>RxMin</source>
-        <translation type="unfinished"></translation>
+        <translation>RxMin</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/touchpad.cpp" line="117"/>
         <source>RxMax</source>
-        <translation type="unfinished"></translation>
+        <translation>RxMax</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/touchpad.cpp" line="120"/>
         <source>RyMin</source>
-        <translation type="unfinished"></translation>
+        <translation>RyMin</translation>
     </message>
     <message>
         <location filename="../../src/components/micro/touchpad.cpp" line="123"/>
         <source>RyMax</source>
-        <translation type="unfinished"></translation>
+        <translation>RyMax</translation>
     </message>
 </context>
 <context>
@@ -6109,7 +6447,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/passive/reactive/transformer.cpp" line="51"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/passive/reactive/transformer.cpp" line="52"/>
@@ -6142,7 +6480,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/triac.cpp" line="78"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/triac.cpp" line="79"/>
@@ -6180,7 +6518,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/other/truthtable/truthtable.ui" line="102"/>
         <source>Clear test</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar prueba</translation>
     </message>
 </context>
 <context>
@@ -6193,7 +6531,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/connectors/tunnel.cpp" line="57"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/connectors/tunnel.cpp" line="58"/>
@@ -6247,37 +6585,37 @@ No se pudo encontrar el archivo:
 <context>
     <name>VarResistor</name>
     <message>
-        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="23"/>
+        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="24"/>
         <source>Variable Resistor</source>
         <translation>Resistencia Variable</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="35"/>
+        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="36"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="42"/>
+        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="43"/>
         <source>Current Value</source>
         <translation>Valor Actual</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="36"/>
+        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="37"/>
         <source>Minimum Resistance</source>
         <translation>Resistencia Minima</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="39"/>
+        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="40"/>
         <source>Maximum Resistance</source>
         <translation>Resistencia Máxima</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="45"/>
+        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="46"/>
         <source>Dial Step</source>
         <translation>Paso del Dial</translation>
     </message>
     <message>
-        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="49"/>
+        <location filename="../../src/components/passive/resistors/varresistor.cpp" line="50"/>
         <source>Dial</source>
         <translation>Dial</translation>
     </message>
@@ -6292,7 +6630,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/volt_reg.cpp" line="61"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/volt_reg.cpp" line="62"/>
@@ -6305,7 +6643,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/voltsource.cpp" line="40"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/voltsource.cpp" line="44"/>
@@ -6346,7 +6684,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/outputs/leds/ws2812.cpp" line="58"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/outputs/leds/ws2812.cpp" line="59"/>
@@ -6420,7 +6758,7 @@ No se pudo encontrar el archivo:
         <location filename="../../src/components/sources/wavegen.cpp" line="65"/>
         <location filename="../../src/components/sources/wavegen.cpp" line="70"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/wavegen.cpp" line="71"/>
@@ -6439,7 +6777,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/wavegen.cpp" line="83"/>
         <source>Duty</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciclo de Trabajo</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/wavegen.cpp" line="89"/>
@@ -6469,7 +6807,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/sources/wavegen.cpp" line="80"/>
         <source>Minimum Steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasos Mínimos</translation>
     </message>
     <message>
         <location filename="../../src/components/sources/wavegen.cpp" line="376"/>
@@ -6521,7 +6859,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/logic/gate_xor.cpp" line="33"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/logic/gate_xor.cpp" line="35"/>
@@ -6539,7 +6877,12 @@ No se pudo encontrar el archivo:
         <translation>Salidas</translation>
     </message>
     <message>
-        <location filename="../../src/components/logic/gate_xor.cpp" line="48"/>
+        <location filename="../../src/components/logic/gate_xor.cpp" line="47"/>
+        <source>Invert Output by Right-Click on Pin</source>
+        <translation>Invertir Salida haciendo Clic Derecho en el Pin</translation>
+    </message>
+    <message>
+        <location filename="../../src/components/logic/gate_xor.cpp" line="51"/>
         <source>Timing</source>
         <translation>Tiempos</translation>
     </message>
@@ -6554,7 +6897,7 @@ No se pudo encontrar el archivo:
     <message>
         <location filename="../../src/components/active/zener.cpp" line="30"/>
         <source>Main</source>
-        <translation>Basico</translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../../src/components/active/zener.cpp" line="31"/>
@@ -6596,6 +6939,19 @@ No se pudo encontrar el archivo:
     </message>
 </context>
 <context>
+    <name>currentWidget</name>
+    <message>
+        <location filename="../../src/gui/appdialogs/currentwidget.ui" line="20"/>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/appdialogs/currentwidget.ui" line="136"/>
+        <source>Current Speed:</source>
+        <translation>Velocidad Actual:</translation>
+    </message>
+</context>
+<context>
     <name>elCapacitor</name>
     <message>
         <location filename="../../src/components/passive/reactive/elcapacitor.cpp" line="21"/>
@@ -6606,62 +6962,94 @@ No se pudo encontrar el archivo:
 <context>
     <name>infoWidget</name>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="154"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="142"/>
         <source>Simulation Time:</source>
         <translation>Tiempo de Simulador:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="359"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="366"/>
         <source>Target Speed:</source>
         <translation>Velocidad Deseada:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="410"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="417"/>
         <source>Main MCU:</source>
         <translation>MCU Principal:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="746"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="753"/>
         <source>Engine Load:</source>
         <translation>Carga en Motor:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="911"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="918"/>
         <source>Update Load:</source>
         <translation>Carga en actualización:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="854"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="861"/>
         <source>Real FPS:</source>
         <translation>FPS Real:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="575"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="582"/>
         <source>GUI overload:</source>
         <translation>Sobrecarga GUI:</translation>
     </message>
     <message>
-        <location filename="../../src/gui/appdialogs/infowidget.ui" line="981"/>
+        <location filename="../../src/gui/appdialogs/infowidget.ui" line="988"/>
         <source>Real Speed:</source>
         <translation>Velocidad Real:</translation>
     </message>
 </context>
 <context>
+    <name>installInfo</name>
+    <message>
+        <location filename="../../src/gui/componentlist/installinfo.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>Diálogo</translation>
+    </message>
+</context>
+<context>
+    <name>installItem</name>
+    <message>
+        <location filename="../../src/gui/componentlist/installitem.ui" line="14"/>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+</context>
+<context>
+    <name>installer</name>
+    <message>
+        <location filename="../../src/gui/componentlist/installer.ui" line="14"/>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+</context>
+<context>
     <name>manCompDialog</name>
     <message>
-        <location filename="../../src/gui/componentlist/managecomps.cpp" line="22"/>
         <source>Name</source>
-        <translation>Nombre</translation>
+        <translation type="vanished">Nombre</translation>
     </message>
     <message>
-        <location filename="../../src/gui/componentlist/managecomps.cpp" line="22"/>
+        <location filename="../../src/gui/componentlist/managecomps.cpp" line="24"/>
         <source>ShortCut</source>
-        <translation type="unfinished"></translation>
+        <translation>Atajo</translation>
+    </message>
+    <message>
+        <location filename="../../src/gui/componentlist/managecomps.cpp" line="24"/>
+        <source>Component</source>
+        <translation>Componente</translation>
+    </message>
+    <message>
+        <source>Manage Components</source>
+        <translation type="vanished">Configurar Componentes</translation>
     </message>
     <message>
         <location filename="../../src/gui/componentlist/managecomps.ui" line="14"/>
-        <source>Manage Components</source>
-        <translation>Configurar Componentes</translation>
+        <source>Component Shortcuts</source>
+        <translation>Atajos de Componentes</translation>
     </message>
 </context>
 </TS>

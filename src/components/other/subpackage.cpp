@@ -1,4 +1,4 @@
-﻿/***************************************************************************
+/***************************************************************************
  *   Copyright (C) 2019 by Santiago González                               *
  *                                                                         *
  ***( see copyright.txt file at root folder )*******************************/
@@ -612,7 +612,7 @@ void SubPackage::savePackage( QString fileName )
           return;
     }
     QTextStream out(&file);
-    out.setEncoding( QStringConverter::Utf8 );
+    out.setCodec("UTF-8");
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 

@@ -13,7 +13,7 @@ Watched::Watched()
 }
 Watched::~Watched()
 {
-    if( m_watcher ) m_watcher->deleteLater();
+    //if( m_watcher ) m_watcher->deleteLater();
 }
 
 void Watched::createWatcher( bool proxy )

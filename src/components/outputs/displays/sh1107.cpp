@@ -3,11 +3,15 @@
  *                                                                         *
  ***( see copyright.txt file at root folder )*******************************/
 
+#include <QDebug>
+
 #include "sh1107.h"
 #include "itemlibrary.h"
+#include "utils.h"
 
 #include "doubleprop.h"
 #include "intprop.h"
+#include "boolprop.h"
 
 #define tr(str) simulideTr("Sh1107",str)
 
@@ -29,6 +33,8 @@ Sh1107::Sh1107( QString type, QString id )
 {
     m_address = m_cCode = 0b00111100; // 0x3A - 60
 
+    m_xOffset = true;
+
     setColorStr("White");
 
     setSize( 128, 128 );
@@ -39,7 +45,10 @@ Sh1107::Sh1107( QString type, QString id )
                              , this, &Sh1107::width, &Sh1107::setWidth, propNoCopy,"uint" ),
 
         new IntProp <Sh1107>("Height", tr("Height"), "_px"
-                             ,this,&Sh1107::height, &Sh1107::setHeight, propNoCopy,"uint" ),
+                             ,this, &Sh1107::height, &Sh1107::setHeight, propNoCopy,"uint" ),
+
+        new BoolProp<Sh1107>("Xoffset", tr("X Offset"), ""
+                             ,this, &Sh1107::xoffset, &Sh1107::setXoffset, propNoCopy ),
     }, 0} );
 
     addPropGroup( { tr("I2C"), {
@@ -58,22 +67,18 @@ void Sh1107::proccessCommand()
     m_readIndex = 0;
     m_readBytes = 0;
 
-    if( m_rxReg < 0x17 )
+    if( m_rxReg < 0x18 )
     {
-        if( m_addrMode != PAGE_ADDR_MODE ) return;
-
         if( m_rxReg < 0x10 )                              // Lower Colum Start Address for Page Addresing mode
             m_addrX = (m_addrX & 0xF0) | (m_rxReg & 0x0F);
         else                                              // Higher Colum Start Address for Page Addresing mode
-            m_addrX = (m_addrX & 0x0F) | ((m_rxReg & 0x0F) << 4);
-
-        if( m_addrX >= m_maxWidth) m_addrX -= m_maxWidth;
+            m_addrX = (m_addrX & 0x0F) | ((m_rxReg & 0x07) << 4);
     }
-    else if( m_rxReg>=0x40 && m_rxReg<=0x7F )            // Display Start Line
+    else if( m_rxReg>=0x40 && m_rxReg<=0x7F )             // Display Start Line
     {
         m_ramOffset = m_rxReg & m_lineMask;
     }
-    else if( m_rxReg>=0xB0 && m_rxReg<=0xB7 )            // Page Start Address for Page Addresing mode
+    else if( m_rxReg>=0xB0 && m_rxReg<=0xBF )             // Page Start Address for Page Addresing mode
     {
         if( m_addrMode == PAGE_ADDR_MODE ) m_addrY = m_rxReg & m_rowMask;
     }
@@ -100,6 +105,7 @@ void Sh1107::proccessCommand()
         case 0xDA: m_readBytes = 1;    break; // COM Pins Hardware Configuration
         case 0xDB: m_readBytes = 1;    break; // VCOM DETECT
         case 0xDC: m_readBytes = 1;    break; // Display Start Line
+        default: qDebug() << "Sh1107::proccessCommand Not implemented" << m_rxReg;
         }
     }
 }
@@ -119,5 +125,24 @@ void Sh1107::parameter()
         }break;
         case 0xD3: m_dispOffset = m_rxReg & m_lineMask; break; // Display Offset Set vertical shift by COM from 0d~63d
         case 0xDC: m_ramOffset  = m_rxReg & m_lineMask; break; // Display Start Line
+    }
+}
+
+void Sh1107::writeData()
+{
+    uint8_t addrX = m_addrX;
+    if( m_xOffset ){
+        if( addrX >= 96 ) addrX -= 96;
+        else              addrX += m_maxWidth-96;
+    }
+    m_DDRAM[addrX][m_addrY] = m_rxReg;
+
+    if( m_addrMode & VERT_ADDR_MODE )
+    {
+        m_addrY++;
+        if( m_addrY > m_endY ) m_addrY = m_startY;
+    }else{
+        m_addrX++;
+        if( m_addrX > m_endX ) m_addrX = m_startX;
     }
 }

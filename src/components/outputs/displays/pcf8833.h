@@ -20,7 +20,7 @@ class PCF8833 : public TftController, public Spi3Pins
  static Component* construct( QString type, QString id );
  static LibraryItem* libraryItem();
 
-        void stamp() override;
+        void initialize() override;
 
         void endTransaction() override;
 

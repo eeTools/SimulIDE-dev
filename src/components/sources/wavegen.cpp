@@ -151,15 +151,15 @@ void WaveGen::stamp()
         m_outpin->createCurrent();
         m_gndpin->createCurrent();
 
-        m_outpin->setImpedance( cero_doub );
-        m_gndpin->setImpedance( cero_doub );
+        m_outpin->setImpedance( low_imp );
+        m_gndpin->setImpedance( low_imp );
     }
     else{
         m_outpin->skipStamp( false );
         m_gndpin->skipStamp( false );
 
-        m_outpin->setImpedance( cero_doub );
-        m_gndpin->setImpedance( cero_doub );
+        m_outpin->setImpedance( low_imp );
+        m_gndpin->setImpedance( low_imp );
     }
 }
 
@@ -183,10 +183,14 @@ void WaveGen::runEvent()
         if( m_bipolar )
         {
             double volt = m_voltage*(m_vOut-0.5);
-            if( !m_floating ) volt /= 2;
-
-            m_outpin->setVoltage( m_voltMid+volt );
-            m_gndpin->setVoltage( m_voltMid-volt );
+            if( m_floating ) {
+                m_outpin->stampCurrent( volt*high_imp );
+                m_gndpin->stampCurrent(-volt*high_imp );
+            }else{
+                volt /= 2;
+                m_outpin->setVoltage( m_voltMid+volt );
+                m_gndpin->setVoltage( m_voltMid-volt );
+            }
         }
         else m_outpin->setVoltage( m_voltBase+m_voltage*m_vOut );
     }

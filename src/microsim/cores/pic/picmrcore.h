@@ -93,7 +93,7 @@ class PicMrCore : public Mcu8bits
 
         // ALU operations: dest ← OP(f,W)
         void MOVWF( uint8_t f );
-        void CLRF( uint8_t f );
+        void CLR( uint8_t f , uint8_t d );
         void SUBWF( uint8_t f, uint8_t d );
         void DECF( uint8_t f, uint8_t d );
         void IORWF( uint8_t f, uint8_t d );

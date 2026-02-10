@@ -269,7 +269,7 @@ void LedMatrix::remove()
 void LedMatrix::paint( QPainter* p, const QStyleOptionGraphicsItem* o, QWidget* w )
 {
     Component::paint( p, o, w );
-    p->drawRoundedRect( m_area, 4, 4 );
+    p->drawRoundedRect( m_area, 2, 2 );
 
     Component::paintSelected( p );
 }

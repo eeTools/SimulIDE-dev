@@ -67,7 +67,7 @@
         </size>
        </property>
        <property name="locale">
-        <locale language="C" country="AnyTerritory"/>
+        <locale language="C" country="AnyCountry"/>
        </property>
        <property name="currentIndex">
         <number>0</number>
@@ -368,7 +368,7 @@
               <string>Select tool path</string>
              </property>
              <property name="locale">
-              <locale language="C" country="AnyTerritory"/>
+              <locale language="C" country="AnyCountry"/>
              </property>
              <property name="text">
               <string notr="true">...</string>

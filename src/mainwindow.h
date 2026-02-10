@@ -98,13 +98,14 @@ class MainWindow : public QMainWindow
         void clearSearch();
 
     private:
+        void createWidgets();
+        void writeSettings();
+        QString getFilePath( QString filename, QString directory );
+
         Langs m_lang;
 
         bool m_blocked;
 
-        void createWidgets();
-        void writeSettings();
-        
         QString m_fontName;
         float m_fontScale;
         int m_autoBck;

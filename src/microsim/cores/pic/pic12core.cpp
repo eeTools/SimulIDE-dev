@@ -52,7 +52,7 @@ void Pic12Core::decode( uint16_t instr )
         if( (instr & 0xE00) == 0 ) {
             switch( instr & 0x1C0) {
             case 0x000: MOVWF( f );    return; // MOVWF f   0000 001f ffff
-            case 0x040: CLRF( f );     return; // CLR   f   0000 011f ffff
+            case 0x040: CLR( f, 1 );   return; // CLR   f   0000 011f ffff
             case 0x080: SUBWF( f, d ); return; // SUBWF f,d 0000 10df ffff
             case 0x0C0: DECF( f, d );  return; // DECF  f,d 0000 11df ffff
             case 0x100: IORWF( f, d ); return; // IORWF f,d 0001 00df ffff

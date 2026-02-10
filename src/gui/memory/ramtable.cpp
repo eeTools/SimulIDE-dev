@@ -237,7 +237,7 @@ void RamTable::saveVarSet()
         file.flush();
 
         QTextStream out(&file);
-        out.setEncoding( QStringConverter::Utf8 );
+        out.setCodec("UTF-8");
         QApplication::setOverrideCursor(Qt::WaitCursor);
 
         for( int row=0; row<m_numRegs; row++ )

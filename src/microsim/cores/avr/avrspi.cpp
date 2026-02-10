@@ -93,7 +93,7 @@ void AvrSpi::configureA( uint8_t newSPCR ) // SPCR is being written
     m_sampleEdge = ( clkPol == clkPha ) ? Clock_Rising : Clock_Falling; // This shows up in the truth table
 
     uint8_t spr = getRegBitsVal( newSPCR, m_SPR );
-    m_prescaler = m_prescList[spr];
+    setPrescIndex( spr );
     updateSpeed();
 }
 

@@ -5,8 +5,7 @@
 
 #pragma once
 
-//#include <QAudioOutput>
-#include <QAudioDevice>
+#include <QAudioOutput>
 
 #include "e-resistor.h"
 #include "component.h"
@@ -45,12 +44,12 @@ class AudioOut : public Component, public eResistor
         void updtProperties();
 
     private:
-        QAudioDevice m_deviceinfo;
-        QAudioFormat m_format;
-        
-        QAudioSink* m_audioOutput;
-        QIODevice*  m_audioBuffer;
-        QByteArray  m_dataBuffer;
+        QAudioDeviceInfo m_deviceinfo;
+        QAudioFormat     m_format;
+
+        QAudioOutput* m_audioOutput;
+        QIODevice*    m_audioBuffer;
+        QByteArray    m_dataBuffer;
 
         double m_frequency;
         double m_impedance;

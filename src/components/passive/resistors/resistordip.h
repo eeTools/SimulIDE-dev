@@ -21,8 +21,6 @@ class ResistorDip : public Component, public eElement
  static Component* construct( QString type, QString id );
  static LibraryItem *libraryItem();
 
-        void setValPos( QPointF ) override {;}
-
         virtual void stamp() override;
         virtual void updateStep() override;
 

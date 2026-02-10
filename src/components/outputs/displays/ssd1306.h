@@ -22,4 +22,5 @@ class Ssd1306 : public OledController
     protected:
         void proccessCommand() override;
         void parameter() override;
+        void configScroll( uint8_t command );
 };

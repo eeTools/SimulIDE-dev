@@ -34,7 +34,7 @@ ADC::ADC( QString type, QString id )
 {
     m_width  = 4;
     m_height = 9;
-    qDebug() << sizeof(ADC);
+
     m_maxVolt = 5;
 
     setLabelPos(-16,-80, 0);

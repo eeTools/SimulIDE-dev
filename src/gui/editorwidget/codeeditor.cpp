@@ -823,7 +823,7 @@ void CodeEditor::saveConfig()
         return;
     }
     QTextStream out( &file );
-    out.setEncoding( QStringConverter::Utf8 );
+    out.setCodec("UTF-8");
     out << config;
     file.close();
 }
@@ -909,6 +909,12 @@ void CodeEditor::lineNumberAreaPaintEvent( QPaintEvent* event )
         {
             int newLine = block.blockNumber() + 1;
             int oldLine = newLine + delta;
+            if( oldLine > numLines )
+            {
+                if( brkPoints.contains( oldLine ) ) brkPoints.removeOne( oldLine );
+                if( errors.contains(    oldLine ) ) errors.removeOne(    oldLine );
+                if( warnings.contains(  oldLine ) ) warnings.removeOne(  oldLine );
+            }
             if( block == cBlock )
             {
                 if( delta > 0 ) // Line removed, check if point at cursor line and remove it

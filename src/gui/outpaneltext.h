@@ -21,7 +21,7 @@ class OutPanelText : public QPlainTextEdit, public Updatable
         OutPanelText( QWidget* parent=0 );
         ~OutPanelText();
 
-        virtual void updateStep() override;
+        void updateStep() override;
 
         void appendText( const QString text ) { m_textBuffer.append( text ); }
         void appendLine( const QString text );

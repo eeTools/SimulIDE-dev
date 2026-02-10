@@ -92,8 +92,8 @@ Csource::~Csource() {}
 
 void Csource::stamp()
 {
-    if( m_currControl ) m_admit = 1/cero_doub;
-    else                m_admit = cero_doub;
+    if( m_currControl ) m_admit = 1/low_imp;
+    else                m_admit = low_imp;
     eResistor::stamp();
 
     m_pin[2]->setEnodeComp( m_pin[3]->getEnode() );
@@ -126,11 +126,11 @@ void Csource::updateStep()
 
     if( m_currControl )
     {
-        m_admit = 1/cero_doub;
+        m_admit = 1/low_imp;
         m_pin[0]->setLabelText( "" );
         m_pin[1]->setLabelText( "" );
     }else{
-        m_admit = cero_doub;
+        m_admit = low_imp;
         m_pin[0]->setLabelText("+");
         m_pin[1]->setLabelText("–");  // U+2013
     }
@@ -141,8 +141,8 @@ void Csource::updateStep()
         m_pin[2]->stampAdmitance( 0 );
         m_pin[3]->stampAdmitance( 0 );
     }else{
-        m_pin[2]->stampAdmitance( 1/cero_doub );
-        m_pin[3]->stampAdmitance( 1/cero_doub );
+        m_pin[2]->stampAdmitance( 1/low_imp );
+        m_pin[3]->stampAdmitance( 1/low_imp );
     }
 
     if( !m_controlPins && !m_linkedTo )
@@ -155,8 +155,8 @@ void Csource::updateStep()
             m_pin[2]->stampCurrent(-m_curr );
             m_pin[3]->stampCurrent( m_curr );
         }else{
-            m_pin[2]->stampCurrent( m_volt/cero_doub );
-            m_pin[3]->stampCurrent(-m_volt/cero_doub );
+            m_pin[2]->stampCurrent( m_volt/low_imp );
+            m_pin[3]->stampCurrent(-m_volt/low_imp );
         }
     }
     else voltChanged();
@@ -174,7 +174,7 @@ void Csource::setVoltage( double v )
     m_lastCurr = curr;
 
     if( m_currSource   ) curr = -curr;      // Current source
-    else if( curr != 0 ) curr /= cero_doub; // Voltage source
+    else if( curr != 0 ) curr /= low_imp; // Voltage source
     if( m_currControl  ) curr *= m_admit;   // Current controlled
 
     curr *= m_gain;
@@ -250,10 +250,11 @@ void Csource::updtProperties()
     if( !m_propDialog ) return;
     bool controlled = m_controlPins || m_linkedTo; // Controlled by pins or Linked
 
-    m_propDialog->showProp("Voltage"    , !controlled && !m_currSource );
-    m_propDialog->showProp("Current"    , !controlled &&  m_currSource );
-    m_propDialog->showProp("CurrControl",  controlled );
-    m_propDialog->showProp("Gain"       ,  controlled );
+    m_propDialog->showProp("Control_Pins", !m_linkedTo );
+    m_propDialog->showProp("Voltage"     , !controlled && !m_currSource );
+    m_propDialog->showProp("Current"     , !controlled &&  m_currSource );
+    m_propDialog->showProp("CurrControl" ,  m_controlPins && !m_linkedTo );
+    m_propDialog->showProp("Gain"        ,  controlled );
 
     m_propDialog->adjustWidgets();
 }

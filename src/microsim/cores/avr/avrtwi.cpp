@@ -119,8 +119,7 @@ void AvrTwi::writeAddrReg( uint8_t newTWAR ) // TWAR is being written
 void AvrTwi::writeStatus( uint8_t newTWSR ) // TWSR Status Register is being written
 {
     newTWSR &= 0b00000011;
-    uint8_t prescaler = m_prescList[newTWSR];
-    if( m_prescaler != prescaler ) { m_prescaler = prescaler; updateFreq(); }
+    if( m_prIndex != newTWSR ) { setPrescIndex( newTWSR ); updateFreq(); }
     /// Done by masking //m_mcu->m_regOverride = newTWSR | (*m_statReg & 0b11111100); // Preserve Status bits
 }
 

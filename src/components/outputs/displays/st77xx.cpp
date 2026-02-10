@@ -51,7 +51,6 @@ void St77xx::initialize()
     updateStep();
 }
 
-
 void St77xx::endTransaction()
 {
     Spi5Pins::endTransaction();
