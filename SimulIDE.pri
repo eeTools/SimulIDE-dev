@@ -27,6 +27,7 @@ INCLUDEPATH += $$PWD/src \
     $$PWD/src/components/meters \
     $$PWD/src/components/micro \
     $$PWD/src/components/other \
+    $$PWD/src/components/other/plantmodel \
     $$PWD/src/components/other/truthtable \
     $$PWD/src/components/outputs \
     $$PWD/src/components/outputs/displays \
@@ -78,7 +79,8 @@ INCLUDEPATH += $$PWD/src \
     $$PWD/src/microsim/modules/script\
     $$PWD/src/angel/include \
     $$PWD/src/angel/JIT \
-    $$PWD/src/angel/src
+    $$PWD/src/angel/src \
+    /usr/include/python3.12 \
 
 QMAKE_CXXFLAGS += -Wno-unused-parameter
 #QMAKE_CXXFLAGS += -Wno-deprecated-declarations
@@ -94,8 +96,10 @@ QMAKE_CXXFLAGS_DEBUG -= -O1
 QMAKE_CXXFLAGS_DEBUG -= -O2
 QMAKE_CXXFLAGS_DEBUG -= -O3
 QMAKE_CXXFLAGS_DEBUG += -O0
+QMAKE_LFLAGS += -lpython3.12
 
 LIBS += -lz
+LIBS += -lpython3.12
 
 win32 {
     OS = Windows
