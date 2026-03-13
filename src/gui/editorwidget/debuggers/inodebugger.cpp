@@ -353,7 +353,6 @@ int InoDebugger::compile( bool debug )
         /// if( debug ) command += " --optimize-for-debug"; // Maybe problems in Arduino 2.2.1: Mapping Flash to Source... 0 lines mapped
         command += " --fqbn="+boardName;
         command += " --build-path "+cBuildPath;
-        command += " --build-cache-path "+cCachePath;
         if( !m_inclPath.isEmpty() )
             command += " --libraries "+addQuotes( m_inclPath );
     }
