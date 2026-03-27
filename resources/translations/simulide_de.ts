@@ -2324,7 +2324,7 @@ Sollen die Änderungen gespeichert werden?
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="787"/>
         <source>UpLoad</source>
-        <translation>UpLoad</translation>
+        <translation>Upload</translation>
     </message>
     <message>
         <location filename="../../src/gui/editorwidget/editorwidget.cpp" line="788"/>
