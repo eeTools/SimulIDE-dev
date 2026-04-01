@@ -86,6 +86,7 @@
 #include "oscope.h"
 #include "pcd8544.h"
 #include "pcf8833.h"
+#include "plant_model.h"
 #include "probe.h"
 #include "potentiometer.h"
 #include "push.h"
@@ -335,6 +336,7 @@ void ItemLibrary::loadItems()
     addItem( SubPackage::libraryItem() );
     addItem( TestUnit::libraryItem() );
     addItem( Dial::libraryItem() );
+    addItem( PlantModel::libraryItem() );
 }
 
 void ItemLibrary::addItem( LibraryItem* item )
